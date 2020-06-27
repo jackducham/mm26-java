@@ -11,10 +11,18 @@ import java.net.InetSocketAddress
 import java.util.logging.Logger
 
 
+/**
+ * main function for running the server with no onReceive and onSend
+ */
+fun main(args: Array<String>) {
+    Server().startServer(args[0].toInt(), {}, {})
+}
+
 class Server {
 
     private val logger = Logger.getLogger(Server::class.toString())
     private val player: PlayerStrategyInterface = PlayerStrategy()
+
 
     /**
      * Starts a server using a specified port
