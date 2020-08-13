@@ -22,7 +22,7 @@ public final class InfraProtos {
      * <code>string player_name = 1;</code>
      * @return The playerName.
      */
-    String getPlayerName();
+    java.lang.String getPlayerName();
     /**
      * <code>string player_name = 1;</code>
      * @return The bytes for playerName.
@@ -34,7 +34,7 @@ public final class InfraProtos {
      * <code>string player_ip = 2;</code>
      * @return The playerIp.
      */
-    String getPlayerIp();
+    java.lang.String getPlayerIp();
     /**
      * <code>string player_ip = 2;</code>
      * @return The bytes for playerIp.
@@ -45,7 +45,7 @@ public final class InfraProtos {
   /**
    * Protobuf type {@code infra.InfraPlayer}
    */
-  public static final class InfraPlayer extends
+  public  static final class InfraPlayer extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:infra.InfraPlayer)
       InfraPlayerOrBuilder {
@@ -59,14 +59,14 @@ public final class InfraProtos {
       playerIp_ = "";
     }
 
-    @Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected Object newInstance(
+    protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new InfraPlayer();
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -77,7 +77,7 @@ public final class InfraProtos {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new NullPointerException();
+        throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -90,13 +90,13 @@ public final class InfraProtos {
               done = true;
               break;
             case 10: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               playerName_ = s;
               break;
             }
             case 18: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               playerIp_ = s;
               break;
@@ -122,32 +122,31 @@ public final class InfraProtos {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return InfraProtos.internal_static_infra_InfraPlayer_descriptor;
+      return mech.mania.engine.domain.model.InfraProtos.internal_static_infra_InfraPlayer_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return InfraProtos.internal_static_infra_InfraPlayer_fieldAccessorTable
+      return mech.mania.engine.domain.model.InfraProtos.internal_static_infra_InfraPlayer_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              InfraPlayer.class, Builder.class);
+              mech.mania.engine.domain.model.InfraProtos.InfraPlayer.class, mech.mania.engine.domain.model.InfraProtos.InfraPlayer.Builder.class);
     }
 
     public static final int PLAYER_NAME_FIELD_NUMBER = 1;
-    private volatile Object playerName_;
+    private volatile java.lang.Object playerName_;
     /**
      * <code>string player_name = 1;</code>
      * @return The playerName.
      */
-    @Override
-    public String getPlayerName() {
-      Object ref = playerName_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getPlayerName() {
+      java.lang.Object ref = playerName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         playerName_ = s;
         return s;
       }
@@ -156,14 +155,13 @@ public final class InfraProtos {
      * <code>string player_name = 1;</code>
      * @return The bytes for playerName.
      */
-    @Override
     public com.google.protobuf.ByteString
         getPlayerNameBytes() {
-      Object ref = playerName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+      java.lang.Object ref = playerName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         playerName_ = b;
         return b;
       } else {
@@ -172,20 +170,19 @@ public final class InfraProtos {
     }
 
     public static final int PLAYER_IP_FIELD_NUMBER = 2;
-    private volatile Object playerIp_;
+    private volatile java.lang.Object playerIp_;
     /**
      * <code>string player_ip = 2;</code>
      * @return The playerIp.
      */
-    @Override
-    public String getPlayerIp() {
-      Object ref = playerIp_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getPlayerIp() {
+      java.lang.Object ref = playerIp_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         playerIp_ = s;
         return s;
       }
@@ -194,14 +191,13 @@ public final class InfraProtos {
      * <code>string player_ip = 2;</code>
      * @return The bytes for playerIp.
      */
-    @Override
     public com.google.protobuf.ByteString
         getPlayerIpBytes() {
-      Object ref = playerIp_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+      java.lang.Object ref = playerIp_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         playerIp_ = b;
         return b;
       } else {
@@ -210,7 +206,7 @@ public final class InfraProtos {
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -220,7 +216,7 @@ public final class InfraProtos {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getPlayerNameBytes().isEmpty()) {
@@ -232,7 +228,7 @@ public final class InfraProtos {
       unknownFields.writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -249,15 +245,15 @@ public final class InfraProtos {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof InfraPlayer)) {
+      if (!(obj instanceof mech.mania.engine.domain.model.InfraProtos.InfraPlayer)) {
         return super.equals(obj);
       }
-      InfraPlayer other = (InfraPlayer) obj;
+      mech.mania.engine.domain.model.InfraProtos.InfraPlayer other = (mech.mania.engine.domain.model.InfraProtos.InfraPlayer) obj;
 
       if (!getPlayerName()
           .equals(other.getPlayerName())) return false;
@@ -267,7 +263,7 @@ public final class InfraProtos {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -283,69 +279,69 @@ public final class InfraProtos {
       return hash;
     }
 
-    public static InfraPlayer parseFrom(
+    public static mech.mania.engine.domain.model.InfraProtos.InfraPlayer parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static InfraPlayer parseFrom(
+    public static mech.mania.engine.domain.model.InfraProtos.InfraPlayer parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static InfraPlayer parseFrom(
+    public static mech.mania.engine.domain.model.InfraProtos.InfraPlayer parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static InfraPlayer parseFrom(
+    public static mech.mania.engine.domain.model.InfraProtos.InfraPlayer parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static InfraPlayer parseFrom(byte[] data)
+    public static mech.mania.engine.domain.model.InfraProtos.InfraPlayer parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static InfraPlayer parseFrom(
+    public static mech.mania.engine.domain.model.InfraProtos.InfraPlayer parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static InfraPlayer parseFrom(java.io.InputStream input)
+    public static mech.mania.engine.domain.model.InfraProtos.InfraPlayer parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static InfraPlayer parseFrom(
+    public static mech.mania.engine.domain.model.InfraProtos.InfraPlayer parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static InfraPlayer parseDelimitedFrom(java.io.InputStream input)
+    public static mech.mania.engine.domain.model.InfraProtos.InfraPlayer parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static InfraPlayer parseDelimitedFrom(
+    public static mech.mania.engine.domain.model.InfraProtos.InfraPlayer parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static InfraPlayer parseFrom(
+    public static mech.mania.engine.domain.model.InfraProtos.InfraPlayer parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static InfraPlayer parseFrom(
+    public static mech.mania.engine.domain.model.InfraProtos.InfraPlayer parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -353,23 +349,23 @@ public final class InfraProtos {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @Override
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(InfraPlayer prototype) {
+    public static Builder newBuilder(mech.mania.engine.domain.model.InfraProtos.InfraPlayer prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -379,18 +375,18 @@ public final class InfraProtos {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:infra.InfraPlayer)
-        InfraPlayerOrBuilder {
+        mech.mania.engine.domain.model.InfraProtos.InfraPlayerOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return InfraProtos.internal_static_infra_InfraPlayer_descriptor;
+        return mech.mania.engine.domain.model.InfraProtos.internal_static_infra_InfraPlayer_descriptor;
       }
 
-      @Override
-      protected FieldAccessorTable
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return InfraProtos.internal_static_infra_InfraPlayer_fieldAccessorTable
+        return mech.mania.engine.domain.model.InfraProtos.internal_static_infra_InfraPlayer_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                InfraPlayer.class, Builder.class);
+                mech.mania.engine.domain.model.InfraProtos.InfraPlayer.class, mech.mania.engine.domain.model.InfraProtos.InfraPlayer.Builder.class);
       }
 
       // Construct using mech.mania.engine.domain.model.InfraProtos.InfraPlayer.newBuilder()
@@ -399,7 +395,7 @@ public final class InfraProtos {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -408,7 +404,7 @@ public final class InfraProtos {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         playerName_ = "";
@@ -418,79 +414,79 @@ public final class InfraProtos {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return InfraProtos.internal_static_infra_InfraPlayer_descriptor;
+        return mech.mania.engine.domain.model.InfraProtos.internal_static_infra_InfraPlayer_descriptor;
       }
 
-      @Override
-      public InfraPlayer getDefaultInstanceForType() {
-        return InfraPlayer.getDefaultInstance();
+      @java.lang.Override
+      public mech.mania.engine.domain.model.InfraProtos.InfraPlayer getDefaultInstanceForType() {
+        return mech.mania.engine.domain.model.InfraProtos.InfraPlayer.getDefaultInstance();
       }
 
-      @Override
-      public InfraPlayer build() {
-        InfraPlayer result = buildPartial();
+      @java.lang.Override
+      public mech.mania.engine.domain.model.InfraProtos.InfraPlayer build() {
+        mech.mania.engine.domain.model.InfraProtos.InfraPlayer result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public InfraPlayer buildPartial() {
-        InfraPlayer result = new InfraPlayer(this);
+      @java.lang.Override
+      public mech.mania.engine.domain.model.InfraProtos.InfraPlayer buildPartial() {
+        mech.mania.engine.domain.model.InfraProtos.InfraPlayer result = new mech.mania.engine.domain.model.InfraProtos.InfraPlayer(this);
         result.playerName_ = playerName_;
         result.playerIp_ = playerIp_;
         onBuilt();
         return result;
       }
 
-      @Override
+      @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @Override
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return super.setField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @Override
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @Override
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @Override
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof InfraPlayer) {
-          return mergeFrom((InfraPlayer)other);
+        if (other instanceof mech.mania.engine.domain.model.InfraProtos.InfraPlayer) {
+          return mergeFrom((mech.mania.engine.domain.model.InfraProtos.InfraPlayer)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(InfraPlayer other) {
-        if (other == InfraPlayer.getDefaultInstance()) return this;
+      public Builder mergeFrom(mech.mania.engine.domain.model.InfraProtos.InfraPlayer other) {
+        if (other == mech.mania.engine.domain.model.InfraProtos.InfraPlayer.getDefaultInstance()) return this;
         if (!other.getPlayerName().isEmpty()) {
           playerName_ = other.playerName_;
           onChanged();
@@ -504,21 +500,21 @@ public final class InfraProtos {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        InfraPlayer parsedMessage = null;
+        mech.mania.engine.domain.model.InfraProtos.InfraPlayer parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (InfraPlayer) e.getUnfinishedMessage();
+          parsedMessage = (mech.mania.engine.domain.model.InfraProtos.InfraPlayer) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -528,21 +524,21 @@ public final class InfraProtos {
         return this;
       }
 
-      private Object playerName_ = "";
+      private java.lang.Object playerName_ = "";
       /**
        * <code>string player_name = 1;</code>
        * @return The playerName.
        */
-      public String getPlayerName() {
-        Object ref = playerName_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getPlayerName() {
+        java.lang.Object ref = playerName_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           playerName_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -551,11 +547,11 @@ public final class InfraProtos {
        */
       public com.google.protobuf.ByteString
           getPlayerNameBytes() {
-        Object ref = playerName_;
+        java.lang.Object ref = playerName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           playerName_ = b;
           return b;
         } else {
@@ -568,11 +564,11 @@ public final class InfraProtos {
        * @return This builder for chaining.
        */
       public Builder setPlayerName(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         playerName_ = value;
         onChanged();
         return this;
@@ -582,7 +578,7 @@ public final class InfraProtos {
        * @return This builder for chaining.
        */
       public Builder clearPlayerName() {
-
+        
         playerName_ = getDefaultInstance().getPlayerName();
         onChanged();
         return this;
@@ -598,27 +594,27 @@ public final class InfraProtos {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         playerName_ = value;
         onChanged();
         return this;
       }
 
-      private Object playerIp_ = "";
+      private java.lang.Object playerIp_ = "";
       /**
        * <code>string player_ip = 2;</code>
        * @return The playerIp.
        */
-      public String getPlayerIp() {
-        Object ref = playerIp_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getPlayerIp() {
+        java.lang.Object ref = playerIp_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           playerIp_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -627,11 +623,11 @@ public final class InfraProtos {
        */
       public com.google.protobuf.ByteString
           getPlayerIpBytes() {
-        Object ref = playerIp_;
+        java.lang.Object ref = playerIp_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           playerIp_ = b;
           return b;
         } else {
@@ -644,11 +640,11 @@ public final class InfraProtos {
        * @return This builder for chaining.
        */
       public Builder setPlayerIp(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         playerIp_ = value;
         onChanged();
         return this;
@@ -658,7 +654,7 @@ public final class InfraProtos {
        * @return This builder for chaining.
        */
       public Builder clearPlayerIp() {
-
+        
         playerIp_ = getDefaultInstance().getPlayerIp();
         onChanged();
         return this;
@@ -674,18 +670,18 @@ public final class InfraProtos {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         playerIp_ = value;
         onChanged();
         return this;
       }
-      @Override
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @Override
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -696,18 +692,18 @@ public final class InfraProtos {
     }
 
     // @@protoc_insertion_point(class_scope:infra.InfraPlayer)
-    private static final InfraPlayer DEFAULT_INSTANCE;
+    private static final mech.mania.engine.domain.model.InfraProtos.InfraPlayer DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new InfraPlayer();
+      DEFAULT_INSTANCE = new mech.mania.engine.domain.model.InfraProtos.InfraPlayer();
     }
 
-    public static InfraPlayer getDefaultInstance() {
+    public static mech.mania.engine.domain.model.InfraProtos.InfraPlayer getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<InfraPlayer>
         PARSER = new com.google.protobuf.AbstractParser<InfraPlayer>() {
-      @Override
+      @java.lang.Override
       public InfraPlayer parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -720,13 +716,13 @@ public final class InfraProtos {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<InfraPlayer> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public InfraPlayer getDefaultInstanceForType() {
+    @java.lang.Override
+    public mech.mania.engine.domain.model.InfraProtos.InfraPlayer getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -746,7 +742,7 @@ public final class InfraProtos {
      * <code>string message = 2;</code>
      * @return The message.
      */
-    String getMessage();
+    java.lang.String getMessage();
     /**
      * <code>string message = 2;</code>
      * @return The bytes for message.
@@ -757,7 +753,7 @@ public final class InfraProtos {
   /**
    * Protobuf type {@code infra.InfraStatus}
    */
-  public static final class InfraStatus extends
+  public  static final class InfraStatus extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:infra.InfraStatus)
       InfraStatusOrBuilder {
@@ -770,14 +766,14 @@ public final class InfraProtos {
       message_ = "";
     }
 
-    @Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected Object newInstance(
+    protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new InfraStatus();
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -788,7 +784,7 @@ public final class InfraProtos {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new NullPointerException();
+        throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -806,7 +802,7 @@ public final class InfraProtos {
               break;
             }
             case 18: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               message_ = s;
               break;
@@ -832,15 +828,15 @@ public final class InfraProtos {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return InfraProtos.internal_static_infra_InfraStatus_descriptor;
+      return mech.mania.engine.domain.model.InfraProtos.internal_static_infra_InfraStatus_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return InfraProtos.internal_static_infra_InfraStatus_fieldAccessorTable
+      return mech.mania.engine.domain.model.InfraProtos.internal_static_infra_InfraStatus_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              InfraStatus.class, Builder.class);
+              mech.mania.engine.domain.model.InfraProtos.InfraStatus.class, mech.mania.engine.domain.model.InfraProtos.InfraStatus.Builder.class);
     }
 
     public static final int STATUS_FIELD_NUMBER = 1;
@@ -849,26 +845,24 @@ public final class InfraProtos {
      * <code>int32 status = 1;</code>
      * @return The status.
      */
-    @Override
     public int getStatus() {
       return status_;
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 2;
-    private volatile Object message_;
+    private volatile java.lang.Object message_;
     /**
      * <code>string message = 2;</code>
      * @return The message.
      */
-    @Override
-    public String getMessage() {
-      Object ref = message_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         message_ = s;
         return s;
       }
@@ -877,14 +871,13 @@ public final class InfraProtos {
      * <code>string message = 2;</code>
      * @return The bytes for message.
      */
-    @Override
     public com.google.protobuf.ByteString
         getMessageBytes() {
-      Object ref = message_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         message_ = b;
         return b;
       } else {
@@ -893,7 +886,7 @@ public final class InfraProtos {
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -903,7 +896,7 @@ public final class InfraProtos {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (status_ != 0) {
@@ -915,7 +908,7 @@ public final class InfraProtos {
       unknownFields.writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -933,15 +926,15 @@ public final class InfraProtos {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof InfraStatus)) {
+      if (!(obj instanceof mech.mania.engine.domain.model.InfraProtos.InfraStatus)) {
         return super.equals(obj);
       }
-      InfraStatus other = (InfraStatus) obj;
+      mech.mania.engine.domain.model.InfraProtos.InfraStatus other = (mech.mania.engine.domain.model.InfraProtos.InfraStatus) obj;
 
       if (getStatus()
           != other.getStatus()) return false;
@@ -951,7 +944,7 @@ public final class InfraProtos {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -967,69 +960,69 @@ public final class InfraProtos {
       return hash;
     }
 
-    public static InfraStatus parseFrom(
+    public static mech.mania.engine.domain.model.InfraProtos.InfraStatus parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static InfraStatus parseFrom(
+    public static mech.mania.engine.domain.model.InfraProtos.InfraStatus parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static InfraStatus parseFrom(
+    public static mech.mania.engine.domain.model.InfraProtos.InfraStatus parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static InfraStatus parseFrom(
+    public static mech.mania.engine.domain.model.InfraProtos.InfraStatus parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static InfraStatus parseFrom(byte[] data)
+    public static mech.mania.engine.domain.model.InfraProtos.InfraStatus parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static InfraStatus parseFrom(
+    public static mech.mania.engine.domain.model.InfraProtos.InfraStatus parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static InfraStatus parseFrom(java.io.InputStream input)
+    public static mech.mania.engine.domain.model.InfraProtos.InfraStatus parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static InfraStatus parseFrom(
+    public static mech.mania.engine.domain.model.InfraProtos.InfraStatus parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static InfraStatus parseDelimitedFrom(java.io.InputStream input)
+    public static mech.mania.engine.domain.model.InfraProtos.InfraStatus parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static InfraStatus parseDelimitedFrom(
+    public static mech.mania.engine.domain.model.InfraProtos.InfraStatus parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static InfraStatus parseFrom(
+    public static mech.mania.engine.domain.model.InfraProtos.InfraStatus parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static InfraStatus parseFrom(
+    public static mech.mania.engine.domain.model.InfraProtos.InfraStatus parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1037,23 +1030,23 @@ public final class InfraProtos {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @Override
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(InfraStatus prototype) {
+    public static Builder newBuilder(mech.mania.engine.domain.model.InfraProtos.InfraStatus prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1063,18 +1056,18 @@ public final class InfraProtos {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:infra.InfraStatus)
-        InfraStatusOrBuilder {
+        mech.mania.engine.domain.model.InfraProtos.InfraStatusOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return InfraProtos.internal_static_infra_InfraStatus_descriptor;
+        return mech.mania.engine.domain.model.InfraProtos.internal_static_infra_InfraStatus_descriptor;
       }
 
-      @Override
-      protected FieldAccessorTable
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return InfraProtos.internal_static_infra_InfraStatus_fieldAccessorTable
+        return mech.mania.engine.domain.model.InfraProtos.internal_static_infra_InfraStatus_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                InfraStatus.class, Builder.class);
+                mech.mania.engine.domain.model.InfraProtos.InfraStatus.class, mech.mania.engine.domain.model.InfraProtos.InfraStatus.Builder.class);
       }
 
       // Construct using mech.mania.engine.domain.model.InfraProtos.InfraStatus.newBuilder()
@@ -1083,7 +1076,7 @@ public final class InfraProtos {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1092,7 +1085,7 @@ public final class InfraProtos {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         status_ = 0;
@@ -1102,79 +1095,79 @@ public final class InfraProtos {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return InfraProtos.internal_static_infra_InfraStatus_descriptor;
+        return mech.mania.engine.domain.model.InfraProtos.internal_static_infra_InfraStatus_descriptor;
       }
 
-      @Override
-      public InfraStatus getDefaultInstanceForType() {
-        return InfraStatus.getDefaultInstance();
+      @java.lang.Override
+      public mech.mania.engine.domain.model.InfraProtos.InfraStatus getDefaultInstanceForType() {
+        return mech.mania.engine.domain.model.InfraProtos.InfraStatus.getDefaultInstance();
       }
 
-      @Override
-      public InfraStatus build() {
-        InfraStatus result = buildPartial();
+      @java.lang.Override
+      public mech.mania.engine.domain.model.InfraProtos.InfraStatus build() {
+        mech.mania.engine.domain.model.InfraProtos.InfraStatus result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public InfraStatus buildPartial() {
-        InfraStatus result = new InfraStatus(this);
+      @java.lang.Override
+      public mech.mania.engine.domain.model.InfraProtos.InfraStatus buildPartial() {
+        mech.mania.engine.domain.model.InfraProtos.InfraStatus result = new mech.mania.engine.domain.model.InfraProtos.InfraStatus(this);
         result.status_ = status_;
         result.message_ = message_;
         onBuilt();
         return result;
       }
 
-      @Override
+      @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @Override
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return super.setField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @Override
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @Override
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @Override
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof InfraStatus) {
-          return mergeFrom((InfraStatus)other);
+        if (other instanceof mech.mania.engine.domain.model.InfraProtos.InfraStatus) {
+          return mergeFrom((mech.mania.engine.domain.model.InfraProtos.InfraStatus)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(InfraStatus other) {
-        if (other == InfraStatus.getDefaultInstance()) return this;
+      public Builder mergeFrom(mech.mania.engine.domain.model.InfraProtos.InfraStatus other) {
+        if (other == mech.mania.engine.domain.model.InfraProtos.InfraStatus.getDefaultInstance()) return this;
         if (other.getStatus() != 0) {
           setStatus(other.getStatus());
         }
@@ -1187,21 +1180,21 @@ public final class InfraProtos {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        InfraStatus parsedMessage = null;
+        mech.mania.engine.domain.model.InfraProtos.InfraStatus parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (InfraStatus) e.getUnfinishedMessage();
+          parsedMessage = (mech.mania.engine.domain.model.InfraProtos.InfraStatus) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1216,7 +1209,6 @@ public final class InfraProtos {
        * <code>int32 status = 1;</code>
        * @return The status.
        */
-      @Override
       public int getStatus() {
         return status_;
       }
@@ -1226,7 +1218,7 @@ public final class InfraProtos {
        * @return This builder for chaining.
        */
       public Builder setStatus(int value) {
-
+        
         status_ = value;
         onChanged();
         return this;
@@ -1236,27 +1228,27 @@ public final class InfraProtos {
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
-
+        
         status_ = 0;
         onChanged();
         return this;
       }
 
-      private Object message_ = "";
+      private java.lang.Object message_ = "";
       /**
        * <code>string message = 2;</code>
        * @return The message.
        */
-      public String getMessage() {
-        Object ref = message_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           message_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1265,11 +1257,11 @@ public final class InfraProtos {
        */
       public com.google.protobuf.ByteString
           getMessageBytes() {
-        Object ref = message_;
+        java.lang.Object ref = message_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           message_ = b;
           return b;
         } else {
@@ -1282,11 +1274,11 @@ public final class InfraProtos {
        * @return This builder for chaining.
        */
       public Builder setMessage(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         message_ = value;
         onChanged();
         return this;
@@ -1296,7 +1288,7 @@ public final class InfraProtos {
        * @return This builder for chaining.
        */
       public Builder clearMessage() {
-
+        
         message_ = getDefaultInstance().getMessage();
         onChanged();
         return this;
@@ -1312,18 +1304,18 @@ public final class InfraProtos {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         message_ = value;
         onChanged();
         return this;
       }
-      @Override
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @Override
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1334,18 +1326,18 @@ public final class InfraProtos {
     }
 
     // @@protoc_insertion_point(class_scope:infra.InfraStatus)
-    private static final InfraStatus DEFAULT_INSTANCE;
+    private static final mech.mania.engine.domain.model.InfraProtos.InfraStatus DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new InfraStatus();
+      DEFAULT_INSTANCE = new mech.mania.engine.domain.model.InfraProtos.InfraStatus();
     }
 
-    public static InfraStatus getDefaultInstance() {
+    public static mech.mania.engine.domain.model.InfraProtos.InfraStatus getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<InfraStatus>
         PARSER = new com.google.protobuf.AbstractParser<InfraStatus>() {
-      @Override
+      @java.lang.Override
       public InfraStatus parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1358,13 +1350,13 @@ public final class InfraProtos {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<InfraStatus> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public InfraStatus getDefaultInstanceForType() {
+    @java.lang.Override
+    public mech.mania.engine.domain.model.InfraProtos.InfraStatus getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1372,12 +1364,12 @@ public final class InfraProtos {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_infra_InfraPlayer_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_infra_InfraPlayer_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_infra_InfraStatus_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_infra_InfraStatus_fieldAccessorTable;
 
@@ -1388,7 +1380,7 @@ public final class InfraProtos {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\013infra.proto\022\005infra\"5\n\013InfraPlayer\022\023\n\013p" +
       "layer_name\030\001 \001(\t\022\021\n\tplayer_ip\030\002 \001(\t\".\n\013I" +
       "nfraStatus\022\016\n\006status\030\001 \001(\005\022\017\n\007message\030\002 " +
@@ -1404,13 +1396,13 @@ public final class InfraProtos {
     internal_static_infra_InfraPlayer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_infra_InfraPlayer_descriptor,
-        new String[] { "PlayerName", "PlayerIp", });
+        new java.lang.String[] { "PlayerName", "PlayerIp", });
     internal_static_infra_InfraStatus_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_infra_InfraStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_infra_InfraStatus_descriptor,
-        new String[] { "Status", "Message", });
+        new java.lang.String[] { "Status", "Message", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

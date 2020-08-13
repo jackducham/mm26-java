@@ -1,5 +1,8 @@
 package mech.mania.starter_pack
 
+import junit.framework.TestCase.assertTrue
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import mech.mania.starter_pack.entrypoints.Server
 import mech.mania.engine.domain.model.InfraProtos.InfraPlayer
 import mech.mania.engine.domain.model.InfraProtos.InfraStatus
@@ -29,7 +32,7 @@ import kotlin.collections.ArrayList
 class GameEngineCommunicationTests {
 
     /** Port to launch the Game server on */
-    private val port = 8080
+    private val port = 9000
 
     /** URL that visualizer will connect to */
     private var VISUALIZER_URL: String = "ws://localhost:$port/visualizer"
@@ -52,18 +55,18 @@ class GameEngineCommunicationTests {
     fun setup() {
         // start game server
         val pb = ProcessBuilder()
-        pb.command("java", "-jar", jarfile, "$port")
+        pb.command("java", "-jar", jarfile, "$port") // @TODO: engine jar doesn't actually take a port
         process = pb.start()
 
-        // GlobalScope.launch {
-        //     val reader = process.inputStream.reader()
-        //     while (process.isAlive) {
-        //         LOGGER.info(reader.readText())
-        //     }
-        // }
+         GlobalScope.launch {
+             val reader = process.inputStream.reader()
+             while (process.isAlive) {
+                 LOGGER.info(reader.readText())
+             }
+         }
 
         LOGGER.info("Starting game engine...")
-        Thread.sleep(8000)
+        awaitEngineStart()
         LOGGER.info("Game engine started")
     }
 
@@ -85,6 +88,29 @@ class GameEngineCommunicationTests {
             LOGGER.warning("Error closing server: ${e.message}")
         }
         process.destroy()
+    }
+
+    /**
+     * Helper function that waits until engine /health endpoint responds
+     */
+    private fun awaitEngineStart(){
+        while(true){
+            // Connect to engine health endpoint
+            val url = URL("http://localhost:$port/infra/health")
+            try {
+                val bytes = url.readBytes()
+                val statusObj = InfraStatus.parseFrom(bytes)
+                // LOGGER.info("Waiting for engine to start. Health endpoint returned: " + statusObj.message)
+                if(statusObj.status == 200){
+                    Thread.sleep(8000) // Wait for server to fully boot (if some tests fail, try upping this time)
+                    return
+                }
+            } catch (e: Exception) {
+                // LOGGER.info("Waiting for engine to start. Exception received: " + e.message)
+                Thread.sleep(1000)
+                continue; // Try again
+            }
+        }
     }
 
     /**
@@ -138,7 +164,9 @@ class GameEngineCommunicationTests {
                 outputStream.flush()
                 outputStream.close()
 
-                InfraStatus.parseFrom(inputStream.readBytes())
+                val status: InfraStatus = InfraStatus.parseFrom(inputStream.readBytes())
+                LOGGER.info("Response upon sending new player: " + status.message)
+
                 inputStream.close()
                 disconnect()
             }
@@ -152,7 +180,7 @@ class GameEngineCommunicationTests {
     @Throws(URISyntaxException::class, InterruptedException::class, ExecutionException::class, TimeoutException::class)
     fun canReceivePlayerTurn() {
         // wait for an actual object to end the test
-        val latch = CountDownLatch(1)
+        val latch = CountDownLatch(2)
 
         connectNPlayers(1, {
             // if server receives turn successfully
@@ -161,10 +189,27 @@ class GameEngineCommunicationTests {
             // if server sends turn successfully
             latch.countDown()
         })
-
-        assert(latch.await(20, TimeUnit.SECONDS))
+        assert(latch.await(5, TimeUnit.SECONDS))
     }
 
+    /**
+     * Test to see if the endpoint works and can be connected to via websocket over multiple turns
+     */
+    @Test
+    @Throws(URISyntaxException::class, InterruptedException::class, ExecutionException::class, TimeoutException::class)
+    fun canReceivePlayerTurnMultipleTimes() {
+        // wait for an actual object to end the test
+        val latch = CountDownLatch(10) // tests for 5 turns
+
+        connectNPlayers(1, {
+            // if server receives turn successfully
+            latch.countDown()
+        }, {
+            // if server sends turn successfully
+            latch.countDown()
+        })
+        assert(latch.await(25, TimeUnit.SECONDS))
+    }
 
     /**
      * Test to see if the endpoint works and can be connected to via websocket
@@ -183,6 +228,6 @@ class GameEngineCommunicationTests {
             latch.countDown()
         })
 
-        assert(latch.await(20, TimeUnit.SECONDS))
+        assert(latch.await(25, TimeUnit.SECONDS))
     }
 }

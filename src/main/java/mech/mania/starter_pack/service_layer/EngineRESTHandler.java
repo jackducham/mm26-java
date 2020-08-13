@@ -23,7 +23,7 @@ public class EngineRESTHandler {
      * @param payload PlayerTurn protobuf
      * @return PlayerDecision protobuf from PlayerStrategy
      */
-    @PostMapping("/")
+    @PostMapping("/server")
     public byte[] makeDecision(@RequestBody byte[] payload) {
         try {
             PlayerProtos.PlayerTurn turn = PlayerProtos.PlayerTurn.parseFrom(payload);

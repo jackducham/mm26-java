@@ -38,22 +38,24 @@ class Server {
         try {
             HttpServer.create(InetSocketAddress(port), 0).apply {
                 createContext("/server") { exchange: HttpExchange ->
-                    exchange.responseHeaders["Content-Type"] = "application/octet-stream"
-
                     // read in input from server
                     // once the turn is parsed, use that turn to call a passed in function
                     val turn = PlayerTurn.parseFrom(exchange.requestBody)
+                    logger.info("received playerTurn: " + turn.playerName)
                     onReceive(turn)
 
                     // calculate what to do with turn
-                    val gameState: GameState = GameState(turn.gameState)
+                    val gameState = GameState(turn.gameState)
                     val decision: CharacterDecision = player.makeDecision(turn.playerName, gameState)
                     val proto: PlayerDecision = decision.buildProtoClassCharacterDecision()
                     val size: Long = proto.toByteArray().size.toLong()
 
                     // send back response
+                    exchange.responseHeaders["Content-Type"] = "application/octet-stream"
                     exchange.sendResponseHeaders(200, size)
                     proto.writeTo(exchange.responseBody)
+                    exchange.responseBody.flush()
+                    exchange.responseBody.close()
                     onSend(proto)
                 }
                 start()
