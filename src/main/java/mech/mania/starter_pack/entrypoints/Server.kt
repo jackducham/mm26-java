@@ -23,7 +23,6 @@ class Server {
     private val logger = Logger.getLogger(Server::class.toString())
     private val player: Strategy = PlayerStrategy()
 
-
     /**
      * Starts a server using a specified port
      * TODO: allow URL instead of port
@@ -36,30 +35,41 @@ class Server {
                     onReceive: (turn: PlayerTurn) -> Unit,
                     onSend: (decision: PlayerDecision) -> Unit): Int {
         try {
-            HttpServer.create(InetSocketAddress(port), 0).apply {
-                createContext("/server") { exchange: HttpExchange ->
-                    // read in input from server
-                    // once the turn is parsed, use that turn to call a passed in function
-                    val turn = PlayerTurn.parseFrom(exchange.requestBody)
-                    logger.info("received playerTurn: " + turn.playerName)
-                    onReceive(turn)
+            // Create server on specified port
+            val server = HttpServer.create(InetSocketAddress(port), 0)
 
-                    // calculate what to do with turn
-                    val gameState = GameState(turn.gameState)
-                    val decision: CharacterDecision = player.makeDecision(turn.playerName, gameState)
-                    val proto: PlayerDecision = decision.buildProtoClassCharacterDecision()
-                    val size: Long = proto.toByteArray().size.toLong()
+            // Add handler to server endpoint which receives PlayerTurn and returns PlayerDecision
+            server.createContext("/server") { exchange: HttpExchange ->
+                // read in input from server
+                // once the turn is parsed, use that turn to call a passed in function
+                val turn = PlayerTurn.parseFrom(exchange.requestBody)
+                logger.info("received playerTurn: " + turn.playerName)
+                onReceive(turn)
 
-                    // send back response
-                    exchange.responseHeaders["Content-Type"] = "application/octet-stream"
-                    exchange.sendResponseHeaders(200, size)
-                    proto.writeTo(exchange.responseBody)
-                    exchange.responseBody.flush()
-                    exchange.responseBody.close()
-                    onSend(proto)
-                }
-                start()
+                // calculate what to do with turn
+                val gameState = GameState(turn.gameState)
+                val decision: CharacterDecision = player.makeDecision(turn.playerName, gameState)
+                val proto: PlayerDecision = decision.buildProtoClassCharacterDecision()
+                val size: Long = proto.toByteArray().size.toLong()
+
+                // send back response
+                exchange.responseHeaders["Content-Type"] = "application/octet-stream"
+                exchange.sendResponseHeaders(200, size)
+                proto.writeTo(exchange.responseBody)
+                exchange.responseBody.flush()
+                exchange.responseBody.close()
+                onSend(proto)
             }
+
+            // Add handler to health endpoint which returns status code of 200
+            server.createContext("/health") { exchange: HttpExchange ->
+                val message = "200".toByteArray()
+                exchange.sendResponseHeaders(200, message.size.toLong())
+                exchange.responseBody.write(message)
+            }
+
+            // Start server
+            server.start()
             logger.info("Server started on port $port")
             return 0
         } catch (e: Exception) {
