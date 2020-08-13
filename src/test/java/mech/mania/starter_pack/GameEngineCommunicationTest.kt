@@ -1,6 +1,5 @@
 package mech.mania.starter_pack
 
-import junit.framework.TestCase.assertTrue
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import mech.mania.starter_pack.entrypoints.Server
@@ -31,15 +30,16 @@ import kotlin.collections.ArrayList
 @RunWith(SpringJUnit4ClassRunner::class)
 class GameEngineCommunicationTests {
 
-    /** Port to launch the Game server on */
-    private val port = 9000
+    /** Ports to launch the Game server on */
+    private val infraPort = 9000
+    private val visPort = 9001
 
     /** URL that visualizer will connect to */
-    private var VISUALIZER_URL: String = "ws://localhost:$port/visualizer"
+    private var VISUALIZER_URL: String = "ws://localhost:$visPort/visualizer"
 
     /** URL that infra will send new/reconnect player messages to */
-    private var INFRA_NEW_URL: String = "http://localhost:$port/infra/player/new"
-    private var INFRA_RECONNECT_URL: String = "http://localhost:$port/infra/player/reconnect"
+    private var INFRA_NEW_URL: String = "http://localhost:$infraPort/infra/player/new"
+    private var INFRA_RECONNECT_URL: String = "http://localhost:$infraPort/infra/player/reconnect"
 
     private var LOGGER = Logger.getLogger(GameEngineCommunicationTests::class.toString())
 
@@ -55,7 +55,7 @@ class GameEngineCommunicationTests {
     fun setup() {
         // start game server
         val pb = ProcessBuilder()
-        pb.command("java", "-jar", jarfile, "$port") // @TODO: engine jar doesn't actually take a port
+        pb.command("java", "-jar", jarfile, "$infraPort", "$visPort")
         process = pb.start()
 
          GlobalScope.launch {
@@ -77,7 +77,7 @@ class GameEngineCommunicationTests {
     fun cleanup() {
         // end game server - send HTTP request to server
         // https://stackoverflow.com/questions/46177133/http-request-in-kotlin
-        val url = URL("http://localhost:$port/infra/endgame")
+        val url = URL("http://localhost:$infraPort/infra/endgame")
         try {
             val bytes = url.readBytes()
             val statusObj = InfraStatus.parseFrom(bytes)
@@ -96,7 +96,7 @@ class GameEngineCommunicationTests {
     private fun awaitEngineStart(){
         while(true){
             // Connect to engine health endpoint
-            val url = URL("http://localhost:$port/infra/health")
+            val url = URL("http://localhost:$infraPort/infra/health")
             try {
                 val bytes = url.readBytes()
                 val statusObj = InfraStatus.parseFrom(bytes)
