@@ -58,6 +58,7 @@ class Server {
                 proto.writeTo(exchange.responseBody)
                 exchange.responseBody.flush()
                 exchange.responseBody.close()
+                logger.info("sent playerDecision")
                 onSend(proto)
             }
 

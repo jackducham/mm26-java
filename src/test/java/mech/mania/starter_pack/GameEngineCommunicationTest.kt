@@ -31,8 +31,8 @@ import kotlin.collections.ArrayList
 class GameEngineCommunicationTests {
 
     /** Ports to launch the Game server on */
-    private val infraPort = 9000
-    private val visPort = 9001
+    private val infraPort = 8080
+    private val visPort = 8081
 
     /** URL that visualizer will connect to */
     private var VISUALIZER_URL: String = "ws://localhost:$visPort/visualizer"
