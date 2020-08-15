@@ -1,30 +1,19 @@
 package mech.mania.starter_pack.domain;
 
-import mech.mania.engine.domain.game.GameState;
-import mech.mania.engine.domain.game.characters.*;
-import mech.mania.engine.domain.game.board.*;
-import mech.mania.engine.domain.game.items.*;
-
-import java.util.List;
-
-import static mech.mania.engine.domain.game.pathfinding.PathFinder.findPath;
+import mech.mania.engine.domain.model.CharacterProtos.*;
+import mech.mania.engine.domain.model.GameStateProtos.*;
+import mech.mania.engine.domain.model.PlayerProtos.*;
 
 public class PlayerStrategy implements Strategy{
-    public CharacterDecision makeDecision(String playerName, GameState gameState){
-        Player myPlayer = gameState.getPlayer(playerName);
-        return new CharacterDecision(CharacterDecision.decisionTypes.MOVE, new Position(0, 0, playerName));
-//
-//        // Target adjacent space to the east
-//        Position target = myPlayer.getPosition();
-//        target.setX(target.getX() + 1);
-//
-//        // Check that move is possible
-//        List<Position> path = findPath(gameState, myPlayer.getPosition(), target);
-//        if(path.isEmpty() || path.size() > myPlayer.getSpeed()){
-//            // Move west instead
-//            target.setX(target.getX() - 2);
-//        }
-//
-//        return new CharacterDecision(CharacterDecision.decisionTypes.MOVE, target);
+    public PlayerDecision makeDecision(String playerName, GameState gameState){
+        Player myPlayer = gameState.getPlayerNamesMap().get(playerName);
+
+        // Returns MOVE decision to (0, 0) on private board
+        return PlayerDecision.newBuilder()
+                .setDecisionType(DecisionType.MOVE)
+                .setTargetPosition(Position.newBuilder()
+                        .setX(0).setY(0).setBoardId(playerName)
+                        .build())
+                .build();
     }
 }

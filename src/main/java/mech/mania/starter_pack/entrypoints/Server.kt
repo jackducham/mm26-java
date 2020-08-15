@@ -2,8 +2,6 @@ package mech.mania.starter_pack.entrypoints
 
 import com.sun.net.httpserver.HttpExchange
 import com.sun.net.httpserver.HttpServer
-import mech.mania.engine.domain.game.GameState
-import mech.mania.engine.domain.game.characters.CharacterDecision
 import mech.mania.engine.domain.model.PlayerProtos.*
 import mech.mania.starter_pack.domain.PlayerStrategy
 import mech.mania.starter_pack.domain.Strategy
@@ -47,19 +45,17 @@ class Server {
                 onReceive(turn)
 
                 // calculate what to do with turn
-                val gameState = GameState(turn.gameState)
-                val decision: CharacterDecision = player.makeDecision(turn.playerName, gameState)
-                val proto: PlayerDecision = decision.buildProtoClassCharacterDecision()
-                val size: Long = proto.toByteArray().size.toLong()
+                val decision: PlayerDecision = player.makeDecision(turn.playerName, turn.gameState)
+                val size: Long = decision.toByteArray().size.toLong()
 
                 // send back response
                 exchange.responseHeaders["Content-Type"] = "application/octet-stream"
                 exchange.sendResponseHeaders(200, size)
-                proto.writeTo(exchange.responseBody)
+                decision.writeTo(exchange.responseBody)
                 exchange.responseBody.flush()
                 exchange.responseBody.close()
                 logger.info("sent playerDecision")
-                onSend(proto)
+                onSend(decision)
             }
 
             // Add handler to health endpoint which returns status code of 200

@@ -1,8 +1,8 @@
 package mech.mania.starter_pack.domain;
 
-import mech.mania.engine.domain.game.GameState;
-import mech.mania.engine.domain.game.characters.CharacterDecision;
+import mech.mania.engine.domain.model.GameStateProtos.*;
+import mech.mania.engine.domain.model.PlayerProtos.*;
 
 public interface Strategy {
-    public CharacterDecision makeDecision(String playerName, GameState gameState);
+    PlayerDecision makeDecision(String playerName, GameState gameState);
 }
