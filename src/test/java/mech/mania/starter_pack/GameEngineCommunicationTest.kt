@@ -141,7 +141,7 @@ class GameEngineCommunicationTests {
 
             // gather information about the player
             val playerName = UUID.randomUUID().toString()
-            val playerAddr = "localhost:$randomPort/server"
+            val playerAddr = "localhost:$randomPort"
             LOGGER.info("Creating player \"$playerName\" with IP address $playerAddr")
 
             playerNames.add(playerName)
