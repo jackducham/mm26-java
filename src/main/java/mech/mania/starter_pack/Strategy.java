@@ -1,4 +1,4 @@
-package mech.mania.starter_pack.domain;
+package mech.mania.starter_pack;
 
 import mech.mania.engine.domain.model.GameStateProtos.*;
 import mech.mania.engine.domain.model.PlayerProtos.*;

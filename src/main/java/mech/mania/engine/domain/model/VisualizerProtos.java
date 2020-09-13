@@ -14,90 +14,45 @@ public final class VisualizerProtos {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface GameChangeOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:player_communication.GameChange)
+  public interface VisualizerInitialOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:player_communication.VisualizerInitial)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated string new_player_names = 1;</code>
-     * @return A list containing the newPlayerNames.
+     * <code>.game.GameState state = 1;</code>
+     * @return Whether the state field is set.
      */
-    java.util.List<java.lang.String>
-        getNewPlayerNamesList();
+    boolean hasState();
     /**
-     * <code>repeated string new_player_names = 1;</code>
-     * @return The count of newPlayerNames.
+     * <code>.game.GameState state = 1;</code>
+     * @return The state.
      */
-    int getNewPlayerNamesCount();
+    mech.mania.engine.domain.model.GameStateProtos.GameState getState();
     /**
-     * <code>repeated string new_player_names = 1;</code>
-     * @param index The index of the element to return.
-     * @return The newPlayerNames at the given index.
+     * <code>.game.GameState state = 1;</code>
      */
-    java.lang.String getNewPlayerNames(int index);
-    /**
-     * <code>repeated string new_player_names = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the newPlayerNames at the given index.
-     */
-    com.google.protobuf.ByteString
-        getNewPlayerNamesBytes(int index);
-
-    /**
-     * <code>map&lt;string, .player_communication.CharacterChange&gt; character_stat_changes = 2;</code>
-     */
-    int getCharacterStatChangesCount();
-    /**
-     * <code>map&lt;string, .player_communication.CharacterChange&gt; character_stat_changes = 2;</code>
-     */
-    boolean containsCharacterStatChanges(
-        java.lang.String key);
-    /**
-     * Use {@link #getCharacterStatChangesMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange>
-    getCharacterStatChanges();
-    /**
-     * <code>map&lt;string, .player_communication.CharacterChange&gt; character_stat_changes = 2;</code>
-     */
-    java.util.Map<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange>
-    getCharacterStatChangesMap();
-    /**
-     * <code>map&lt;string, .player_communication.CharacterChange&gt; character_stat_changes = 2;</code>
-     */
-
-    mech.mania.engine.domain.model.VisualizerProtos.CharacterChange getCharacterStatChangesOrDefault(
-        java.lang.String key,
-        mech.mania.engine.domain.model.VisualizerProtos.CharacterChange defaultValue);
-    /**
-     * <code>map&lt;string, .player_communication.CharacterChange&gt; character_stat_changes = 2;</code>
-     */
-
-    mech.mania.engine.domain.model.VisualizerProtos.CharacterChange getCharacterStatChangesOrThrow(
-        java.lang.String key);
+    mech.mania.engine.domain.model.GameStateProtos.GameStateOrBuilder getStateOrBuilder();
   }
   /**
-   * Protobuf type {@code player_communication.GameChange}
+   * Protobuf type {@code player_communication.VisualizerInitial}
    */
-  public  static final class GameChange extends
+  public static final class VisualizerInitial extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:player_communication.GameChange)
-      GameChangeOrBuilder {
+      // @@protoc_insertion_point(message_implements:player_communication.VisualizerInitial)
+      VisualizerInitialOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use GameChange.newBuilder() to construct.
-    private GameChange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use VisualizerInitial.newBuilder() to construct.
+    private VisualizerInitial(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private GameChange() {
-      newPlayerNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private VisualizerInitial() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new GameChange();
+      return new VisualizerInitial();
     }
 
     @java.lang.Override
@@ -105,7 +60,7 @@ public final class VisualizerProtos {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GameChange(
+    private VisualizerInitial(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -113,7 +68,6 @@ public final class VisualizerProtos {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -125,25 +79,16 @@ public final class VisualizerProtos {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                newPlayerNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+              mech.mania.engine.domain.model.GameStateProtos.GameState.Builder subBuilder = null;
+              if (state_ != null) {
+                subBuilder = state_.toBuilder();
               }
-              newPlayerNames_.add(s);
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                characterStatChanges_ = com.google.protobuf.MapField.newMapField(
-                    CharacterStatChangesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+              state_ = input.readMessage(mech.mania.engine.domain.model.GameStateProtos.GameState.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(state_);
+                state_ = subBuilder.buildPartial();
               }
-              com.google.protobuf.MapEntry<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange>
-              characterStatChanges__ = input.readMessage(
-                  CharacterStatChangesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              characterStatChanges_.getMutableMap().put(
-                  characterStatChanges__.getKey(), characterStatChanges__.getValue());
+
               break;
             }
             default: {
@@ -161,147 +106,47 @@ public final class VisualizerProtos {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          newPlayerNames_ = newPlayerNames_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_GameChange_descriptor;
+      return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_VisualizerInitial_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 2:
-          return internalGetCharacterStatChanges();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_GameChange_fieldAccessorTable
+      return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_VisualizerInitial_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              mech.mania.engine.domain.model.VisualizerProtos.GameChange.class, mech.mania.engine.domain.model.VisualizerProtos.GameChange.Builder.class);
+              mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial.class, mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial.Builder.class);
     }
 
-    public static final int NEW_PLAYER_NAMES_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList newPlayerNames_;
+    public static final int STATE_FIELD_NUMBER = 1;
+    private mech.mania.engine.domain.model.GameStateProtos.GameState state_;
     /**
-     * <code>repeated string new_player_names = 1;</code>
-     * @return A list containing the newPlayerNames.
+     * <code>.game.GameState state = 1;</code>
+     * @return Whether the state field is set.
      */
-    public com.google.protobuf.ProtocolStringList
-        getNewPlayerNamesList() {
-      return newPlayerNames_;
-    }
-    /**
-     * <code>repeated string new_player_names = 1;</code>
-     * @return The count of newPlayerNames.
-     */
-    public int getNewPlayerNamesCount() {
-      return newPlayerNames_.size();
+    @java.lang.Override
+    public boolean hasState() {
+      return state_ != null;
     }
     /**
-     * <code>repeated string new_player_names = 1;</code>
-     * @param index The index of the element to return.
-     * @return The newPlayerNames at the given index.
+     * <code>.game.GameState state = 1;</code>
+     * @return The state.
      */
-    public java.lang.String getNewPlayerNames(int index) {
-      return newPlayerNames_.get(index);
+    @java.lang.Override
+    public mech.mania.engine.domain.model.GameStateProtos.GameState getState() {
+      return state_ == null ? mech.mania.engine.domain.model.GameStateProtos.GameState.getDefaultInstance() : state_;
     }
     /**
-     * <code>repeated string new_player_names = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the newPlayerNames at the given index.
+     * <code>.game.GameState state = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNewPlayerNamesBytes(int index) {
-      return newPlayerNames_.getByteString(index);
-    }
-
-    public static final int CHARACTER_STAT_CHANGES_FIELD_NUMBER = 2;
-    private static final class CharacterStatChangesDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange>newDefaultInstance(
-                  mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_GameChange_CharacterStatChangesEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  mech.mania.engine.domain.model.VisualizerProtos.CharacterChange.getDefaultInstance());
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange> characterStatChanges_;
-    private com.google.protobuf.MapField<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange>
-    internalGetCharacterStatChanges() {
-      if (characterStatChanges_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            CharacterStatChangesDefaultEntryHolder.defaultEntry);
-      }
-      return characterStatChanges_;
-    }
-
-    public int getCharacterStatChangesCount() {
-      return internalGetCharacterStatChanges().getMap().size();
-    }
-    /**
-     * <code>map&lt;string, .player_communication.CharacterChange&gt; character_stat_changes = 2;</code>
-     */
-
-    public boolean containsCharacterStatChanges(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetCharacterStatChanges().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getCharacterStatChangesMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange> getCharacterStatChanges() {
-      return getCharacterStatChangesMap();
-    }
-    /**
-     * <code>map&lt;string, .player_communication.CharacterChange&gt; character_stat_changes = 2;</code>
-     */
-
-    public java.util.Map<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange> getCharacterStatChangesMap() {
-      return internalGetCharacterStatChanges().getMap();
-    }
-    /**
-     * <code>map&lt;string, .player_communication.CharacterChange&gt; character_stat_changes = 2;</code>
-     */
-
-    public mech.mania.engine.domain.model.VisualizerProtos.CharacterChange getCharacterStatChangesOrDefault(
-        java.lang.String key,
-        mech.mania.engine.domain.model.VisualizerProtos.CharacterChange defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange> map =
-          internalGetCharacterStatChanges().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, .player_communication.CharacterChange&gt; character_stat_changes = 2;</code>
-     */
-
-    public mech.mania.engine.domain.model.VisualizerProtos.CharacterChange getCharacterStatChangesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange> map =
-          internalGetCharacterStatChanges().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+    @java.lang.Override
+    public mech.mania.engine.domain.model.GameStateProtos.GameStateOrBuilder getStateOrBuilder() {
+      return getState();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -318,15 +163,9 @@ public final class VisualizerProtos {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < newPlayerNames_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, newPlayerNames_.getRaw(i));
+      if (state_ != null) {
+        output.writeMessage(1, getState());
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetCharacterStatChanges(),
-          CharacterStatChangesDefaultEntryHolder.defaultEntry,
-          2);
       unknownFields.writeTo(output);
     }
 
@@ -336,23 +175,9 @@ public final class VisualizerProtos {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < newPlayerNames_.size(); i++) {
-          dataSize += computeStringSizeNoTag(newPlayerNames_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getNewPlayerNamesList().size();
-      }
-      for (java.util.Map.Entry<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange> entry
-           : internalGetCharacterStatChanges().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange>
-        characterStatChanges__ = CharacterStatChangesDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
+      if (state_ != null) {
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, characterStatChanges__);
+          .computeMessageSize(1, getState());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -364,15 +189,16 @@ public final class VisualizerProtos {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof mech.mania.engine.domain.model.VisualizerProtos.GameChange)) {
+      if (!(obj instanceof mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial)) {
         return super.equals(obj);
       }
-      mech.mania.engine.domain.model.VisualizerProtos.GameChange other = (mech.mania.engine.domain.model.VisualizerProtos.GameChange) obj;
+      mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial other = (mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial) obj;
 
-      if (!getNewPlayerNamesList()
-          .equals(other.getNewPlayerNamesList())) return false;
-      if (!internalGetCharacterStatChanges().equals(
-          other.internalGetCharacterStatChanges())) return false;
+      if (hasState() != other.hasState()) return false;
+      if (hasState()) {
+        if (!getState()
+            .equals(other.getState())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -384,82 +210,78 @@ public final class VisualizerProtos {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getNewPlayerNamesCount() > 0) {
-        hash = (37 * hash) + NEW_PLAYER_NAMES_FIELD_NUMBER;
-        hash = (53 * hash) + getNewPlayerNamesList().hashCode();
-      }
-      if (!internalGetCharacterStatChanges().getMap().isEmpty()) {
-        hash = (37 * hash) + CHARACTER_STAT_CHANGES_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetCharacterStatChanges().hashCode();
+      if (hasState()) {
+        hash = (37 * hash) + STATE_FIELD_NUMBER;
+        hash = (53 * hash) + getState().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static mech.mania.engine.domain.model.VisualizerProtos.GameChange parseFrom(
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.GameChange parseFrom(
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.GameChange parseFrom(
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.GameChange parseFrom(
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.GameChange parseFrom(byte[] data)
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.GameChange parseFrom(
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.GameChange parseFrom(java.io.InputStream input)
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.GameChange parseFrom(
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.GameChange parseDelimitedFrom(java.io.InputStream input)
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.GameChange parseDelimitedFrom(
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.GameChange parseFrom(
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.GameChange parseFrom(
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -472,7 +294,7 @@ public final class VisualizerProtos {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(mech.mania.engine.domain.model.VisualizerProtos.GameChange prototype) {
+    public static Builder newBuilder(mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -488,48 +310,26 @@ public final class VisualizerProtos {
       return builder;
     }
     /**
-     * Protobuf type {@code player_communication.GameChange}
+     * Protobuf type {@code player_communication.VisualizerInitial}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:player_communication.GameChange)
-        mech.mania.engine.domain.model.VisualizerProtos.GameChangeOrBuilder {
+        // @@protoc_insertion_point(builder_implements:player_communication.VisualizerInitial)
+        mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitialOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_GameChange_descriptor;
+        return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_VisualizerInitial_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 2:
-            return internalGetCharacterStatChanges();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 2:
-            return internalGetMutableCharacterStatChanges();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_GameChange_fieldAccessorTable
+        return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_VisualizerInitial_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                mech.mania.engine.domain.model.VisualizerProtos.GameChange.class, mech.mania.engine.domain.model.VisualizerProtos.GameChange.Builder.class);
+                mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial.class, mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial.Builder.class);
       }
 
-      // Construct using mech.mania.engine.domain.model.VisualizerProtos.GameChange.newBuilder()
+      // Construct using mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -547,26 +347,29 @@ public final class VisualizerProtos {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        newPlayerNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        internalGetMutableCharacterStatChanges().clear();
+        if (stateBuilder_ == null) {
+          state_ = null;
+        } else {
+          state_ = null;
+          stateBuilder_ = null;
+        }
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_GameChange_descriptor;
+        return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_VisualizerInitial_descriptor;
       }
 
       @java.lang.Override
-      public mech.mania.engine.domain.model.VisualizerProtos.GameChange getDefaultInstanceForType() {
-        return mech.mania.engine.domain.model.VisualizerProtos.GameChange.getDefaultInstance();
+      public mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial getDefaultInstanceForType() {
+        return mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial.getDefaultInstance();
       }
 
       @java.lang.Override
-      public mech.mania.engine.domain.model.VisualizerProtos.GameChange build() {
-        mech.mania.engine.domain.model.VisualizerProtos.GameChange result = buildPartial();
+      public mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial build() {
+        mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -574,16 +377,13 @@ public final class VisualizerProtos {
       }
 
       @java.lang.Override
-      public mech.mania.engine.domain.model.VisualizerProtos.GameChange buildPartial() {
-        mech.mania.engine.domain.model.VisualizerProtos.GameChange result = new mech.mania.engine.domain.model.VisualizerProtos.GameChange(this);
-        int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          newPlayerNames_ = newPlayerNames_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+      public mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial buildPartial() {
+        mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial result = new mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial(this);
+        if (stateBuilder_ == null) {
+          result.state_ = state_;
+        } else {
+          result.state_ = stateBuilder_.build();
         }
-        result.newPlayerNames_ = newPlayerNames_;
-        result.characterStatChanges_ = internalGetCharacterStatChanges();
-        result.characterStatChanges_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -622,28 +422,19 @@ public final class VisualizerProtos {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof mech.mania.engine.domain.model.VisualizerProtos.GameChange) {
-          return mergeFrom((mech.mania.engine.domain.model.VisualizerProtos.GameChange)other);
+        if (other instanceof mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial) {
+          return mergeFrom((mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(mech.mania.engine.domain.model.VisualizerProtos.GameChange other) {
-        if (other == mech.mania.engine.domain.model.VisualizerProtos.GameChange.getDefaultInstance()) return this;
-        if (!other.newPlayerNames_.isEmpty()) {
-          if (newPlayerNames_.isEmpty()) {
-            newPlayerNames_ = other.newPlayerNames_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureNewPlayerNamesIsMutable();
-            newPlayerNames_.addAll(other.newPlayerNames_);
-          }
-          onChanged();
+      public Builder mergeFrom(mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial other) {
+        if (other == mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial.getDefaultInstance()) return this;
+        if (other.hasState()) {
+          mergeState(other.getState());
         }
-        internalGetMutableCharacterStatChanges().mergeFrom(
-            other.internalGetCharacterStatChanges());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -659,11 +450,11 @@ public final class VisualizerProtos {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        mech.mania.engine.domain.model.VisualizerProtos.GameChange parsedMessage = null;
+        mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (mech.mania.engine.domain.model.VisualizerProtos.GameChange) e.getUnfinishedMessage();
+          parsedMessage = (mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -672,239 +463,124 @@ public final class VisualizerProtos {
         }
         return this;
       }
-      private int bitField0_;
 
-      private com.google.protobuf.LazyStringList newPlayerNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureNewPlayerNamesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          newPlayerNames_ = new com.google.protobuf.LazyStringArrayList(newPlayerNames_);
-          bitField0_ |= 0x00000001;
-         }
+      private mech.mania.engine.domain.model.GameStateProtos.GameState state_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          mech.mania.engine.domain.model.GameStateProtos.GameState, mech.mania.engine.domain.model.GameStateProtos.GameState.Builder, mech.mania.engine.domain.model.GameStateProtos.GameStateOrBuilder> stateBuilder_;
+      /**
+       * <code>.game.GameState state = 1;</code>
+       * @return Whether the state field is set.
+       */
+      public boolean hasState() {
+        return stateBuilder_ != null || state_ != null;
       }
       /**
-       * <code>repeated string new_player_names = 1;</code>
-       * @return A list containing the newPlayerNames.
+       * <code>.game.GameState state = 1;</code>
+       * @return The state.
        */
-      public com.google.protobuf.ProtocolStringList
-          getNewPlayerNamesList() {
-        return newPlayerNames_.getUnmodifiableView();
-      }
-      /**
-       * <code>repeated string new_player_names = 1;</code>
-       * @return The count of newPlayerNames.
-       */
-      public int getNewPlayerNamesCount() {
-        return newPlayerNames_.size();
-      }
-      /**
-       * <code>repeated string new_player_names = 1;</code>
-       * @param index The index of the element to return.
-       * @return The newPlayerNames at the given index.
-       */
-      public java.lang.String getNewPlayerNames(int index) {
-        return newPlayerNames_.get(index);
-      }
-      /**
-       * <code>repeated string new_player_names = 1;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the newPlayerNames at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getNewPlayerNamesBytes(int index) {
-        return newPlayerNames_.getByteString(index);
-      }
-      /**
-       * <code>repeated string new_player_names = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The newPlayerNames to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNewPlayerNames(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureNewPlayerNamesIsMutable();
-        newPlayerNames_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string new_player_names = 1;</code>
-       * @param value The newPlayerNames to add.
-       * @return This builder for chaining.
-       */
-      public Builder addNewPlayerNames(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureNewPlayerNamesIsMutable();
-        newPlayerNames_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string new_player_names = 1;</code>
-       * @param values The newPlayerNames to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllNewPlayerNames(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureNewPlayerNamesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, newPlayerNames_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string new_player_names = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNewPlayerNames() {
-        newPlayerNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string new_player_names = 1;</code>
-       * @param value The bytes of the newPlayerNames to add.
-       * @return This builder for chaining.
-       */
-      public Builder addNewPlayerNamesBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureNewPlayerNamesIsMutable();
-        newPlayerNames_.add(value);
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.MapField<
-          java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange> characterStatChanges_;
-      private com.google.protobuf.MapField<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange>
-      internalGetCharacterStatChanges() {
-        if (characterStatChanges_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              CharacterStatChangesDefaultEntryHolder.defaultEntry);
+      public mech.mania.engine.domain.model.GameStateProtos.GameState getState() {
+        if (stateBuilder_ == null) {
+          return state_ == null ? mech.mania.engine.domain.model.GameStateProtos.GameState.getDefaultInstance() : state_;
+        } else {
+          return stateBuilder_.getMessage();
         }
-        return characterStatChanges_;
       }
-      private com.google.protobuf.MapField<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange>
-      internalGetMutableCharacterStatChanges() {
-        onChanged();;
-        if (characterStatChanges_ == null) {
-          characterStatChanges_ = com.google.protobuf.MapField.newMapField(
-              CharacterStatChangesDefaultEntryHolder.defaultEntry);
+      /**
+       * <code>.game.GameState state = 1;</code>
+       */
+      public Builder setState(mech.mania.engine.domain.model.GameStateProtos.GameState value) {
+        if (stateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          state_ = value;
+          onChanged();
+        } else {
+          stateBuilder_.setMessage(value);
         }
-        if (!characterStatChanges_.isMutable()) {
-          characterStatChanges_ = characterStatChanges_.copy();
+
+        return this;
+      }
+      /**
+       * <code>.game.GameState state = 1;</code>
+       */
+      public Builder setState(
+          mech.mania.engine.domain.model.GameStateProtos.GameState.Builder builderForValue) {
+        if (stateBuilder_ == null) {
+          state_ = builderForValue.build();
+          onChanged();
+        } else {
+          stateBuilder_.setMessage(builderForValue.build());
         }
-        return characterStatChanges_;
-      }
 
-      public int getCharacterStatChangesCount() {
-        return internalGetCharacterStatChanges().getMap().size();
+        return this;
       }
       /**
-       * <code>map&lt;string, .player_communication.CharacterChange&gt; character_stat_changes = 2;</code>
+       * <code>.game.GameState state = 1;</code>
        */
-
-      public boolean containsCharacterStatChanges(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetCharacterStatChanges().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getCharacterStatChangesMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange> getCharacterStatChanges() {
-        return getCharacterStatChangesMap();
-      }
-      /**
-       * <code>map&lt;string, .player_communication.CharacterChange&gt; character_stat_changes = 2;</code>
-       */
-
-      public java.util.Map<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange> getCharacterStatChangesMap() {
-        return internalGetCharacterStatChanges().getMap();
-      }
-      /**
-       * <code>map&lt;string, .player_communication.CharacterChange&gt; character_stat_changes = 2;</code>
-       */
-
-      public mech.mania.engine.domain.model.VisualizerProtos.CharacterChange getCharacterStatChangesOrDefault(
-          java.lang.String key,
-          mech.mania.engine.domain.model.VisualizerProtos.CharacterChange defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange> map =
-            internalGetCharacterStatChanges().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, .player_communication.CharacterChange&gt; character_stat_changes = 2;</code>
-       */
-
-      public mech.mania.engine.domain.model.VisualizerProtos.CharacterChange getCharacterStatChangesOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange> map =
-            internalGetCharacterStatChanges().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
+      public Builder mergeState(mech.mania.engine.domain.model.GameStateProtos.GameState value) {
+        if (stateBuilder_ == null) {
+          if (state_ != null) {
+            state_ =
+              mech.mania.engine.domain.model.GameStateProtos.GameState.newBuilder(state_).mergeFrom(value).buildPartial();
+          } else {
+            state_ = value;
+          }
+          onChanged();
+        } else {
+          stateBuilder_.mergeFrom(value);
         }
-        return map.get(key);
-      }
 
-      public Builder clearCharacterStatChanges() {
-        internalGetMutableCharacterStatChanges().getMutableMap()
-            .clear();
         return this;
       }
       /**
-       * <code>map&lt;string, .player_communication.CharacterChange&gt; character_stat_changes = 2;</code>
+       * <code>.game.GameState state = 1;</code>
        */
+      public Builder clearState() {
+        if (stateBuilder_ == null) {
+          state_ = null;
+          onChanged();
+        } else {
+          state_ = null;
+          stateBuilder_ = null;
+        }
 
-      public Builder removeCharacterStatChanges(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableCharacterStatChanges().getMutableMap()
-            .remove(key);
         return this;
       }
       /**
-       * Use alternate mutation accessors instead.
+       * <code>.game.GameState state = 1;</code>
        */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange>
-      getMutableCharacterStatChanges() {
-        return internalGetMutableCharacterStatChanges().getMutableMap();
+      public mech.mania.engine.domain.model.GameStateProtos.GameState.Builder getStateBuilder() {
+        
+        onChanged();
+        return getStateFieldBuilder().getBuilder();
       }
       /**
-       * <code>map&lt;string, .player_communication.CharacterChange&gt; character_stat_changes = 2;</code>
+       * <code>.game.GameState state = 1;</code>
        */
-      public Builder putCharacterStatChanges(
-          java.lang.String key,
-          mech.mania.engine.domain.model.VisualizerProtos.CharacterChange value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableCharacterStatChanges().getMutableMap()
-            .put(key, value);
-        return this;
+      public mech.mania.engine.domain.model.GameStateProtos.GameStateOrBuilder getStateOrBuilder() {
+        if (stateBuilder_ != null) {
+          return stateBuilder_.getMessageOrBuilder();
+        } else {
+          return state_ == null ?
+              mech.mania.engine.domain.model.GameStateProtos.GameState.getDefaultInstance() : state_;
+        }
       }
       /**
-       * <code>map&lt;string, .player_communication.CharacterChange&gt; character_stat_changes = 2;</code>
+       * <code>.game.GameState state = 1;</code>
        */
-
-      public Builder putAllCharacterStatChanges(
-          java.util.Map<java.lang.String, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange> values) {
-        internalGetMutableCharacterStatChanges().getMutableMap()
-            .putAll(values);
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          mech.mania.engine.domain.model.GameStateProtos.GameState, mech.mania.engine.domain.model.GameStateProtos.GameState.Builder, mech.mania.engine.domain.model.GameStateProtos.GameStateOrBuilder> 
+          getStateFieldBuilder() {
+        if (stateBuilder_ == null) {
+          stateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              mech.mania.engine.domain.model.GameStateProtos.GameState, mech.mania.engine.domain.model.GameStateProtos.GameState.Builder, mech.mania.engine.domain.model.GameStateProtos.GameStateOrBuilder>(
+                  getState(),
+                  getParentForChildren(),
+                  isClean());
+          state_ = null;
+        }
+        return stateBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -919,119 +595,100 @@ public final class VisualizerProtos {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:player_communication.GameChange)
+      // @@protoc_insertion_point(builder_scope:player_communication.VisualizerInitial)
     }
 
-    // @@protoc_insertion_point(class_scope:player_communication.GameChange)
-    private static final mech.mania.engine.domain.model.VisualizerProtos.GameChange DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:player_communication.VisualizerInitial)
+    private static final mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new mech.mania.engine.domain.model.VisualizerProtos.GameChange();
+      DEFAULT_INSTANCE = new mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial();
     }
 
-    public static mech.mania.engine.domain.model.VisualizerProtos.GameChange getDefaultInstance() {
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<GameChange>
-        PARSER = new com.google.protobuf.AbstractParser<GameChange>() {
+    private static final com.google.protobuf.Parser<VisualizerInitial>
+        PARSER = new com.google.protobuf.AbstractParser<VisualizerInitial>() {
       @java.lang.Override
-      public GameChange parsePartialFrom(
+      public VisualizerInitial parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GameChange(input, extensionRegistry);
+        return new VisualizerInitial(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<GameChange> parser() {
+    public static com.google.protobuf.Parser<VisualizerInitial> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GameChange> getParserForType() {
+    public com.google.protobuf.Parser<VisualizerInitial> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public mech.mania.engine.domain.model.VisualizerProtos.GameChange getDefaultInstanceForType() {
+    public mech.mania.engine.domain.model.VisualizerProtos.VisualizerInitial getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface CharacterChangeOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:player_communication.CharacterChange)
+  public interface VisualizerTurnOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:player_communication.VisualizerTurn)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool died = 1;</code>
-     * @return The died.
+     * <code>.game.GameState state = 1;</code>
+     * @return Whether the state field is set.
      */
-    boolean getDied();
+    boolean hasState();
+    /**
+     * <code>.game.GameState state = 1;</code>
+     * @return The state.
+     */
+    mech.mania.engine.domain.model.GameStateProtos.GameState getState();
+    /**
+     * <code>.game.GameState state = 1;</code>
+     */
+    mech.mania.engine.domain.model.GameStateProtos.GameStateOrBuilder getStateOrBuilder();
 
     /**
-     * <code>bool respawned = 2;</code>
-     * @return The respawned.
+     * <code>.game.GameChange change = 2;</code>
+     * @return Whether the change field is set.
      */
-    boolean getRespawned();
-
+    boolean hasChange();
     /**
-     * <code>.character.DecisionType decision_type = 3;</code>
-     * @return The enum numeric value on the wire for decisionType.
+     * <code>.game.GameChange change = 2;</code>
+     * @return The change.
      */
-    int getDecisionTypeValue();
+    mech.mania.engine.domain.model.GameStateProtos.GameChange getChange();
     /**
-     * <code>.character.DecisionType decision_type = 3;</code>
-     * @return The decisionType.
+     * <code>.game.GameChange change = 2;</code>
      */
-    mech.mania.engine.domain.model.CharacterProtos.DecisionType getDecisionType();
-
-    /**
-     * <code>repeated .character.Position path = 4;</code>
-     */
-    java.util.List<mech.mania.engine.domain.model.CharacterProtos.Position> 
-        getPathList();
-    /**
-     * <code>repeated .character.Position path = 4;</code>
-     */
-    mech.mania.engine.domain.model.CharacterProtos.Position getPath(int index);
-    /**
-     * <code>repeated .character.Position path = 4;</code>
-     */
-    int getPathCount();
-    /**
-     * <code>repeated .character.Position path = 4;</code>
-     */
-    java.util.List<? extends mech.mania.engine.domain.model.CharacterProtos.PositionOrBuilder> 
-        getPathOrBuilderList();
-    /**
-     * <code>repeated .character.Position path = 4;</code>
-     */
-    mech.mania.engine.domain.model.CharacterProtos.PositionOrBuilder getPathOrBuilder(
-        int index);
+    mech.mania.engine.domain.model.GameStateProtos.GameChangeOrBuilder getChangeOrBuilder();
   }
   /**
-   * Protobuf type {@code player_communication.CharacterChange}
+   * Protobuf type {@code player_communication.VisualizerTurn}
    */
-  public  static final class CharacterChange extends
+  public static final class VisualizerTurn extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:player_communication.CharacterChange)
-      CharacterChangeOrBuilder {
+      // @@protoc_insertion_point(message_implements:player_communication.VisualizerTurn)
+      VisualizerTurnOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CharacterChange.newBuilder() to construct.
-    private CharacterChange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use VisualizerTurn.newBuilder() to construct.
+    private VisualizerTurn(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CharacterChange() {
-      decisionType_ = 0;
-      path_ = java.util.Collections.emptyList();
+    private VisualizerTurn() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new CharacterChange();
+      return new VisualizerTurn();
     }
 
     @java.lang.Override
@@ -1039,7 +696,7 @@ public final class VisualizerProtos {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CharacterChange(
+    private VisualizerTurn(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1047,7 +704,6 @@ public final class VisualizerProtos {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1058,29 +714,30 @@ public final class VisualizerProtos {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              died_ = input.readBool();
-              break;
-            }
-            case 16: {
-
-              respawned_ = input.readBool();
-              break;
-            }
-            case 24: {
-              int rawValue = input.readEnum();
-
-              decisionType_ = rawValue;
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                path_ = new java.util.ArrayList<mech.mania.engine.domain.model.CharacterProtos.Position>();
-                mutable_bitField0_ |= 0x00000001;
+            case 10: {
+              mech.mania.engine.domain.model.GameStateProtos.GameState.Builder subBuilder = null;
+              if (state_ != null) {
+                subBuilder = state_.toBuilder();
               }
-              path_.add(
-                  input.readMessage(mech.mania.engine.domain.model.CharacterProtos.Position.parser(), extensionRegistry));
+              state_ = input.readMessage(mech.mania.engine.domain.model.GameStateProtos.GameState.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(state_);
+                state_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              mech.mania.engine.domain.model.GameStateProtos.GameChange.Builder subBuilder = null;
+              if (change_ != null) {
+                subBuilder = change_.toBuilder();
+              }
+              change_ = input.readMessage(mech.mania.engine.domain.model.GameStateProtos.GameChange.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(change_);
+                change_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -1098,98 +755,73 @@ public final class VisualizerProtos {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          path_ = java.util.Collections.unmodifiableList(path_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_CharacterChange_descriptor;
+      return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_VisualizerTurn_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_CharacterChange_fieldAccessorTable
+      return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_VisualizerTurn_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              mech.mania.engine.domain.model.VisualizerProtos.CharacterChange.class, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange.Builder.class);
+              mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn.class, mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn.Builder.class);
     }
 
-    public static final int DIED_FIELD_NUMBER = 1;
-    private boolean died_;
+    public static final int STATE_FIELD_NUMBER = 1;
+    private mech.mania.engine.domain.model.GameStateProtos.GameState state_;
     /**
-     * <code>bool died = 1;</code>
-     * @return The died.
+     * <code>.game.GameState state = 1;</code>
+     * @return Whether the state field is set.
      */
-    public boolean getDied() {
-      return died_;
+    @java.lang.Override
+    public boolean hasState() {
+      return state_ != null;
+    }
+    /**
+     * <code>.game.GameState state = 1;</code>
+     * @return The state.
+     */
+    @java.lang.Override
+    public mech.mania.engine.domain.model.GameStateProtos.GameState getState() {
+      return state_ == null ? mech.mania.engine.domain.model.GameStateProtos.GameState.getDefaultInstance() : state_;
+    }
+    /**
+     * <code>.game.GameState state = 1;</code>
+     */
+    @java.lang.Override
+    public mech.mania.engine.domain.model.GameStateProtos.GameStateOrBuilder getStateOrBuilder() {
+      return getState();
     }
 
-    public static final int RESPAWNED_FIELD_NUMBER = 2;
-    private boolean respawned_;
+    public static final int CHANGE_FIELD_NUMBER = 2;
+    private mech.mania.engine.domain.model.GameStateProtos.GameChange change_;
     /**
-     * <code>bool respawned = 2;</code>
-     * @return The respawned.
+     * <code>.game.GameChange change = 2;</code>
+     * @return Whether the change field is set.
      */
-    public boolean getRespawned() {
-      return respawned_;
-    }
-
-    public static final int DECISION_TYPE_FIELD_NUMBER = 3;
-    private int decisionType_;
-    /**
-     * <code>.character.DecisionType decision_type = 3;</code>
-     * @return The enum numeric value on the wire for decisionType.
-     */
-    public int getDecisionTypeValue() {
-      return decisionType_;
+    @java.lang.Override
+    public boolean hasChange() {
+      return change_ != null;
     }
     /**
-     * <code>.character.DecisionType decision_type = 3;</code>
-     * @return The decisionType.
+     * <code>.game.GameChange change = 2;</code>
+     * @return The change.
      */
-    public mech.mania.engine.domain.model.CharacterProtos.DecisionType getDecisionType() {
-      @SuppressWarnings("deprecation")
-      mech.mania.engine.domain.model.CharacterProtos.DecisionType result = mech.mania.engine.domain.model.CharacterProtos.DecisionType.valueOf(decisionType_);
-      return result == null ? mech.mania.engine.domain.model.CharacterProtos.DecisionType.UNRECOGNIZED : result;
-    }
-
-    public static final int PATH_FIELD_NUMBER = 4;
-    private java.util.List<mech.mania.engine.domain.model.CharacterProtos.Position> path_;
-    /**
-     * <code>repeated .character.Position path = 4;</code>
-     */
-    public java.util.List<mech.mania.engine.domain.model.CharacterProtos.Position> getPathList() {
-      return path_;
+    @java.lang.Override
+    public mech.mania.engine.domain.model.GameStateProtos.GameChange getChange() {
+      return change_ == null ? mech.mania.engine.domain.model.GameStateProtos.GameChange.getDefaultInstance() : change_;
     }
     /**
-     * <code>repeated .character.Position path = 4;</code>
+     * <code>.game.GameChange change = 2;</code>
      */
-    public java.util.List<? extends mech.mania.engine.domain.model.CharacterProtos.PositionOrBuilder> 
-        getPathOrBuilderList() {
-      return path_;
-    }
-    /**
-     * <code>repeated .character.Position path = 4;</code>
-     */
-    public int getPathCount() {
-      return path_.size();
-    }
-    /**
-     * <code>repeated .character.Position path = 4;</code>
-     */
-    public mech.mania.engine.domain.model.CharacterProtos.Position getPath(int index) {
-      return path_.get(index);
-    }
-    /**
-     * <code>repeated .character.Position path = 4;</code>
-     */
-    public mech.mania.engine.domain.model.CharacterProtos.PositionOrBuilder getPathOrBuilder(
-        int index) {
-      return path_.get(index);
+    @java.lang.Override
+    public mech.mania.engine.domain.model.GameStateProtos.GameChangeOrBuilder getChangeOrBuilder() {
+      return getChange();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1206,17 +838,11 @@ public final class VisualizerProtos {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (died_ != false) {
-        output.writeBool(1, died_);
+      if (state_ != null) {
+        output.writeMessage(1, getState());
       }
-      if (respawned_ != false) {
-        output.writeBool(2, respawned_);
-      }
-      if (decisionType_ != mech.mania.engine.domain.model.CharacterProtos.DecisionType.NONE.getNumber()) {
-        output.writeEnum(3, decisionType_);
-      }
-      for (int i = 0; i < path_.size(); i++) {
-        output.writeMessage(4, path_.get(i));
+      if (change_ != null) {
+        output.writeMessage(2, getChange());
       }
       unknownFields.writeTo(output);
     }
@@ -1227,21 +853,13 @@ public final class VisualizerProtos {
       if (size != -1) return size;
 
       size = 0;
-      if (died_ != false) {
+      if (state_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, died_);
+          .computeMessageSize(1, getState());
       }
-      if (respawned_ != false) {
+      if (change_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, respawned_);
-      }
-      if (decisionType_ != mech.mania.engine.domain.model.CharacterProtos.DecisionType.NONE.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, decisionType_);
-      }
-      for (int i = 0; i < path_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, path_.get(i));
+          .computeMessageSize(2, getChange());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1253,18 +871,21 @@ public final class VisualizerProtos {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof mech.mania.engine.domain.model.VisualizerProtos.CharacterChange)) {
+      if (!(obj instanceof mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn)) {
         return super.equals(obj);
       }
-      mech.mania.engine.domain.model.VisualizerProtos.CharacterChange other = (mech.mania.engine.domain.model.VisualizerProtos.CharacterChange) obj;
+      mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn other = (mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn) obj;
 
-      if (getDied()
-          != other.getDied()) return false;
-      if (getRespawned()
-          != other.getRespawned()) return false;
-      if (decisionType_ != other.decisionType_) return false;
-      if (!getPathList()
-          .equals(other.getPathList())) return false;
+      if (hasState() != other.hasState()) return false;
+      if (hasState()) {
+        if (!getState()
+            .equals(other.getState())) return false;
+      }
+      if (hasChange() != other.hasChange()) return false;
+      if (hasChange()) {
+        if (!getChange()
+            .equals(other.getChange())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1276,86 +897,82 @@ public final class VisualizerProtos {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DIED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getDied());
-      hash = (37 * hash) + RESPAWNED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getRespawned());
-      hash = (37 * hash) + DECISION_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + decisionType_;
-      if (getPathCount() > 0) {
-        hash = (37 * hash) + PATH_FIELD_NUMBER;
-        hash = (53 * hash) + getPathList().hashCode();
+      if (hasState()) {
+        hash = (37 * hash) + STATE_FIELD_NUMBER;
+        hash = (53 * hash) + getState().hashCode();
+      }
+      if (hasChange()) {
+        hash = (37 * hash) + CHANGE_FIELD_NUMBER;
+        hash = (53 * hash) + getChange().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static mech.mania.engine.domain.model.VisualizerProtos.CharacterChange parseFrom(
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.CharacterChange parseFrom(
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.CharacterChange parseFrom(
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.CharacterChange parseFrom(
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.CharacterChange parseFrom(byte[] data)
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.CharacterChange parseFrom(
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.CharacterChange parseFrom(java.io.InputStream input)
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.CharacterChange parseFrom(
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.CharacterChange parseDelimitedFrom(java.io.InputStream input)
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.CharacterChange parseDelimitedFrom(
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.CharacterChange parseFrom(
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static mech.mania.engine.domain.model.VisualizerProtos.CharacterChange parseFrom(
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1368,7 +985,7 @@ public final class VisualizerProtos {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(mech.mania.engine.domain.model.VisualizerProtos.CharacterChange prototype) {
+    public static Builder newBuilder(mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1384,26 +1001,26 @@ public final class VisualizerProtos {
       return builder;
     }
     /**
-     * Protobuf type {@code player_communication.CharacterChange}
+     * Protobuf type {@code player_communication.VisualizerTurn}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:player_communication.CharacterChange)
-        mech.mania.engine.domain.model.VisualizerProtos.CharacterChangeOrBuilder {
+        // @@protoc_insertion_point(builder_implements:player_communication.VisualizerTurn)
+        mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurnOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_CharacterChange_descriptor;
+        return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_VisualizerTurn_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_CharacterChange_fieldAccessorTable
+        return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_VisualizerTurn_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                mech.mania.engine.domain.model.VisualizerProtos.CharacterChange.class, mech.mania.engine.domain.model.VisualizerProtos.CharacterChange.Builder.class);
+                mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn.class, mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn.Builder.class);
       }
 
-      // Construct using mech.mania.engine.domain.model.VisualizerProtos.CharacterChange.newBuilder()
+      // Construct using mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1416,23 +1033,22 @@ public final class VisualizerProtos {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getPathFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        died_ = false;
-
-        respawned_ = false;
-
-        decisionType_ = 0;
-
-        if (pathBuilder_ == null) {
-          path_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (stateBuilder_ == null) {
+          state_ = null;
         } else {
-          pathBuilder_.clear();
+          state_ = null;
+          stateBuilder_ = null;
+        }
+        if (changeBuilder_ == null) {
+          change_ = null;
+        } else {
+          change_ = null;
+          changeBuilder_ = null;
         }
         return this;
       }
@@ -1440,17 +1056,17 @@ public final class VisualizerProtos {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_CharacterChange_descriptor;
+        return mech.mania.engine.domain.model.VisualizerProtos.internal_static_player_communication_VisualizerTurn_descriptor;
       }
 
       @java.lang.Override
-      public mech.mania.engine.domain.model.VisualizerProtos.CharacterChange getDefaultInstanceForType() {
-        return mech.mania.engine.domain.model.VisualizerProtos.CharacterChange.getDefaultInstance();
+      public mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn getDefaultInstanceForType() {
+        return mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn.getDefaultInstance();
       }
 
       @java.lang.Override
-      public mech.mania.engine.domain.model.VisualizerProtos.CharacterChange build() {
-        mech.mania.engine.domain.model.VisualizerProtos.CharacterChange result = buildPartial();
+      public mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn build() {
+        mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1458,20 +1074,17 @@ public final class VisualizerProtos {
       }
 
       @java.lang.Override
-      public mech.mania.engine.domain.model.VisualizerProtos.CharacterChange buildPartial() {
-        mech.mania.engine.domain.model.VisualizerProtos.CharacterChange result = new mech.mania.engine.domain.model.VisualizerProtos.CharacterChange(this);
-        int from_bitField0_ = bitField0_;
-        result.died_ = died_;
-        result.respawned_ = respawned_;
-        result.decisionType_ = decisionType_;
-        if (pathBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            path_ = java.util.Collections.unmodifiableList(path_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.path_ = path_;
+      public mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn buildPartial() {
+        mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn result = new mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn(this);
+        if (stateBuilder_ == null) {
+          result.state_ = state_;
         } else {
-          result.path_ = pathBuilder_.build();
+          result.state_ = stateBuilder_.build();
+        }
+        if (changeBuilder_ == null) {
+          result.change_ = change_;
+        } else {
+          result.change_ = changeBuilder_.build();
         }
         onBuilt();
         return result;
@@ -1511,50 +1124,21 @@ public final class VisualizerProtos {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof mech.mania.engine.domain.model.VisualizerProtos.CharacterChange) {
-          return mergeFrom((mech.mania.engine.domain.model.VisualizerProtos.CharacterChange)other);
+        if (other instanceof mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn) {
+          return mergeFrom((mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(mech.mania.engine.domain.model.VisualizerProtos.CharacterChange other) {
-        if (other == mech.mania.engine.domain.model.VisualizerProtos.CharacterChange.getDefaultInstance()) return this;
-        if (other.getDied() != false) {
-          setDied(other.getDied());
+      public Builder mergeFrom(mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn other) {
+        if (other == mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn.getDefaultInstance()) return this;
+        if (other.hasState()) {
+          mergeState(other.getState());
         }
-        if (other.getRespawned() != false) {
-          setRespawned(other.getRespawned());
-        }
-        if (other.decisionType_ != 0) {
-          setDecisionTypeValue(other.getDecisionTypeValue());
-        }
-        if (pathBuilder_ == null) {
-          if (!other.path_.isEmpty()) {
-            if (path_.isEmpty()) {
-              path_ = other.path_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensurePathIsMutable();
-              path_.addAll(other.path_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.path_.isEmpty()) {
-            if (pathBuilder_.isEmpty()) {
-              pathBuilder_.dispose();
-              pathBuilder_ = null;
-              path_ = other.path_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              pathBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getPathFieldBuilder() : null;
-            } else {
-              pathBuilder_.addAllMessages(other.path_);
-            }
-          }
+        if (other.hasChange()) {
+          mergeChange(other.getChange());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1571,11 +1155,11 @@ public final class VisualizerProtos {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        mech.mania.engine.domain.model.VisualizerProtos.CharacterChange parsedMessage = null;
+        mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (mech.mania.engine.domain.model.VisualizerProtos.CharacterChange) e.getUnfinishedMessage();
+          parsedMessage = (mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1584,358 +1168,243 @@ public final class VisualizerProtos {
         }
         return this;
       }
-      private int bitField0_;
 
-      private boolean died_ ;
+      private mech.mania.engine.domain.model.GameStateProtos.GameState state_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          mech.mania.engine.domain.model.GameStateProtos.GameState, mech.mania.engine.domain.model.GameStateProtos.GameState.Builder, mech.mania.engine.domain.model.GameStateProtos.GameStateOrBuilder> stateBuilder_;
       /**
-       * <code>bool died = 1;</code>
-       * @return The died.
+       * <code>.game.GameState state = 1;</code>
+       * @return Whether the state field is set.
        */
-      public boolean getDied() {
-        return died_;
+      public boolean hasState() {
+        return stateBuilder_ != null || state_ != null;
       }
       /**
-       * <code>bool died = 1;</code>
-       * @param value The died to set.
-       * @return This builder for chaining.
+       * <code>.game.GameState state = 1;</code>
+       * @return The state.
        */
-      public Builder setDied(boolean value) {
-        
-        died_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool died = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDied() {
-        
-        died_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean respawned_ ;
-      /**
-       * <code>bool respawned = 2;</code>
-       * @return The respawned.
-       */
-      public boolean getRespawned() {
-        return respawned_;
-      }
-      /**
-       * <code>bool respawned = 2;</code>
-       * @param value The respawned to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRespawned(boolean value) {
-        
-        respawned_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool respawned = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRespawned() {
-        
-        respawned_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int decisionType_ = 0;
-      /**
-       * <code>.character.DecisionType decision_type = 3;</code>
-       * @return The enum numeric value on the wire for decisionType.
-       */
-      public int getDecisionTypeValue() {
-        return decisionType_;
-      }
-      /**
-       * <code>.character.DecisionType decision_type = 3;</code>
-       * @param value The enum numeric value on the wire for decisionType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDecisionTypeValue(int value) {
-        decisionType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.character.DecisionType decision_type = 3;</code>
-       * @return The decisionType.
-       */
-      public mech.mania.engine.domain.model.CharacterProtos.DecisionType getDecisionType() {
-        @SuppressWarnings("deprecation")
-        mech.mania.engine.domain.model.CharacterProtos.DecisionType result = mech.mania.engine.domain.model.CharacterProtos.DecisionType.valueOf(decisionType_);
-        return result == null ? mech.mania.engine.domain.model.CharacterProtos.DecisionType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.character.DecisionType decision_type = 3;</code>
-       * @param value The decisionType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDecisionType(mech.mania.engine.domain.model.CharacterProtos.DecisionType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        decisionType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.character.DecisionType decision_type = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDecisionType() {
-        
-        decisionType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<mech.mania.engine.domain.model.CharacterProtos.Position> path_ =
-        java.util.Collections.emptyList();
-      private void ensurePathIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          path_ = new java.util.ArrayList<mech.mania.engine.domain.model.CharacterProtos.Position>(path_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          mech.mania.engine.domain.model.CharacterProtos.Position, mech.mania.engine.domain.model.CharacterProtos.Position.Builder, mech.mania.engine.domain.model.CharacterProtos.PositionOrBuilder> pathBuilder_;
-
-      /**
-       * <code>repeated .character.Position path = 4;</code>
-       */
-      public java.util.List<mech.mania.engine.domain.model.CharacterProtos.Position> getPathList() {
-        if (pathBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(path_);
+      public mech.mania.engine.domain.model.GameStateProtos.GameState getState() {
+        if (stateBuilder_ == null) {
+          return state_ == null ? mech.mania.engine.domain.model.GameStateProtos.GameState.getDefaultInstance() : state_;
         } else {
-          return pathBuilder_.getMessageList();
+          return stateBuilder_.getMessage();
         }
       }
       /**
-       * <code>repeated .character.Position path = 4;</code>
+       * <code>.game.GameState state = 1;</code>
        */
-      public int getPathCount() {
-        if (pathBuilder_ == null) {
-          return path_.size();
-        } else {
-          return pathBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .character.Position path = 4;</code>
-       */
-      public mech.mania.engine.domain.model.CharacterProtos.Position getPath(int index) {
-        if (pathBuilder_ == null) {
-          return path_.get(index);
-        } else {
-          return pathBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .character.Position path = 4;</code>
-       */
-      public Builder setPath(
-          int index, mech.mania.engine.domain.model.CharacterProtos.Position value) {
-        if (pathBuilder_ == null) {
+      public Builder setState(mech.mania.engine.domain.model.GameStateProtos.GameState value) {
+        if (stateBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensurePathIsMutable();
-          path_.set(index, value);
+          state_ = value;
           onChanged();
         } else {
-          pathBuilder_.setMessage(index, value);
+          stateBuilder_.setMessage(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .character.Position path = 4;</code>
+       * <code>.game.GameState state = 1;</code>
        */
-      public Builder setPath(
-          int index, mech.mania.engine.domain.model.CharacterProtos.Position.Builder builderForValue) {
-        if (pathBuilder_ == null) {
-          ensurePathIsMutable();
-          path_.set(index, builderForValue.build());
+      public Builder setState(
+          mech.mania.engine.domain.model.GameStateProtos.GameState.Builder builderForValue) {
+        if (stateBuilder_ == null) {
+          state_ = builderForValue.build();
           onChanged();
         } else {
-          pathBuilder_.setMessage(index, builderForValue.build());
+          stateBuilder_.setMessage(builderForValue.build());
         }
+
         return this;
       }
       /**
-       * <code>repeated .character.Position path = 4;</code>
+       * <code>.game.GameState state = 1;</code>
        */
-      public Builder addPath(mech.mania.engine.domain.model.CharacterProtos.Position value) {
-        if (pathBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
+      public Builder mergeState(mech.mania.engine.domain.model.GameStateProtos.GameState value) {
+        if (stateBuilder_ == null) {
+          if (state_ != null) {
+            state_ =
+              mech.mania.engine.domain.model.GameStateProtos.GameState.newBuilder(state_).mergeFrom(value).buildPartial();
+          } else {
+            state_ = value;
           }
-          ensurePathIsMutable();
-          path_.add(value);
           onChanged();
         } else {
-          pathBuilder_.addMessage(value);
+          stateBuilder_.mergeFrom(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .character.Position path = 4;</code>
+       * <code>.game.GameState state = 1;</code>
        */
-      public Builder addPath(
-          int index, mech.mania.engine.domain.model.CharacterProtos.Position value) {
-        if (pathBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePathIsMutable();
-          path_.add(index, value);
+      public Builder clearState() {
+        if (stateBuilder_ == null) {
+          state_ = null;
           onChanged();
         } else {
-          pathBuilder_.addMessage(index, value);
+          state_ = null;
+          stateBuilder_ = null;
         }
+
         return this;
       }
       /**
-       * <code>repeated .character.Position path = 4;</code>
+       * <code>.game.GameState state = 1;</code>
        */
-      public Builder addPath(
-          mech.mania.engine.domain.model.CharacterProtos.Position.Builder builderForValue) {
-        if (pathBuilder_ == null) {
-          ensurePathIsMutable();
-          path_.add(builderForValue.build());
-          onChanged();
+      public mech.mania.engine.domain.model.GameStateProtos.GameState.Builder getStateBuilder() {
+        
+        onChanged();
+        return getStateFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.game.GameState state = 1;</code>
+       */
+      public mech.mania.engine.domain.model.GameStateProtos.GameStateOrBuilder getStateOrBuilder() {
+        if (stateBuilder_ != null) {
+          return stateBuilder_.getMessageOrBuilder();
         } else {
-          pathBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .character.Position path = 4;</code>
-       */
-      public Builder addPath(
-          int index, mech.mania.engine.domain.model.CharacterProtos.Position.Builder builderForValue) {
-        if (pathBuilder_ == null) {
-          ensurePathIsMutable();
-          path_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          pathBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .character.Position path = 4;</code>
-       */
-      public Builder addAllPath(
-          java.lang.Iterable<? extends mech.mania.engine.domain.model.CharacterProtos.Position> values) {
-        if (pathBuilder_ == null) {
-          ensurePathIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, path_);
-          onChanged();
-        } else {
-          pathBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .character.Position path = 4;</code>
-       */
-      public Builder clearPath() {
-        if (pathBuilder_ == null) {
-          path_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          pathBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .character.Position path = 4;</code>
-       */
-      public Builder removePath(int index) {
-        if (pathBuilder_ == null) {
-          ensurePathIsMutable();
-          path_.remove(index);
-          onChanged();
-        } else {
-          pathBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .character.Position path = 4;</code>
-       */
-      public mech.mania.engine.domain.model.CharacterProtos.Position.Builder getPathBuilder(
-          int index) {
-        return getPathFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .character.Position path = 4;</code>
-       */
-      public mech.mania.engine.domain.model.CharacterProtos.PositionOrBuilder getPathOrBuilder(
-          int index) {
-        if (pathBuilder_ == null) {
-          return path_.get(index);  } else {
-          return pathBuilder_.getMessageOrBuilder(index);
+          return state_ == null ?
+              mech.mania.engine.domain.model.GameStateProtos.GameState.getDefaultInstance() : state_;
         }
       }
       /**
-       * <code>repeated .character.Position path = 4;</code>
+       * <code>.game.GameState state = 1;</code>
        */
-      public java.util.List<? extends mech.mania.engine.domain.model.CharacterProtos.PositionOrBuilder> 
-           getPathOrBuilderList() {
-        if (pathBuilder_ != null) {
-          return pathBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(path_);
-        }
-      }
-      /**
-       * <code>repeated .character.Position path = 4;</code>
-       */
-      public mech.mania.engine.domain.model.CharacterProtos.Position.Builder addPathBuilder() {
-        return getPathFieldBuilder().addBuilder(
-            mech.mania.engine.domain.model.CharacterProtos.Position.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .character.Position path = 4;</code>
-       */
-      public mech.mania.engine.domain.model.CharacterProtos.Position.Builder addPathBuilder(
-          int index) {
-        return getPathFieldBuilder().addBuilder(
-            index, mech.mania.engine.domain.model.CharacterProtos.Position.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .character.Position path = 4;</code>
-       */
-      public java.util.List<mech.mania.engine.domain.model.CharacterProtos.Position.Builder> 
-           getPathBuilderList() {
-        return getPathFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          mech.mania.engine.domain.model.CharacterProtos.Position, mech.mania.engine.domain.model.CharacterProtos.Position.Builder, mech.mania.engine.domain.model.CharacterProtos.PositionOrBuilder> 
-          getPathFieldBuilder() {
-        if (pathBuilder_ == null) {
-          pathBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              mech.mania.engine.domain.model.CharacterProtos.Position, mech.mania.engine.domain.model.CharacterProtos.Position.Builder, mech.mania.engine.domain.model.CharacterProtos.PositionOrBuilder>(
-                  path_,
-                  ((bitField0_ & 0x00000001) != 0),
+      private com.google.protobuf.SingleFieldBuilderV3<
+          mech.mania.engine.domain.model.GameStateProtos.GameState, mech.mania.engine.domain.model.GameStateProtos.GameState.Builder, mech.mania.engine.domain.model.GameStateProtos.GameStateOrBuilder> 
+          getStateFieldBuilder() {
+        if (stateBuilder_ == null) {
+          stateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              mech.mania.engine.domain.model.GameStateProtos.GameState, mech.mania.engine.domain.model.GameStateProtos.GameState.Builder, mech.mania.engine.domain.model.GameStateProtos.GameStateOrBuilder>(
+                  getState(),
                   getParentForChildren(),
                   isClean());
-          path_ = null;
+          state_ = null;
         }
-        return pathBuilder_;
+        return stateBuilder_;
+      }
+
+      private mech.mania.engine.domain.model.GameStateProtos.GameChange change_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          mech.mania.engine.domain.model.GameStateProtos.GameChange, mech.mania.engine.domain.model.GameStateProtos.GameChange.Builder, mech.mania.engine.domain.model.GameStateProtos.GameChangeOrBuilder> changeBuilder_;
+      /**
+       * <code>.game.GameChange change = 2;</code>
+       * @return Whether the change field is set.
+       */
+      public boolean hasChange() {
+        return changeBuilder_ != null || change_ != null;
+      }
+      /**
+       * <code>.game.GameChange change = 2;</code>
+       * @return The change.
+       */
+      public mech.mania.engine.domain.model.GameStateProtos.GameChange getChange() {
+        if (changeBuilder_ == null) {
+          return change_ == null ? mech.mania.engine.domain.model.GameStateProtos.GameChange.getDefaultInstance() : change_;
+        } else {
+          return changeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.game.GameChange change = 2;</code>
+       */
+      public Builder setChange(mech.mania.engine.domain.model.GameStateProtos.GameChange value) {
+        if (changeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          change_ = value;
+          onChanged();
+        } else {
+          changeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.game.GameChange change = 2;</code>
+       */
+      public Builder setChange(
+          mech.mania.engine.domain.model.GameStateProtos.GameChange.Builder builderForValue) {
+        if (changeBuilder_ == null) {
+          change_ = builderForValue.build();
+          onChanged();
+        } else {
+          changeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.game.GameChange change = 2;</code>
+       */
+      public Builder mergeChange(mech.mania.engine.domain.model.GameStateProtos.GameChange value) {
+        if (changeBuilder_ == null) {
+          if (change_ != null) {
+            change_ =
+              mech.mania.engine.domain.model.GameStateProtos.GameChange.newBuilder(change_).mergeFrom(value).buildPartial();
+          } else {
+            change_ = value;
+          }
+          onChanged();
+        } else {
+          changeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.game.GameChange change = 2;</code>
+       */
+      public Builder clearChange() {
+        if (changeBuilder_ == null) {
+          change_ = null;
+          onChanged();
+        } else {
+          change_ = null;
+          changeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.game.GameChange change = 2;</code>
+       */
+      public mech.mania.engine.domain.model.GameStateProtos.GameChange.Builder getChangeBuilder() {
+        
+        onChanged();
+        return getChangeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.game.GameChange change = 2;</code>
+       */
+      public mech.mania.engine.domain.model.GameStateProtos.GameChangeOrBuilder getChangeOrBuilder() {
+        if (changeBuilder_ != null) {
+          return changeBuilder_.getMessageOrBuilder();
+        } else {
+          return change_ == null ?
+              mech.mania.engine.domain.model.GameStateProtos.GameChange.getDefaultInstance() : change_;
+        }
+      }
+      /**
+       * <code>.game.GameChange change = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          mech.mania.engine.domain.model.GameStateProtos.GameChange, mech.mania.engine.domain.model.GameStateProtos.GameChange.Builder, mech.mania.engine.domain.model.GameStateProtos.GameChangeOrBuilder> 
+          getChangeFieldBuilder() {
+        if (changeBuilder_ == null) {
+          changeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              mech.mania.engine.domain.model.GameStateProtos.GameChange, mech.mania.engine.domain.model.GameStateProtos.GameChange.Builder, mech.mania.engine.domain.model.GameStateProtos.GameChangeOrBuilder>(
+                  getChange(),
+                  getParentForChildren(),
+                  isClean());
+          change_ = null;
+        }
+        return changeBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1950,61 +1419,56 @@ public final class VisualizerProtos {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:player_communication.CharacterChange)
+      // @@protoc_insertion_point(builder_scope:player_communication.VisualizerTurn)
     }
 
-    // @@protoc_insertion_point(class_scope:player_communication.CharacterChange)
-    private static final mech.mania.engine.domain.model.VisualizerProtos.CharacterChange DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:player_communication.VisualizerTurn)
+    private static final mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new mech.mania.engine.domain.model.VisualizerProtos.CharacterChange();
+      DEFAULT_INSTANCE = new mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn();
     }
 
-    public static mech.mania.engine.domain.model.VisualizerProtos.CharacterChange getDefaultInstance() {
+    public static mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CharacterChange>
-        PARSER = new com.google.protobuf.AbstractParser<CharacterChange>() {
+    private static final com.google.protobuf.Parser<VisualizerTurn>
+        PARSER = new com.google.protobuf.AbstractParser<VisualizerTurn>() {
       @java.lang.Override
-      public CharacterChange parsePartialFrom(
+      public VisualizerTurn parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CharacterChange(input, extensionRegistry);
+        return new VisualizerTurn(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<CharacterChange> parser() {
+    public static com.google.protobuf.Parser<VisualizerTurn> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CharacterChange> getParserForType() {
+    public com.google.protobuf.Parser<VisualizerTurn> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public mech.mania.engine.domain.model.VisualizerProtos.CharacterChange getDefaultInstanceForType() {
+    public mech.mania.engine.domain.model.VisualizerProtos.VisualizerTurn getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_player_communication_GameChange_descriptor;
+    internal_static_player_communication_VisualizerInitial_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_player_communication_GameChange_fieldAccessorTable;
+      internal_static_player_communication_VisualizerInitial_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_player_communication_GameChange_CharacterStatChangesEntry_descriptor;
+    internal_static_player_communication_VisualizerTurn_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_player_communication_GameChange_CharacterStatChangesEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_player_communication_CharacterChange_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_player_communication_CharacterChange_fieldAccessorTable;
+      internal_static_player_communication_VisualizerTurn_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2015,43 +1479,31 @@ public final class VisualizerProtos {
   static {
     java.lang.String[] descriptorData = {
       "\n\020visualizer.proto\022\024player_communication" +
-      "\032\017character.proto\"\346\001\n\nGameChange\022\030\n\020new_" +
-      "player_names\030\001 \003(\t\022Z\n\026character_stat_cha" +
-      "nges\030\002 \003(\0132:.player_communication.GameCh" +
-      "ange.CharacterStatChangesEntry\032b\n\031Charac" +
-      "terStatChangesEntry\022\013\n\003key\030\001 \001(\t\0224\n\005valu" +
-      "e\030\002 \001(\0132%.player_communication.Character" +
-      "Change:\0028\001\"\205\001\n\017CharacterChange\022\014\n\004died\030\001" +
-      " \001(\010\022\021\n\trespawned\030\002 \001(\010\022.\n\rdecision_type" +
-      "\030\003 \001(\0162\027.character.DecisionType\022!\n\004path\030" +
-      "\004 \003(\0132\023.character.PositionBC\n\036mech.mania" +
-      ".engine.domain.modelB\020VisualizerProtos\252\002" +
-      "\016MM26.IO.Modelsb\006proto3"
+      "\032\ngame.proto\"3\n\021VisualizerInitial\022\036\n\005sta" +
+      "te\030\001 \001(\0132\017.game.GameState\"R\n\016VisualizerT" +
+      "urn\022\036\n\005state\030\001 \001(\0132\017.game.GameState\022 \n\006c" +
+      "hange\030\002 \001(\0132\020.game.GameChangeBC\n\036mech.ma" +
+      "nia.engine.domain.modelB\020VisualizerProto" +
+      "s\252\002\016MM26.IO.Modelsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          mech.mania.engine.domain.model.CharacterProtos.getDescriptor(),
+          mech.mania.engine.domain.model.GameStateProtos.getDescriptor(),
         });
-    internal_static_player_communication_GameChange_descriptor =
+    internal_static_player_communication_VisualizerInitial_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_player_communication_GameChange_fieldAccessorTable = new
+    internal_static_player_communication_VisualizerInitial_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_player_communication_GameChange_descriptor,
-        new java.lang.String[] { "NewPlayerNames", "CharacterStatChanges", });
-    internal_static_player_communication_GameChange_CharacterStatChangesEntry_descriptor =
-      internal_static_player_communication_GameChange_descriptor.getNestedTypes().get(0);
-    internal_static_player_communication_GameChange_CharacterStatChangesEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_player_communication_GameChange_CharacterStatChangesEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_player_communication_CharacterChange_descriptor =
+        internal_static_player_communication_VisualizerInitial_descriptor,
+        new java.lang.String[] { "State", });
+    internal_static_player_communication_VisualizerTurn_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_player_communication_CharacterChange_fieldAccessorTable = new
+    internal_static_player_communication_VisualizerTurn_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_player_communication_CharacterChange_descriptor,
-        new java.lang.String[] { "Died", "Respawned", "DecisionType", "Path", });
-    mech.mania.engine.domain.model.CharacterProtos.getDescriptor();
+        internal_static_player_communication_VisualizerTurn_descriptor,
+        new java.lang.String[] { "State", "Change", });
+    mech.mania.engine.domain.model.GameStateProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,17 +19,17 @@ public final class PlayerProtos {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.game_state.GameState game_state = 1;</code>
+     * <code>.game.GameState game_state = 1;</code>
      * @return Whether the gameState field is set.
      */
     boolean hasGameState();
     /**
-     * <code>.game_state.GameState game_state = 1;</code>
+     * <code>.game.GameState game_state = 1;</code>
      * @return The gameState.
      */
     mech.mania.engine.domain.model.GameStateProtos.GameState getGameState();
     /**
-     * <code>.game_state.GameState game_state = 1;</code>
+     * <code>.game.GameState game_state = 1;</code>
      */
     mech.mania.engine.domain.model.GameStateProtos.GameStateOrBuilder getGameStateOrBuilder();
 
@@ -52,7 +52,7 @@ public final class PlayerProtos {
    *
    * Protobuf type {@code player_communication.PlayerTurn}
    */
-  public  static final class PlayerTurn extends
+  public static final class PlayerTurn extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:player_communication.PlayerTurn)
       PlayerTurnOrBuilder {
@@ -149,22 +149,25 @@ public final class PlayerProtos {
     public static final int GAME_STATE_FIELD_NUMBER = 1;
     private mech.mania.engine.domain.model.GameStateProtos.GameState gameState_;
     /**
-     * <code>.game_state.GameState game_state = 1;</code>
+     * <code>.game.GameState game_state = 1;</code>
      * @return Whether the gameState field is set.
      */
+    @java.lang.Override
     public boolean hasGameState() {
       return gameState_ != null;
     }
     /**
-     * <code>.game_state.GameState game_state = 1;</code>
+     * <code>.game.GameState game_state = 1;</code>
      * @return The gameState.
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.GameStateProtos.GameState getGameState() {
       return gameState_ == null ? mech.mania.engine.domain.model.GameStateProtos.GameState.getDefaultInstance() : gameState_;
     }
     /**
-     * <code>.game_state.GameState game_state = 1;</code>
+     * <code>.game.GameState game_state = 1;</code>
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.GameStateProtos.GameStateOrBuilder getGameStateOrBuilder() {
       return getGameState();
     }
@@ -175,6 +178,7 @@ public final class PlayerProtos {
      * <code>string player_name = 2;</code>
      * @return The playerName.
      */
+    @java.lang.Override
     public java.lang.String getPlayerName() {
       java.lang.Object ref = playerName_;
       if (ref instanceof java.lang.String) {
@@ -191,6 +195,7 @@ public final class PlayerProtos {
      * <code>string player_name = 2;</code>
      * @return The bytes for playerName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getPlayerNameBytes() {
       java.lang.Object ref = playerName_;
@@ -545,14 +550,14 @@ public final class PlayerProtos {
       private com.google.protobuf.SingleFieldBuilderV3<
           mech.mania.engine.domain.model.GameStateProtos.GameState, mech.mania.engine.domain.model.GameStateProtos.GameState.Builder, mech.mania.engine.domain.model.GameStateProtos.GameStateOrBuilder> gameStateBuilder_;
       /**
-       * <code>.game_state.GameState game_state = 1;</code>
+       * <code>.game.GameState game_state = 1;</code>
        * @return Whether the gameState field is set.
        */
       public boolean hasGameState() {
         return gameStateBuilder_ != null || gameState_ != null;
       }
       /**
-       * <code>.game_state.GameState game_state = 1;</code>
+       * <code>.game.GameState game_state = 1;</code>
        * @return The gameState.
        */
       public mech.mania.engine.domain.model.GameStateProtos.GameState getGameState() {
@@ -563,7 +568,7 @@ public final class PlayerProtos {
         }
       }
       /**
-       * <code>.game_state.GameState game_state = 1;</code>
+       * <code>.game.GameState game_state = 1;</code>
        */
       public Builder setGameState(mech.mania.engine.domain.model.GameStateProtos.GameState value) {
         if (gameStateBuilder_ == null) {
@@ -579,7 +584,7 @@ public final class PlayerProtos {
         return this;
       }
       /**
-       * <code>.game_state.GameState game_state = 1;</code>
+       * <code>.game.GameState game_state = 1;</code>
        */
       public Builder setGameState(
           mech.mania.engine.domain.model.GameStateProtos.GameState.Builder builderForValue) {
@@ -593,7 +598,7 @@ public final class PlayerProtos {
         return this;
       }
       /**
-       * <code>.game_state.GameState game_state = 1;</code>
+       * <code>.game.GameState game_state = 1;</code>
        */
       public Builder mergeGameState(mech.mania.engine.domain.model.GameStateProtos.GameState value) {
         if (gameStateBuilder_ == null) {
@@ -611,7 +616,7 @@ public final class PlayerProtos {
         return this;
       }
       /**
-       * <code>.game_state.GameState game_state = 1;</code>
+       * <code>.game.GameState game_state = 1;</code>
        */
       public Builder clearGameState() {
         if (gameStateBuilder_ == null) {
@@ -625,7 +630,7 @@ public final class PlayerProtos {
         return this;
       }
       /**
-       * <code>.game_state.GameState game_state = 1;</code>
+       * <code>.game.GameState game_state = 1;</code>
        */
       public mech.mania.engine.domain.model.GameStateProtos.GameState.Builder getGameStateBuilder() {
         
@@ -633,7 +638,7 @@ public final class PlayerProtos {
         return getGameStateFieldBuilder().getBuilder();
       }
       /**
-       * <code>.game_state.GameState game_state = 1;</code>
+       * <code>.game.GameState game_state = 1;</code>
        */
       public mech.mania.engine.domain.model.GameStateProtos.GameStateOrBuilder getGameStateOrBuilder() {
         if (gameStateBuilder_ != null) {
@@ -644,7 +649,7 @@ public final class PlayerProtos {
         }
       }
       /**
-       * <code>.game_state.GameState game_state = 1;</code>
+       * <code>.game.GameState game_state = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           mech.mania.engine.domain.model.GameStateProtos.GameState, mech.mania.engine.domain.model.GameStateProtos.GameState.Builder, mech.mania.engine.domain.model.GameStateProtos.GameStateOrBuilder> 
@@ -847,7 +852,7 @@ public final class PlayerProtos {
    *
    * Protobuf type {@code player_communication.PlayerDecision}
    */
-  public  static final class PlayerDecision extends
+  public static final class PlayerDecision extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:player_communication.PlayerDecision)
       PlayerDecisionOrBuilder {
@@ -952,14 +957,14 @@ public final class PlayerProtos {
      * <code>.character.DecisionType decision_type = 1;</code>
      * @return The enum numeric value on the wire for decisionType.
      */
-    public int getDecisionTypeValue() {
+    @java.lang.Override public int getDecisionTypeValue() {
       return decisionType_;
     }
     /**
      * <code>.character.DecisionType decision_type = 1;</code>
      * @return The decisionType.
      */
-    public mech.mania.engine.domain.model.CharacterProtos.DecisionType getDecisionType() {
+    @java.lang.Override public mech.mania.engine.domain.model.CharacterProtos.DecisionType getDecisionType() {
       @SuppressWarnings("deprecation")
       mech.mania.engine.domain.model.CharacterProtos.DecisionType result = mech.mania.engine.domain.model.CharacterProtos.DecisionType.valueOf(decisionType_);
       return result == null ? mech.mania.engine.domain.model.CharacterProtos.DecisionType.UNRECOGNIZED : result;
@@ -975,6 +980,7 @@ public final class PlayerProtos {
      * <code>.character.Position target_position = 2;</code>
      * @return Whether the targetPosition field is set.
      */
+    @java.lang.Override
     public boolean hasTargetPosition() {
       return targetPosition_ != null;
     }
@@ -986,6 +992,7 @@ public final class PlayerProtos {
      * <code>.character.Position target_position = 2;</code>
      * @return The targetPosition.
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.CharacterProtos.Position getTargetPosition() {
       return targetPosition_ == null ? mech.mania.engine.domain.model.CharacterProtos.Position.getDefaultInstance() : targetPosition_;
     }
@@ -996,6 +1003,7 @@ public final class PlayerProtos {
      *
      * <code>.character.Position target_position = 2;</code>
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.CharacterProtos.PositionOrBuilder getTargetPositionOrBuilder() {
       return getTargetPosition();
     }
@@ -1010,6 +1018,7 @@ public final class PlayerProtos {
      * <code>int32 index = 3;</code>
      * @return The index.
      */
+    @java.lang.Override
     public int getIndex() {
       return index_;
     }
@@ -1371,7 +1380,7 @@ public final class PlayerProtos {
        * <code>.character.DecisionType decision_type = 1;</code>
        * @return The enum numeric value on the wire for decisionType.
        */
-      public int getDecisionTypeValue() {
+      @java.lang.Override public int getDecisionTypeValue() {
         return decisionType_;
       }
       /**
@@ -1380,6 +1389,7 @@ public final class PlayerProtos {
        * @return This builder for chaining.
        */
       public Builder setDecisionTypeValue(int value) {
+        
         decisionType_ = value;
         onChanged();
         return this;
@@ -1388,6 +1398,7 @@ public final class PlayerProtos {
        * <code>.character.DecisionType decision_type = 1;</code>
        * @return The decisionType.
        */
+      @java.lang.Override
       public mech.mania.engine.domain.model.CharacterProtos.DecisionType getDecisionType() {
         @SuppressWarnings("deprecation")
         mech.mania.engine.domain.model.CharacterProtos.DecisionType result = mech.mania.engine.domain.model.CharacterProtos.DecisionType.valueOf(decisionType_);
@@ -1582,6 +1593,7 @@ public final class PlayerProtos {
        * <code>int32 index = 3;</code>
        * @return The index.
        */
+      @java.lang.Override
       public int getIndex() {
         return index_;
       }
@@ -1686,15 +1698,15 @@ public final class PlayerProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014player.proto\022\024player_communication\032\020ga" +
-      "me_state.proto\032\017character.proto\"L\n\nPlaye" +
-      "rTurn\022)\n\ngame_state\030\001 \001(\0132\025.game_state.G" +
-      "ameState\022\023\n\013player_name\030\002 \001(\t\"}\n\016PlayerD" +
-      "ecision\022.\n\rdecision_type\030\001 \001(\0162\027.charact" +
-      "er.DecisionType\022,\n\017target_position\030\002 \001(\013" +
-      "2\023.character.Position\022\r\n\005index\030\003 \001(\005B?\n\036" +
-      "mech.mania.engine.domain.modelB\014PlayerPr" +
-      "otos\252\002\016MM26.IO.Modelsb\006proto3"
+      "\n\014player.proto\022\024player_communication\032\nga" +
+      "me.proto\032\017character.proto\"F\n\nPlayerTurn\022" +
+      "#\n\ngame_state\030\001 \001(\0132\017.game.GameState\022\023\n\013" +
+      "player_name\030\002 \001(\t\"}\n\016PlayerDecision\022.\n\rd" +
+      "ecision_type\030\001 \001(\0162\027.character.DecisionT" +
+      "ype\022,\n\017target_position\030\002 \001(\0132\023.character" +
+      ".Position\022\r\n\005index\030\003 \001(\005B?\n\036mech.mania.e" +
+      "ngine.domain.modelB\014PlayerProtos\252\002\016MM26." +
+      "IO.Modelsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
