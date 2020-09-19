@@ -3,8 +3,18 @@ package mech.mania.starter_pack.domain;
 import mech.mania.engine.domain.model.CharacterProtos.*;
 import mech.mania.engine.domain.model.GameStateProtos.*;
 import mech.mania.engine.domain.model.PlayerProtos.*;
+import mech.mania.starter_pack.domain.memory.MemoryObject;
+import mech.mania.starter_pack.domain.memory.RedisWritePolicy;
 
 public class PlayerStrategy implements Strategy {
+    /**
+     * This MemoryObject allows you to store persistent data of the types
+     * int, double/float, string, and boolean. See the MemoryObject documentation
+     * (https://github.com/jackducham/mm26-infra/blob/master/memory-object/API-Design.md)
+     * for details on usage.
+     */
+    private MemoryObject memory = new MemoryObject(RedisWritePolicy.WRITETHROUGH);
+
     public PlayerDecision createPlayerDecision(DecisionType decision, int x, int y, String boardId, int index) {
         return PlayerDecision.newBuilder()
                 .setDecisionType(decision)
