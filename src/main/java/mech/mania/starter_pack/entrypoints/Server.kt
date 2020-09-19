@@ -5,6 +5,8 @@ import com.sun.net.httpserver.HttpServer
 import mech.mania.engine.domain.model.PlayerProtos.*
 import mech.mania.starter_pack.domain.PlayerStrategy
 import mech.mania.starter_pack.domain.Strategy
+import mech.mania.starter_pack.domain.memory.MemoryObject
+import mech.mania.starter_pack.domain.memory.RedisWritePolicy
 import java.net.InetSocketAddress
 import java.util.logging.Logger
 
@@ -19,7 +21,8 @@ fun main(args: Array<String>) {
 class Server {
 
     private val logger = Logger.getLogger(Server::class.toString())
-    private val player: Strategy = PlayerStrategy()
+    private val memory = MemoryObject(RedisWritePolicy.WRITETHROUGH)
+    private val player: Strategy = PlayerStrategy(memory)
 
     /**
      * Starts a server using a specified port
@@ -63,6 +66,20 @@ class Server {
                 val message = "200".toByteArray()
                 exchange.sendResponseHeaders(200, message.size.toLong())
                 exchange.responseBody.write(message)
+            }
+
+            // Add handler to shutdown endpoint to close this server
+            server.createContext("/shutdown") { exchange: HttpExchange ->
+                val message = "200".toByteArray()
+                exchange.sendResponseHeaders(200, message.size.toLong())
+                exchange.responseBody.write(message)
+
+                // Close MemoryObject Redis connection
+                memory.saveAndClose()
+
+                // Wait up to 10 seconds to finish current exchanges,
+                // then close this server
+                server.stop(10000)
             }
 
             // Start server

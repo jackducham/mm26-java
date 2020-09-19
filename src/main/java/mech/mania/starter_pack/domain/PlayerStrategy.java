@@ -13,7 +13,11 @@ public class PlayerStrategy implements Strategy {
      * (https://github.com/jackducham/mm26-infra/blob/master/memory-object/API-Design.md)
      * for details on usage.
      */
-    private MemoryObject memory = new MemoryObject(RedisWritePolicy.WRITETHROUGH);
+    private MemoryObject memory;
+
+    public PlayerStrategy(MemoryObject memory){
+        this.memory = memory;
+    }
 
     public PlayerDecision createPlayerDecision(DecisionType decision, int x, int y, String boardId, int index) {
         return PlayerDecision.newBuilder()
