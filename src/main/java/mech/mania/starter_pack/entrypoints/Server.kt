@@ -2,6 +2,7 @@ package mech.mania.starter_pack.entrypoints
 
 import com.sun.net.httpserver.HttpExchange
 import com.sun.net.httpserver.HttpServer
+import mech.mania.engine.domain.model.CharacterProtos.*
 import mech.mania.engine.domain.model.PlayerProtos.*
 import mech.mania.starter_pack.domain.PlayerStrategy
 import mech.mania.starter_pack.domain.Strategy
@@ -31,7 +32,7 @@ class Server {
      */
     fun startServer(port: Int,
                     onReceive: (turn: PlayerTurn) -> Unit,
-                    onSend: (decision: PlayerDecision) -> Unit): Int {
+                    onSend: (decision: CharacterDecision) -> Unit): Int {
         try {
             // Create server on specified port
             val server = HttpServer.create(InetSocketAddress(port), 0)
@@ -45,7 +46,13 @@ class Server {
                 onReceive(turn)
 
                 // calculate what to do with turn
-                val decision: PlayerDecision = player.makeDecision(turn.playerName, turn.gameState)
+                val decision: CharacterDecision
+                decision = try {
+                    player.makeDecision(turn.playerName, turn.gameState)
+                } catch (e: Exception){
+                    logger.warning("Exception while making decision: $e")
+                    CharacterDecision.newBuilder().setDecisionType(DecisionType.NONE).setIndex(-1).build()
+                }
                 val size: Long = decision.toByteArray().size.toLong()
 
                 // send back response
