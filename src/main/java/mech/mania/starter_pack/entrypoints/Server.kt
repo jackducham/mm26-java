@@ -2,10 +2,15 @@ package mech.mania.starter_pack.entrypoints
 
 import com.sun.net.httpserver.HttpExchange
 import com.sun.net.httpserver.HttpServer
-import mech.mania.engine.domain.model.CharacterProtos.*
-import mech.mania.engine.domain.model.PlayerProtos.*
+import io.lettuce.core.SetArgs.Builder.ex
+import mech.mania.engine.domain.model.CharacterProtos.CharacterDecision
+import mech.mania.engine.domain.model.CharacterProtos.DecisionType
+import mech.mania.engine.domain.model.PlayerProtos.PlayerTurn
 import mech.mania.starter_pack.domain.PlayerStrategy
 import mech.mania.starter_pack.domain.Strategy
+import java.io.PrintWriter
+import java.io.StringWriter
+import java.io.Writer
 import java.net.InetSocketAddress
 import java.util.logging.Logger
 
@@ -50,7 +55,12 @@ class Server {
                 decision = try {
                     player.makeDecision(turn.playerName, turn.gameState)
                 } catch (e: Exception){
-                    logger.warning("Exception while making decision: $e")
+                    val buffer: Writer = StringWriter()
+                    e.printStackTrace(PrintWriter(buffer))
+                    logger.warning(buffer.toString())
+                    logger.warning("Exception while making decision:\n $e")
+
+                    // Default to NONE decision
                     CharacterDecision.newBuilder().setDecisionType(DecisionType.NONE).setIndex(-1).build()
                 }
                 val size: Long = decision.toByteArray().size.toLong()
