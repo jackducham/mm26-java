@@ -1,7 +1,8 @@
 package mech.mania.starter_pack.domain;
 
-import mech.mania.engine.domain.model.CharacterProtos.*;
-import mech.mania.engine.domain.model.GameStateProtos.*;
+import mech.mania.engine.domain.model.CharacterProtos.CharacterDecision;
+import mech.mania.engine.domain.model.GameState;
+import mech.mania.engine.domain.model.characters.Player;
 import mech.mania.starter_pack.domain.memory.MemoryObject;
 import mech.mania.starter_pack.domain.memory.RedisWritePolicy;
 
@@ -14,20 +15,15 @@ public class PlayerStrategy implements Strategy {
      */
     //private MemoryObject memory = new MemoryObject(RedisWritePolicy.WRITETHROUGH);
 
-    public CharacterDecision createPlayerDecision(DecisionType decision, int x, int y, String boardId, int index) {
-        return CharacterDecision.newBuilder()
-                .setDecisionType(decision)
-                .setTargetPosition(Position.newBuilder()
-                        .setX(x).setY(y).setBoardId(boardId)
-                        .build())
-                .setIndex(index)
-                .build();
-    }
-
+    /**
+     * TODO: implement your strategy here! Make sure to return a CharacterDecision using either of the following
+     * constructors:
+     * CharacterDecision(decisionTypes decision, Position actionPosition)
+     * CharacterDecision(decisionTypes decision, Position actionPosition, int inventoryIndex)
+     */
     public CharacterDecision makeDecision(String playerName, GameState gameState){
-        Player myPlayer = gameState.getPlayerNamesMap().get(playerName);
+        Player myPlayer = gameState.getAllPlayers().get(playerName);
 
-        // Returns MOVE decision to (0, 0) on private board
-        return createPlayerDecision(DecisionType.MOVE, 0, 0, playerName,0);
+        return null;
     }
 }

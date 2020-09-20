@@ -5,6 +5,7 @@ import com.sun.net.httpserver.HttpServer
 import io.lettuce.core.SetArgs.Builder.ex
 import mech.mania.engine.domain.model.CharacterProtos.CharacterDecision
 import mech.mania.engine.domain.model.CharacterProtos.DecisionType
+import mech.mania.engine.domain.model.GameState
 import mech.mania.engine.domain.model.PlayerProtos.PlayerTurn
 import mech.mania.starter_pack.domain.PlayerStrategy
 import mech.mania.starter_pack.domain.Strategy
@@ -53,7 +54,7 @@ class Server {
                 // calculate what to do with turn
                 val decision: CharacterDecision
                 decision = try {
-                    player.makeDecision(turn.playerName, turn.gameState)
+                    player.makeDecision(turn.playerName, GameState(turn.gameState));
                 } catch (e: Exception){
                     val buffer: Writer = StringWriter()
                     e.printStackTrace(PrintWriter(buffer))
