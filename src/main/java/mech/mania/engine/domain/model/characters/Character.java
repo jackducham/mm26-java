@@ -26,7 +26,7 @@ public abstract class Character {
 
     /** Death parameters */
     protected int ticksSinceDeath;  // need access in Player to determine whether player just died
-    private boolean isDead;
+    private final boolean isDead;
 
     /** Position parameters */
     protected Position position;

@@ -13,10 +13,10 @@ import mech.mania.engine.domain.model.characters.Player;
 import mech.mania.engine.domain.model.characters.Character;
 
 public class GameState {
-    private long turnNumber;
-    private Map<String, Board> boardNames;
-    private Map<String, Player> playerNames;
-    private Map<String, Monster> monsterNames;
+    private final long turnNumber;
+    private final Map<String, Board> boardNames;
+    private final Map<String, Player> playerNames;
+    private final Map<String, Monster> monsterNames;
 
     /**
      * Gets the pvp board.
@@ -184,5 +184,8 @@ public class GameState {
         }
     }
 
+    public long getTurnNumber() {
+        return turnNumber;
+    }
 
 }

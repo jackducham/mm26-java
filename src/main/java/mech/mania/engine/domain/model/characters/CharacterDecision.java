@@ -6,9 +6,9 @@ public class CharacterDecision {
     public enum decisionTypes {
         NONE, MOVE, ATTACK, EQUIP, DROP, PICKUP, PORTAL
     }
-    private decisionTypes decision;
-    private Position actionPosition;
-    private int index;
+    private final decisionTypes decision;
+    private final Position actionPosition;
+    private final int index;
 
     public CharacterDecision(decisionTypes decision, Position actionPosition) {
         this.decision = decision;

@@ -9,16 +9,11 @@ import static java.lang.Math.max;
 
 public class Player extends Character {
     private static final int INVENTORY_SIZE = 16;
-    private Hat hat;
-    private Clothes clothes;
-    private Shoes shoes;
-    private Item[] inventory;
-    private Stats playerStats = new Stats();
-
-    private static final int BASE_SPEED = 5;
-    private static final int BASE_MAX_HEALTH = 20;
-    private static final int BASE_ATTACK = 0;
-    private static final int BASE_DEFENSE = 0;
+    private final Hat hat;
+    private final Clothes clothes;
+    private final Shoes shoes;
+    private final Item[] inventory;
+    private final Stats playerStats = new Stats();
 
 
     public Player(CharacterProtos.Player playerProto) {
@@ -298,9 +293,9 @@ public class Player extends Character {
      * stat calculation
      */
     static class Stats {
-        private int monstersSlain;
-        private int deathCount;
-        private int turnsSinceJoined;
+        public final int monstersSlain;
+        public final int deathCount;
+        public final int turnsSinceJoined;
 
         public Stats() {
             monstersSlain = 0;

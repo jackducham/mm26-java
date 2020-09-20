@@ -5,9 +5,9 @@ import mech.mania.engine.domain.model.CharacterProtos;
 import java.util.Objects;
 
 public class Position {
-    private int x;
-    private int y;
-    private String board_id;
+    private final int x;
+    private final int y;
+    private final String board_id;
 
     public Position(CharacterProtos.Position positionProto) {
         x = positionProto.getX();

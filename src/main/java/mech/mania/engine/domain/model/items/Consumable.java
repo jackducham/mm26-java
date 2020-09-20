@@ -3,8 +3,8 @@ package mech.mania.engine.domain.model.items;
 import mech.mania.engine.domain.model.ItemProtos;
 
 public class Consumable extends Item {
-    protected TempStatusModifier effect;
-    private int stacks;
+    protected final TempStatusModifier effect;
+    private final int stacks;
 
 
     /**

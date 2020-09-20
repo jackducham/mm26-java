@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
-    private Tile[][] grid;
-    private List<Position> portals;
+    private final Tile[][] grid;
+    private final List<Position> portals;
 
     public Board(BoardProtos.Board board) {
         int rows = board.getRows();

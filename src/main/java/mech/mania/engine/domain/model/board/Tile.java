@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tile {
-    private List<Item> items;
+    private final List<Item> items;
     public enum TileType{
         VOID, BLANK, IMPASSIBLE, PORTAL
     }
