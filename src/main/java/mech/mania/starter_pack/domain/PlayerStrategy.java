@@ -2,8 +2,6 @@ package mech.mania.starter_pack.domain;
 
 import mech.mania.engine.domain.model.CharacterProtos.*;
 import mech.mania.engine.domain.model.GameStateProtos.*;
-import mech.mania.starter_pack.domain.memory.MemoryObject;
-import mech.mania.starter_pack.domain.memory.RedisWritePolicy;
 
 public class PlayerStrategy implements Strategy {
     /**
@@ -12,7 +10,7 @@ public class PlayerStrategy implements Strategy {
      * (https://github.com/jackducham/mm26-infra/blob/master/memory-object/API-Design.md)
      * for details on usage.
      */
-    //private MemoryObject memory = new MemoryObject(RedisWritePolicy.WRITETHROUGH);
+    //private MemoryObject memory = new MemoryObject();
 
     public CharacterDecision createPlayerDecision(DecisionType decision, int x, int y, String boardId, int index) {
         return CharacterDecision.newBuilder()

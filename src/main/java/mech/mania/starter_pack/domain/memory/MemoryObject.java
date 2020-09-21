@@ -14,14 +14,10 @@ public class MemoryObject {
     public static final int DEFAULT_INT = 0;
     public static final boolean DEFAULT_BOOLEAN = false;
 
-    private RedisWritePolicy redisWritePolicy;
-
     private RedisCommands<String, String> redisCommands;
     private JSONObject userData;
 
-    public MemoryObject(RedisWritePolicy writePolicy) {
-        this.redisWritePolicy = writePolicy;
-
+    public MemoryObject() {
         this.TARGET_ENGINE = System.getenv("TARGET_ENGINE");
         this.TEAM_NAME = System.getenv("TEAM_NAME");
         this.HOST  = System.getenv("REDIS_HOST");
@@ -35,8 +31,7 @@ public class MemoryObject {
     }
 
     public MemoryObject(String targetEngine, String teamName, String host,
-                        String port, String password, RedisWritePolicy writePolicy) {
-        this.redisWritePolicy = writePolicy;
+                        String port, String password) {
         this.TARGET_ENGINE = targetEngine;
         this.TEAM_NAME = teamName;
         this.HOST  = host;
@@ -47,14 +42,6 @@ public class MemoryObject {
 
         this.redisCommands = getConnection();
         fetchData();
-    }
-
-    public void setRedisWritePolicy(RedisWritePolicy policy) {
-        this.redisWritePolicy = policy;
-    }
-
-    public RedisWritePolicy getRedisWritePolicy() {
-        return this.redisWritePolicy;
     }
 
     public SetValueResult setValue(String key, Object value) {
@@ -72,9 +59,7 @@ public class MemoryObject {
 
         userData.put(key, value);
 
-        if (this.redisWritePolicy == RedisWritePolicy.WRITETHROUGH) {
-            saveData();
-        }
+        saveData();
 
         return SetValueResult.OPERATION_SUCCESS;
     }
@@ -126,7 +111,7 @@ public class MemoryObject {
     }
 
     private String formatUserDataKey(String targetEngine, String teamName) {
-        teamName = teamName.replaceAll(" ", "_");
+        teamName = teamName.toLowerCase().replaceAll(" ", "_");
 
         return teamName.concat("_").concat(targetEngine);
     }
@@ -177,7 +162,7 @@ public class MemoryObject {
         return closeConnection();
     }
 
-    private boolean saveData() {
+    public boolean saveData() {
         if (!isConnected()) {
             return false;
         }
@@ -187,7 +172,7 @@ public class MemoryObject {
         return true;
     }
 
-    private boolean closeConnection() {
+    public boolean closeConnection() {
         if (!isConnected()) {
             return false;
         }
@@ -202,7 +187,6 @@ public class MemoryObject {
 
         try {
             RedisClient client = RedisClient.create(connectionString);
-//            client.setDefaultTimeout(Duration.ofSeconds(5));
             StatefulRedisConnection<String, String> redisConnection = client.connect();
             RedisCommands<String, String> syncCommands = redisConnection.sync();
             return syncCommands;
