@@ -4,7 +4,6 @@ import mech.mania.engine.domain.model.CharacterProtos.CharacterDecision;
 import mech.mania.engine.domain.model.GameState;
 import mech.mania.engine.domain.model.characters.Player;
 import mech.mania.starter_pack.domain.memory.MemoryObject;
-import mech.mania.starter_pack.domain.memory.RedisWritePolicy;
 
 public class PlayerStrategy implements Strategy {
     /**
@@ -13,7 +12,7 @@ public class PlayerStrategy implements Strategy {
      * (https://github.com/jackducham/mm26-infra/blob/master/memory-object/API-Design.md)
      * for details on usage.
      */
-    //private MemoryObject memory = new MemoryObject(RedisWritePolicy.WRITETHROUGH);
+    private MemoryObject memory = new MemoryObject();
 
     /**
      * TODO: implement your strategy here! Make sure to return a CharacterDecision using either of the following
