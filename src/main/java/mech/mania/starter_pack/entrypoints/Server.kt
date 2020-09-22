@@ -58,8 +58,8 @@ class Server {
                 } catch (e: Exception){
                     val buffer: Writer = StringWriter()
                     e.printStackTrace(PrintWriter(buffer))
+                    logger.warning("Exception while making decision:\n")
                     logger.warning(buffer.toString())
-                    logger.warning("Exception while making decision:\n $e")
 
                     // Default to NONE decision
                     CharacterDecision.newBuilder().setDecisionType(DecisionType.NONE).setIndex(-1).build()

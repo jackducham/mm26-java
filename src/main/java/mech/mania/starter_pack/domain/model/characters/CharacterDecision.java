@@ -10,15 +10,34 @@ public class CharacterDecision {
     private final Position actionPosition;
     private final int index;
 
+    /**
+     * Creates a decision to do nothing
+     */
+    public CharacterDecision(){
+        this.decision = decisionTypes.NONE;
+        this.actionPosition = null;
+        this.index = -1;
+    }
+
+    /**
+     * Creates a decision with a specified action position
+     * @param decision Should be one of MOVE or ATTACK
+     * @param actionPosition The position at which to apply the decision
+     */
     public CharacterDecision(decisionTypes decision, Position actionPosition) {
         this.decision = decision;
         this.actionPosition = actionPosition;
-        index = -1;
+        this.index = -1;
     }
 
-    public CharacterDecision(decisionTypes decision, Position actionPosition, int actionIndex) {
+    /**
+     * Creates a decision with a specified index
+     * @param decision Should be one of EQUIP, DROP, PICKUP, or PORTAL
+     * @param actionIndex The index (of inventory, tile item list, or board portal list)
+     */
+    public CharacterDecision(decisionTypes decision, int actionIndex) {
         this.decision = decision;
-        this.actionPosition = actionPosition;
+        this.actionPosition = null;
         this.index = actionIndex;
     }
 
@@ -49,7 +68,9 @@ public class CharacterDecision {
         }
 
         decisionBuilder.setIndex(this.index);
-        decisionBuilder.setTargetPosition(this.actionPosition.buildProtoClass());
+        if(actionPosition != null) {
+            decisionBuilder.setTargetPosition(this.actionPosition.buildProtoClass());
+        }
 
         return decisionBuilder.build();
     }

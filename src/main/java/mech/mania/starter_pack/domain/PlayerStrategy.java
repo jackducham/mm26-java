@@ -1,8 +1,9 @@
 package mech.mania.starter_pack.domain;
 
 import mech.mania.engine.domain.model.GameState;
-import mech.mania.starter_pack.domain.model.characters.CharacterDecision;
-import mech.mania.starter_pack.domain.model.characters.Player;
+import mech.mania.starter_pack.domain.model.characters.*;
+import mech.mania.starter_pack.domain.model.board.*;
+import mech.mania.starter_pack.domain.model.items.*;
 import mech.mania.starter_pack.domain.memory.MemoryObject;
 
 public class PlayerStrategy implements Strategy {
@@ -15,13 +16,13 @@ public class PlayerStrategy implements Strategy {
     private MemoryObject memory = new MemoryObject();
 
     /**
-     * TODO: implement your strategy here! Make sure to return a CharacterDecision using either of the following
-     * constructors:
+     * TODO: implement your strategy here! Return a CharacterDecision using either of the following constructors:
      * CharacterDecision(decisionTypes decision, Position actionPosition)
-     * CharacterDecision(decisionTypes decision, Position actionPosition, int inventoryIndex)
+     * CharacterDecision(decisionTypes decision, int actionIndex)
      */
     public CharacterDecision makeDecision(String playerName, GameState gameState){
         Player myPlayer = gameState.getAllPlayers().get(playerName);
+        Position myPos = myPlayer.getPosition();
 
         return null;
     }
