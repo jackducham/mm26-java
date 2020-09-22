@@ -1,8 +1,8 @@
-package mech.mania.engine.domain.model.board;
+package mech.mania.starter_pack.domain.model.board;
 
 import mech.mania.engine.domain.model.BoardProtos;
 import mech.mania.engine.domain.model.ItemProtos;
-import mech.mania.engine.domain.model.items.*;
+import mech.mania.starter_pack.domain.model.items.*;
 
 import java.util.ArrayList;
 import java.util.List;

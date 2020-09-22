@@ -1,4 +1,4 @@
-package mech.mania.engine.domain.model.characters;
+package mech.mania.starter_pack.domain.model.characters;
 
 import mech.mania.engine.domain.model.CharacterProtos;
 

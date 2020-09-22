@@ -7,10 +7,10 @@ import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import mech.mania.engine.domain.model.board.Board;
-import mech.mania.engine.domain.model.characters.Monster;
-import mech.mania.engine.domain.model.characters.Player;
-import mech.mania.engine.domain.model.characters.Character;
+import mech.mania.starter_pack.domain.model.board.Board;
+import mech.mania.starter_pack.domain.model.characters.Monster;
+import mech.mania.starter_pack.domain.model.characters.Player;
+import mech.mania.starter_pack.domain.model.characters.Character;
 
 public class GameState {
     private final long turnNumber;

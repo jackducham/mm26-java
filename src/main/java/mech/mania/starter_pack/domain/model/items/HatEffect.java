@@ -1,4 +1,4 @@
-package mech.mania.engine.domain.model.items;
+package mech.mania.starter_pack.domain.model.items;
 
 public enum HatEffect {
     LINGERING_POTIONS,

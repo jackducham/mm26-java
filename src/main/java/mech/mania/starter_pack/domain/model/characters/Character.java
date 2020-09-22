@@ -1,9 +1,9 @@
-package mech.mania.engine.domain.model.characters;
+package mech.mania.starter_pack.domain.model.characters;
 
 import kotlin.Triple;
 import mech.mania.engine.domain.model.CharacterProtos;
-import mech.mania.engine.domain.model.items.TempStatusModifier;
-import mech.mania.engine.domain.model.items.Weapon;
+import mech.mania.starter_pack.domain.model.items.TempStatusModifier;
+import mech.mania.starter_pack.domain.model.items.Weapon;
 
 import java.util.ArrayList;
 import java.util.List;

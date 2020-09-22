@@ -1,9 +1,9 @@
-package mech.mania.engine.domain.model.characters;
+package mech.mania.starter_pack.domain.model.characters;
 
 import kotlin.Triple;
 import mech.mania.engine.domain.model.CharacterProtos;
 import mech.mania.engine.domain.model.ItemProtos;
-import mech.mania.engine.domain.model.items.*;
+import mech.mania.starter_pack.domain.model.items.*;
 
 import static java.lang.Math.max;
 

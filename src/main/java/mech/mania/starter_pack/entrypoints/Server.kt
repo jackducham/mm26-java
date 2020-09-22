@@ -54,7 +54,7 @@ class Server {
                 // calculate what to do with turn
                 val decision: CharacterDecision
                 decision = try {
-                    player.makeDecision(turn.playerName, GameState(turn.gameState));
+                    player.makeDecision(turn.playerName, GameState(turn.gameState)).buildProtoClassCharacterDecision();
                 } catch (e: Exception){
                     val buffer: Writer = StringWriter()
                     e.printStackTrace(PrintWriter(buffer))

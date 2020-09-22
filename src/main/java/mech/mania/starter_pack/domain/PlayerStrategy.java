@@ -1,8 +1,8 @@
 package mech.mania.starter_pack.domain;
 
-import mech.mania.engine.domain.model.CharacterProtos.CharacterDecision;
 import mech.mania.engine.domain.model.GameState;
-import mech.mania.engine.domain.model.characters.Player;
+import mech.mania.starter_pack.domain.model.characters.CharacterDecision;
+import mech.mania.starter_pack.domain.model.characters.Player;
 import mech.mania.starter_pack.domain.memory.MemoryObject;
 
 public class PlayerStrategy implements Strategy {

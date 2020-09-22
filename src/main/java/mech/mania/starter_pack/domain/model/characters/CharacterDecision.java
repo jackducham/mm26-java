@@ -1,4 +1,4 @@
-package mech.mania.engine.domain.model.characters;
+package mech.mania.starter_pack.domain.model.characters;
 
 import mech.mania.engine.domain.model.CharacterProtos;
 
@@ -16,10 +16,10 @@ public class CharacterDecision {
         index = -1;
     }
 
-    public CharacterDecision(decisionTypes decision, Position actionPosition, int inventoryIndex) {
+    public CharacterDecision(decisionTypes decision, Position actionPosition, int actionIndex) {
         this.decision = decision;
         this.actionPosition = actionPosition;
-        this.index = inventoryIndex;
+        this.index = actionIndex;
     }
 
     public CharacterProtos.CharacterDecision buildProtoClassCharacterDecision(){
