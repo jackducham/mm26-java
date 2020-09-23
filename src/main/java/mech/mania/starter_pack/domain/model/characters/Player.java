@@ -13,7 +13,6 @@ public class Player extends Character {
     private final Clothes clothes;
     private final Shoes shoes;
     private final Item[] inventory;
-    private final Stats playerStats = new Stats();
 
 
     public Player(CharacterProtos.Player playerProto) {
@@ -276,38 +275,6 @@ public class Player extends Character {
             }
         }
         return -1;
-    }
-
-
-    /**
-     * Gets the stats object within this Player to update any extra stats.
-     * @return a Stats object (Player.Stats)
-     */
-    public Stats getExtraStats() {
-        return playerStats;
-    }
-
-
-    /**
-     * Class of <b>extra</b> attributes that are required for infra's player
-     * stat calculation
-     */
-    static class Stats {
-        public final int monstersSlain;
-        public final int deathCount;
-        public final int turnsSinceJoined;
-
-        public Stats() {
-            monstersSlain = 0;
-            deathCount = 0;
-            turnsSinceJoined = 0;
-        }
-
-        public Stats(CharacterProtos.PlayerStats stats) {
-            monstersSlain = stats.getMonstersSlain();
-            deathCount = stats.getDeathCount();
-            turnsSinceJoined = stats.getTurnsSinceJoined();
-        }
     }
 
 }

@@ -118,26 +118,6 @@ public final class ItemProtos {
      */
     mech.mania.engine.domain.model.ItemProtos.ConsumableOrBuilder getConsumableOrBuilder();
 
-    /**
-     * <pre>
-     * Filepath to sprite for this item
-     * </pre>
-     *
-     * <code>string sprite = 8;</code>
-     * @return The sprite.
-     */
-    java.lang.String getSprite();
-    /**
-     * <pre>
-     * Filepath to sprite for this item
-     * </pre>
-     *
-     * <code>string sprite = 8;</code>
-     * @return The bytes for sprite.
-     */
-    com.google.protobuf.ByteString
-        getSpriteBytes();
-
     public mech.mania.engine.domain.model.ItemProtos.Item.ItemCase getItemCase();
   }
   /**
@@ -153,7 +133,6 @@ public final class ItemProtos {
       super(builder);
     }
     private Item() {
-      sprite_ = "";
     }
 
     @java.lang.Override
@@ -272,12 +251,6 @@ public final class ItemProtos {
                 item_ = subBuilder.buildPartial();
               }
               itemCase_ = 7;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sprite_ = s;
               break;
             }
             default: {
@@ -536,50 +509,6 @@ public final class ItemProtos {
       return mech.mania.engine.domain.model.ItemProtos.Consumable.getDefaultInstance();
     }
 
-    public static final int SPRITE_FIELD_NUMBER = 8;
-    private volatile java.lang.Object sprite_;
-    /**
-     * <pre>
-     * Filepath to sprite for this item
-     * </pre>
-     *
-     * <code>string sprite = 8;</code>
-     * @return The sprite.
-     */
-    public java.lang.String getSprite() {
-      java.lang.Object ref = sprite_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sprite_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Filepath to sprite for this item
-     * </pre>
-     *
-     * <code>string sprite = 8;</code>
-     * @return The bytes for sprite.
-     */
-    public com.google.protobuf.ByteString
-        getSpriteBytes() {
-      java.lang.Object ref = sprite_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sprite_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -614,9 +543,6 @@ public final class ItemProtos {
       }
       if (itemCase_ == 7) {
         output.writeMessage(7, (mech.mania.engine.domain.model.ItemProtos.Consumable) item_);
-      }
-      if (!getSpriteBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, sprite_);
       }
       unknownFields.writeTo(output);
     }
@@ -655,9 +581,6 @@ public final class ItemProtos {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, (mech.mania.engine.domain.model.ItemProtos.Consumable) item_);
       }
-      if (!getSpriteBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, sprite_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -680,8 +603,6 @@ public final class ItemProtos {
         if (!getStats()
             .equals(other.getStats())) return false;
       }
-      if (!getSprite()
-          .equals(other.getSprite())) return false;
       if (!getItemCase().equals(other.getItemCase())) return false;
       switch (itemCase_) {
         case 3:
@@ -724,8 +645,6 @@ public final class ItemProtos {
         hash = (37 * hash) + STATS_FIELD_NUMBER;
         hash = (53 * hash) + getStats().hashCode();
       }
-      hash = (37 * hash) + SPRITE_FIELD_NUMBER;
-      hash = (53 * hash) + getSprite().hashCode();
       switch (itemCase_) {
         case 3:
           hash = (37 * hash) + CLOTHES_FIELD_NUMBER;
@@ -891,8 +810,6 @@ public final class ItemProtos {
           stats_ = null;
           statsBuilder_ = null;
         }
-        sprite_ = "";
-
         itemCase_ = 0;
         item_ = null;
         return this;
@@ -962,7 +879,6 @@ public final class ItemProtos {
             result.item_ = consumableBuilder_.build();
           }
         }
-        result.sprite_ = sprite_;
         result.itemCase_ = itemCase_;
         onBuilt();
         return result;
@@ -1017,10 +933,6 @@ public final class ItemProtos {
         }
         if (other.hasStats()) {
           mergeStats(other.getStats());
-        }
-        if (!other.getSprite().isEmpty()) {
-          sprite_ = other.sprite_;
-          onChanged();
         }
         switch (other.getItemCase()) {
           case CLOTHES: {
@@ -1940,102 +1852,6 @@ public final class ItemProtos {
         itemCase_ = 7;
         onChanged();;
         return consumableBuilder_;
-      }
-
-      private java.lang.Object sprite_ = "";
-      /**
-       * <pre>
-       * Filepath to sprite for this item
-       * </pre>
-       *
-       * <code>string sprite = 8;</code>
-       * @return The sprite.
-       */
-      public java.lang.String getSprite() {
-        java.lang.Object ref = sprite_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          sprite_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Filepath to sprite for this item
-       * </pre>
-       *
-       * <code>string sprite = 8;</code>
-       * @return The bytes for sprite.
-       */
-      public com.google.protobuf.ByteString
-          getSpriteBytes() {
-        java.lang.Object ref = sprite_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          sprite_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Filepath to sprite for this item
-       * </pre>
-       *
-       * <code>string sprite = 8;</code>
-       * @param value The sprite to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSprite(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        sprite_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Filepath to sprite for this item
-       * </pre>
-       *
-       * <code>string sprite = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSprite() {
-        
-        sprite_ = getDefaultInstance().getSprite();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Filepath to sprite for this item
-       * </pre>
-       *
-       * <code>string sprite = 8;</code>
-       * @param value The bytes for sprite to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpriteBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        sprite_ = value;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -7977,39 +7793,38 @@ public final class ItemProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nitem.proto\022\004item\"\370\001\n\004Item\022\021\n\tmax_stack" +
+      "\n\nitem.proto\022\004item\"\350\001\n\004Item\022\021\n\tmax_stack" +
       "\030\001 \001(\005\022#\n\005stats\030\002 \001(\0132\024.item.StatusModif" +
       "ier\022 \n\007clothes\030\003 \001(\0132\r.item.ClothesH\000\022\030\n" +
       "\003hat\030\004 \001(\0132\t.item.HatH\000\022\034\n\005shoes\030\005 \001(\0132\013" +
       ".item.ShoesH\000\022\036\n\006weapon\030\006 \001(\0132\014.item.Wea" +
       "ponH\000\022&\n\nconsumable\030\007 \001(\0132\020.item.Consuma" +
-      "bleH\000\022\016\n\006sprite\030\010 \001(\tB\006\n\004item\".\n\007Clothes" +
-      "\022#\n\005stats\030\001 \001(\0132\024.item.StatusModifier\"j\n" +
-      "\003Hat\022#\n\005stats\030\001 \001(\0132\024.item.StatusModifie" +
-      "r\022\'\n\nhat_effect\030\002 \001(\0162\023.item.Hat.HatEffe" +
-      "ct\"\025\n\tHatEffect\022\010\n\004TEST\020\000\",\n\005Shoes\022#\n\005st" +
-      "ats\030\001 \001(\0132\024.item.StatusModifier\"\224\001\n\006Weap" +
-      "on\022#\n\005stats\030\001 \001(\0132\024.item.StatusModifier\022" +
-      "\r\n\005range\030\002 \001(\005\022\025\n\rsplash_radius\030\003 \001(\005\022\016\n" +
-      "\006attack\030\004 \001(\005\022/\n\ron_hit_effect\030\005 \001(\0132\030.i" +
-      "tem.TempStatusModifier\"F\n\nConsumable\022(\n\006" +
-      "effect\030\001 \001(\0132\030.item.TempStatusModifier\022\016" +
-      "\n\006stacks\030\002 \001(\005\"\334\002\n\016StatusModifier\022\031\n\021fla" +
-      "t_speed_change\030\001 \001(\005\022\034\n\024percent_speed_ch" +
-      "ange\030\002 \001(\001\022\032\n\022flat_health_change\030\003 \001(\005\022\035" +
-      "\n\025percent_health_change\030\004 \001(\001\022\036\n\026flat_ex" +
-      "perience_change\030\005 \001(\005\022!\n\031percent_experie" +
-      "nce_change\030\006 \001(\001\022\032\n\022flat_attack_change\030\007" +
-      " \001(\005\022\035\n\025percent_attack_change\030\010 \001(\001\022\033\n\023f" +
-      "lat_defense_change\030\t \001(\005\022\036\n\026percent_defe" +
-      "nse_change\030\n \001(\001\022\033\n\023flat_regen_per_turn\030" +
-      "\013 \001(\005\"\251\001\n\022TempStatusModifier\022#\n\005stats\030\001 " +
-      "\001(\0132\024.item.StatusModifier\022\034\n\024flat_damage" +
-      "_per_turn\030\002 \001(\005\022\037\n\027percent_damage_per_tu" +
-      "rn\030\003 \001(\001\022\033\n\023flat_regen_per_turn\030\004 \001(\005\022\022\n" +
-      "\nturns_left\030\005 \001(\005B=\n\036mech.mania.engine.d" +
-      "omain.modelB\nItemProtos\252\002\016MM26.IO.Models" +
-      "b\006proto3"
+      "bleH\000B\006\n\004item\".\n\007Clothes\022#\n\005stats\030\001 \001(\0132" +
+      "\024.item.StatusModifier\"j\n\003Hat\022#\n\005stats\030\001 " +
+      "\001(\0132\024.item.StatusModifier\022\'\n\nhat_effect\030" +
+      "\002 \001(\0162\023.item.Hat.HatEffect\"\025\n\tHatEffect\022" +
+      "\010\n\004TEST\020\000\",\n\005Shoes\022#\n\005stats\030\001 \001(\0132\024.item" +
+      ".StatusModifier\"\224\001\n\006Weapon\022#\n\005stats\030\001 \001(" +
+      "\0132\024.item.StatusModifier\022\r\n\005range\030\002 \001(\005\022\025" +
+      "\n\rsplash_radius\030\003 \001(\005\022\016\n\006attack\030\004 \001(\005\022/\n" +
+      "\ron_hit_effect\030\005 \001(\0132\030.item.TempStatusMo" +
+      "difier\"F\n\nConsumable\022(\n\006effect\030\001 \001(\0132\030.i" +
+      "tem.TempStatusModifier\022\016\n\006stacks\030\002 \001(\005\"\334" +
+      "\002\n\016StatusModifier\022\031\n\021flat_speed_change\030\001" +
+      " \001(\005\022\034\n\024percent_speed_change\030\002 \001(\001\022\032\n\022fl" +
+      "at_health_change\030\003 \001(\005\022\035\n\025percent_health" +
+      "_change\030\004 \001(\001\022\036\n\026flat_experience_change\030" +
+      "\005 \001(\005\022!\n\031percent_experience_change\030\006 \001(\001" +
+      "\022\032\n\022flat_attack_change\030\007 \001(\005\022\035\n\025percent_" +
+      "attack_change\030\010 \001(\001\022\033\n\023flat_defense_chan" +
+      "ge\030\t \001(\005\022\036\n\026percent_defense_change\030\n \001(\001" +
+      "\022\033\n\023flat_regen_per_turn\030\013 \001(\005\"\251\001\n\022TempSt" +
+      "atusModifier\022#\n\005stats\030\001 \001(\0132\024.item.Statu" +
+      "sModifier\022\034\n\024flat_damage_per_turn\030\002 \001(\005\022" +
+      "\037\n\027percent_damage_per_turn\030\003 \001(\001\022\033\n\023flat" +
+      "_regen_per_turn\030\004 \001(\005\022\022\n\nturns_left\030\005 \001(" +
+      "\005B=\n\036mech.mania.engine.domain.modelB\nIte" +
+      "mProtos\252\002\016MM26.IO.Modelsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8020,7 +7835,7 @@ public final class ItemProtos {
     internal_static_item_Item_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_item_Item_descriptor,
-        new java.lang.String[] { "MaxStack", "Stats", "Clothes", "Hat", "Shoes", "Weapon", "Consumable", "Sprite", "Item", });
+        new java.lang.String[] { "MaxStack", "Stats", "Clothes", "Hat", "Shoes", "Weapon", "Consumable", "Item", });
     internal_static_item_Clothes_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_item_Clothes_fieldAccessorTable = new
