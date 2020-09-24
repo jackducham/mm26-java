@@ -11,25 +11,19 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.nio.ByteBuffer;
-import java.util.concurrent.Flow;
 import java.util.logging.Logger;
 
 /**
  *
  */
-public class EngineApi {
-
-    private static final Logger LOGGER = Logger.getLogger(EngineApi.class.getName());
-
-    // TODO: change this as necessary
-    // TODO: move into a separate file?
-    private static final String ENGINE_URL = "http://localhost:8080";
+public class API {
+    private static final Logger LOGGER = Logger.getLogger(API.class.getName());
+    private static final String API_URL = "http://localhost:8082/api/";
 
     private final GameStateProtos.GameState gameState;
     private final String playerName;
 
-    public EngineApi(GameStateProtos.GameState gameState, String playerName) {
+    public API(GameStateProtos.GameState gameState, String playerName) {
         this.gameState = gameState;
         this.playerName = playerName;
     }
@@ -127,14 +121,10 @@ public class EngineApi {
         return findItemsInRange(gameState, playerName, range);
     }
 
-    /**
-     *
-     * @param gameState
-     * @param start
-     * @param end
-     * @return
-     */
-    public ApiProtos.APIPathFindingResponse pathFinding(GameStateProtos.GameState gameState,
+
+    /* --------------- Private helper functions for HTTP interface ------------------- */
+
+    private ApiProtos.APIPathFindingResponse pathFinding(GameStateProtos.GameState gameState,
                                                         CharacterProtos.Position start,
                                                         CharacterProtos.Position end) {
         ApiProtos.APIPathFindingRequest request = ApiProtos.APIPathFindingRequest.newBuilder()
@@ -151,13 +141,7 @@ public class EngineApi {
     }
 
 
-    /**
-     *
-     * @param gameState
-     * @param playerName
-     * @return
-     */
-    public ApiProtos.APIFindEnemiesResponse findEnemies(GameStateProtos.GameState gameState,
+    private ApiProtos.APIFindEnemiesResponse findEnemies(GameStateProtos.GameState gameState,
                                                         String playerName) {
         ApiProtos.APIFindEnemiesRequest request = ApiProtos.APIFindEnemiesRequest.newBuilder()
                 .setGameState(gameState)
@@ -172,13 +156,7 @@ public class EngineApi {
     }
 
 
-    /**
-     *
-     * @param gameState
-     * @param playerName
-     * @return
-     */
-    public ApiProtos.APIFindMonstersResponse findMonsters(GameStateProtos.GameState gameState,
+    private ApiProtos.APIFindMonstersResponse findMonsters(GameStateProtos.GameState gameState,
                                                           String playerName) {
         ApiProtos.APIFindMonstersRequest request = ApiProtos.APIFindMonstersRequest.newBuilder()
                 .setGameState(gameState)
@@ -193,13 +171,7 @@ public class EngineApi {
     }
 
 
-    /**
-     *
-     * @param gameState
-     * @param playerName
-     * @return
-     */
-    public ApiProtos.APIFindEnemiesInRangeResponse findEnemiesInRange(GameStateProtos.GameState gameState,
+    private ApiProtos.APIFindEnemiesInRangeResponse findEnemiesInRange(GameStateProtos.GameState gameState,
                                                                       String playerName) {
         ApiProtos.APIFindEnemiesInRangeRequest request = ApiProtos.APIFindEnemiesInRangeRequest.newBuilder()
                 .setGameState(gameState)
@@ -213,14 +185,7 @@ public class EngineApi {
         return null;
     }
 
-
-    /**
-     *
-     * @param gameState
-     * @param playerName
-     * @return
-     */
-    public ApiProtos.APICanBeAttackedResponse canBeAttacked(GameStateProtos.GameState gameState,
+    private ApiProtos.APICanBeAttackedResponse canBeAttacked(GameStateProtos.GameState gameState,
                                                             String playerName) {
         ApiProtos.APICanBeAttackedRequest request = ApiProtos.APICanBeAttackedRequest.newBuilder()
                 .setGameState(gameState)
@@ -234,14 +199,7 @@ public class EngineApi {
         return null;
     }
 
-
-    /**
-     *
-     * @param gameState
-     * @param playerName
-     * @return
-     */
-    public ApiProtos.APIFindClosestPortalResponse findClosestPortal(GameStateProtos.GameState gameState,
+    private ApiProtos.APIFindClosestPortalResponse findClosestPortal(GameStateProtos.GameState gameState,
                                                                     String playerName) {
         ApiProtos.APIFindClosestPortalRequest request = ApiProtos.APIFindClosestPortalRequest.newBuilder()
                 .setGameState(gameState)
@@ -255,15 +213,7 @@ public class EngineApi {
         return null;
     }
 
-
-    /**
-     *
-     * @param gameState
-     * @param playerName
-     * @param position
-     * @return
-     */
-    public ApiProtos.APIAllEnemiesHitResponse findAllEnemiesHit(GameStateProtos.GameState gameState,
+    private ApiProtos.APIAllEnemiesHitResponse findAllEnemiesHit(GameStateProtos.GameState gameState,
                                                                 String playerName,
                                                                 CharacterProtos.Position position) {
         ApiProtos.APIAllEnemiesHitRequest request = ApiProtos.APIAllEnemiesHitRequest.newBuilder()
@@ -279,15 +229,7 @@ public class EngineApi {
         return null;
     }
 
-
-    /**
-     *
-     * @param gameState
-     * @param playerName
-     * @param range
-     * @return
-     */
-    public ApiProtos.APIItemsInRangeResponse findItemsInRange(GameStateProtos.GameState gameState,
+    private ApiProtos.APIItemsInRangeResponse findItemsInRange(GameStateProtos.GameState gameState,
                                                               String playerName,
                                                               int range) {
         ApiProtos.APIItemsInRangeRequest request = ApiProtos.APIItemsInRangeRequest.newBuilder()
@@ -312,7 +254,7 @@ public class EngineApi {
      *      response object
      */
     private byte[] makeApiRequest(String apiMethod, MessageLite protobufObj) {
-        String url = ENGINE_URL + "/" + apiMethod;
+        String url = API_URL + apiMethod;
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))

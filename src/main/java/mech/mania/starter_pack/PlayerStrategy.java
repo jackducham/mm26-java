@@ -4,7 +4,6 @@ import mech.mania.engine.domain.model.CharacterProtos.*;
 import mech.mania.engine.domain.model.GameStateProtos.*;
 import mech.mania.engine.domain.model.PlayerProtos.*;
 import mech.mania.engine.domain.model.ApiProtos.*;
-import mech.mania.starter_pack.EngineApi;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -15,7 +14,7 @@ public class PlayerStrategy implements Strategy {
 
     public PlayerDecision makeDecision(String playerName, GameState gameState){
         Player myPlayer = gameState.getPlayerNamesMap().get(playerName);
-        EngineApi api = new EngineApi(gameState, playerName);
+        API api = new API(gameState, playerName);
 
         // Pathfinding
         // was unintuitive to get player's position or the board id
