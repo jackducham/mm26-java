@@ -8,7 +8,7 @@ import mech.mania.starter_pack.domain.model.items.*;
 import static java.lang.Math.max;
 
 public class Player extends Character {
-    private static final int INVENTORY_SIZE = 16;
+    public static final int INVENTORY_SIZE = 16;
     private final Hat hat;
     private final Clothes clothes;
     private final Shoes shoes;
