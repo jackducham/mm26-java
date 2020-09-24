@@ -79,9 +79,10 @@ public class API {
      * @param position The center position to search around
      * @return A List of Monster objects sorted by XP
      */
-    public List<Monster> findMonsters(CharacterProtos.Position position) {
+    public List<Monster> findMonsters(Position position) {
         List<Monster> result = new ArrayList<>();
-        ApiProtos.APIFindMonstersByExpResponse response = findMonsters(ProtoFactory.GameState(gameState), position);
+        ApiProtos.APIFindMonstersByExpResponse response =
+                findMonsters(ProtoFactory.GameState(gameState), ProtoFactory.Position(position));
 
         if(response == null) return result;
         for(CharacterProtos.Monster m : response.getMonstersList()){
