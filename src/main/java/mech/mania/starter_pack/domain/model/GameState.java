@@ -188,4 +188,7 @@ public class GameState {
         return turnNumber;
     }
 
+    public Map<String, Board> getAllBoards() {
+        return boardNames;
+    }
 }

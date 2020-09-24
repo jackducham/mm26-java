@@ -1,5 +1,6 @@
 package mech.mania.engine.domain.model;
 
+import mech.mania.starter_pack.domain.model.GameState;
 import mech.mania.starter_pack.domain.model.board.Board;
 import mech.mania.starter_pack.domain.model.board.Tile;
 import mech.mania.starter_pack.domain.model.characters.Character;
@@ -222,5 +223,24 @@ public class ProtoFactory {
         weaponBuilder.setAttack(weapon.getAttack());
 
         return weaponBuilder.build();
+    }
+
+    public static GameStateProtos.GameState GameState(GameState gameState){
+        GameStateProtos.GameState.Builder gameStateBuilder = GameStateProtos.GameState.newBuilder();
+        gameStateBuilder.setStateId(gameState.getTurnNumber());
+
+        for (String boardID : gameState.getAllBoards().keySet()) {
+            gameStateBuilder.putBoardNames(boardID, Board(gameState.getBoard(boardID)));
+        }
+
+        for (String playerName : gameState.getAllPlayers().keySet()) {
+            gameStateBuilder.putPlayerNames(playerName, Player(gameState.getPlayer(playerName)));
+        }
+
+        for (String monsterName : gameState.getAllMonsters().keySet()) {
+            gameStateBuilder.putMonsterNames(monsterName, Monster(gameState.getMonster(monsterName)));
+        }
+
+        return gameStateBuilder.build();
     }
 }
