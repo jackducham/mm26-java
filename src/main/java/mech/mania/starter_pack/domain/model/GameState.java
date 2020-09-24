@@ -1,4 +1,4 @@
-package mech.mania.engine.domain.model;
+package mech.mania.starter_pack.domain.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -188,4 +188,7 @@ public class GameState {
         return turnNumber;
     }
 
+    public Map<String, Board> getAllBoards() {
+        return boardNames;
+    }
 }

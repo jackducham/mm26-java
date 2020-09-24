@@ -178,4 +178,31 @@ public abstract class Character {
         return weapon;
     }
 
+    public int getBaseSpeed() {
+        return baseSpeed;
+    }
+
+    public int getBaseMaxHealth() {
+        return baseMaxHealth;
+    }
+
+    public int getBaseAttack() {
+        return baseAttack;
+    }
+
+    public int getBaseDefense() {
+        return baseDefense;
+    }
+
+    public int getTicksSinceDeath() {
+        return ticksSinceDeath;
+    }
+
+    public List<Triple<TempStatusModifier, String, Boolean>> getActiveEffects() {
+        return activeEffects;
+    }
+
+    public Map<String, Integer> getTaggedPlayersDamage() {
+        return taggedPlayersDamage;
+    }
 }

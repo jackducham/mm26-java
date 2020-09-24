@@ -2,11 +2,11 @@ package mech.mania.starter_pack
 
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import mech.mania.starter_pack.entrypoints.Server
 import mech.mania.engine.domain.model.InfraProtos.InfraPlayer
 import mech.mania.engine.domain.model.InfraProtos.InfraStatus
 import mech.mania.engine.domain.model.CharacterProtos.CharacterDecision
 import mech.mania.engine.domain.model.PlayerProtos.PlayerTurn
+import mech.mania.starter_pack.entrypoints.Server
 import org.junit.After
 import org.junit.Before
 import org.junit.Test

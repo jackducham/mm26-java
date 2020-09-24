@@ -5,7 +5,7 @@ import com.sun.net.httpserver.HttpServer
 import io.lettuce.core.SetArgs.Builder.ex
 import mech.mania.engine.domain.model.CharacterProtos.CharacterDecision
 import mech.mania.engine.domain.model.CharacterProtos.DecisionType
-import mech.mania.engine.domain.model.GameState
+import mech.mania.starter_pack.domain.model.GameState
 import mech.mania.engine.domain.model.PlayerProtos.PlayerTurn
 import mech.mania.starter_pack.domain.PlayerStrategy
 import mech.mania.starter_pack.domain.Strategy
@@ -30,7 +30,6 @@ class Server {
 
     /**
      * Starts a server using a specified port
-     * TODO: allow URL instead of port
      * @param port Port to start server on (localhost)
      * @param onReceive callback function that gets called when server receives turn
      * @param onSend callback function that gets called when server sends decision

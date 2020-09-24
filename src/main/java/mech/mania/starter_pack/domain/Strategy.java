@@ -1,6 +1,6 @@
 package mech.mania.starter_pack.domain;
 
-import mech.mania.engine.domain.model.GameState;
+import mech.mania.starter_pack.domain.model.GameState;
 import mech.mania.starter_pack.domain.model.characters.CharacterDecision;
 
 public interface Strategy {
