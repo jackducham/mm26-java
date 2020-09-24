@@ -20,9 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-/**
- *
- */
 public class API {
     private static final Logger LOGGER = Logger.getLogger(API.class.getName());
     private static final String API_URL = "http://localhost:8082/api/";
