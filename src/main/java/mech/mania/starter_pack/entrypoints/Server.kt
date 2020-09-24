@@ -2,11 +2,17 @@ package mech.mania.starter_pack.entrypoints
 
 import com.sun.net.httpserver.HttpExchange
 import com.sun.net.httpserver.HttpServer
-import mech.mania.engine.domain.model.PlayerProtos.*
+import mech.mania.engine.domain.model.CharacterProtos.CharacterDecision
+import mech.mania.engine.domain.model.CharacterProtos.DecisionType
+import mech.mania.starter_pack.domain.model.GameState
+import mech.mania.engine.domain.model.PlayerProtos.PlayerTurn
+import mech.mania.engine.domain.model.ProtoFactory
 import mech.mania.starter_pack.domain.PlayerStrategy
 import mech.mania.starter_pack.domain.Strategy
 import mech.mania.starter_pack.domain.memory.MemoryObject
-import mech.mania.starter_pack.domain.memory.RedisWritePolicy
+import java.io.PrintWriter
+import java.io.StringWriter
+import java.io.Writer
 import java.net.InetSocketAddress
 import java.util.logging.Logger
 
@@ -21,12 +27,11 @@ fun main(args: Array<String>) {
 class Server {
 
     private val logger = Logger.getLogger(Server::class.toString())
-    private val memory = MemoryObject(RedisWritePolicy.WRITETHROUGH)
+    private val memory = MemoryObject()
     private val player: Strategy = PlayerStrategy(memory)
 
     /**
      * Starts a server using a specified port
-     * TODO: allow URL instead of port
      * @param port Port to start server on (localhost)
      * @param onReceive callback function that gets called when server receives turn
      * @param onSend callback function that gets called when server sends decision
@@ -34,7 +39,7 @@ class Server {
      */
     fun startServer(port: Int,
                     onReceive: (turn: PlayerTurn) -> Unit,
-                    onSend: (decision: PlayerDecision) -> Unit): Int {
+                    onSend: (decision: CharacterDecision) -> Unit): Int {
         try {
             // Create server on specified port
             val server = HttpServer.create(InetSocketAddress(port), 0)
@@ -48,7 +53,18 @@ class Server {
                 onReceive(turn)
 
                 // calculate what to do with turn
-                val decision: PlayerDecision = player.makeDecision(turn.playerName, turn.gameState)
+                val decision: CharacterDecision
+                decision = try {
+                    ProtoFactory.CharacterDecision(player.makeDecision(turn.playerName, GameState(turn.gameState)))
+                } catch (e: Exception){
+                    val buffer: Writer = StringWriter()
+                    e.printStackTrace(PrintWriter(buffer))
+                    logger.warning("Exception while making decision:\n")
+                    logger.warning(buffer.toString())
+
+                    // Default to NONE decision
+                    CharacterDecision.newBuilder().setDecisionType(DecisionType.NONE).setIndex(-1).build()
+                }
                 val size: Long = decision.toByteArray().size.toLong()
 
                 // send back response

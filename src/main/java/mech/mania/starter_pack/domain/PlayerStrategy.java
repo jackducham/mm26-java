@@ -1,16 +1,14 @@
 package mech.mania.starter_pack.domain;
 
-import mech.mania.engine.domain.model.CharacterProtos.*;
-import mech.mania.engine.domain.model.GameStateProtos.*;
-import mech.mania.engine.domain.model.PlayerProtos.*;
+import mech.mania.starter_pack.domain.model.GameState;
+import mech.mania.starter_pack.domain.model.characters.*;
 import mech.mania.starter_pack.domain.memory.MemoryObject;
-import mech.mania.starter_pack.domain.memory.RedisWritePolicy;
 
 public class PlayerStrategy implements Strategy {
     /**
      * This MemoryObject allows you to store persistent data of the types
      * int, double/float, string, and boolean. See the MemoryObject documentation
-     * (https://github.com/jackducham/mm26-infra/blob/master/memory-object/API-Design.md)
+     * (https://github.com/jackducham/mm26-infra/blob/ready-for-release-94/memory-object/API.md)
      * for details on usage.
      */
     private MemoryObject memory;
@@ -19,20 +17,22 @@ public class PlayerStrategy implements Strategy {
         this.memory = memory;
     }
 
-    public PlayerDecision createPlayerDecision(DecisionType decision, int x, int y, String boardId, int index) {
-        return PlayerDecision.newBuilder()
-                .setDecisionType(decision)
-                .setTargetPosition(Position.newBuilder()
-                        .setX(x).setY(y).setBoardId(boardId)
-                        .build())
-                .setIndex(index)
-                .build();
-    }
+    /**
+     * TODO: implement your strategy here! Return a CharacterDecision using either of the following constructors:
+     * CharacterDecision(decisionTypes decision, Position actionPosition)
+     * CharacterDecision(decisionTypes decision, int actionIndex)
+     *
+     * The default constructor makes no decision -- your player will not act in the next turn
+     */
+    public CharacterDecision makeDecision(String playerName, GameState gameState){
+        /**
+         * This API object gives you access to a few helper functions including pathfinding!
+         * You'll have to reinitialize it with the new GameState and your playerName ever turn.
+         */
+        API api = new API(gameState, playerName);
 
-    public PlayerDecision makeDecision(String playerName, GameState gameState){
-        Player myPlayer = gameState.getPlayerNamesMap().get(playerName);
+        Player myPlayer = gameState.getAllPlayers().get(playerName);
 
-        // Returns MOVE decision to (0, 0) on private board
-        return createPlayerDecision(DecisionType.MOVE, 0, 0, playerName,0);
+        return new CharacterDecision();
     }
 }
