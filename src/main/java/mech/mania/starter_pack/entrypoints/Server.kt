@@ -2,13 +2,14 @@ package mech.mania.starter_pack.entrypoints
 
 import com.sun.net.httpserver.HttpExchange
 import com.sun.net.httpserver.HttpServer
-import io.lettuce.core.SetArgs.Builder.ex
 import mech.mania.engine.domain.model.CharacterProtos.CharacterDecision
 import mech.mania.engine.domain.model.CharacterProtos.DecisionType
 import mech.mania.starter_pack.domain.model.GameState
 import mech.mania.engine.domain.model.PlayerProtos.PlayerTurn
+import mech.mania.engine.domain.model.ProtoFactory
 import mech.mania.starter_pack.domain.PlayerStrategy
 import mech.mania.starter_pack.domain.Strategy
+import mech.mania.starter_pack.domain.memory.MemoryObject
 import java.io.PrintWriter
 import java.io.StringWriter
 import java.io.Writer
@@ -26,7 +27,8 @@ fun main(args: Array<String>) {
 class Server {
 
     private val logger = Logger.getLogger(Server::class.toString())
-    private val player: Strategy = PlayerStrategy()
+    private val memory = MemoryObject()
+    private val player: Strategy = PlayerStrategy(memory)
 
     /**
      * Starts a server using a specified port
@@ -53,7 +55,7 @@ class Server {
                 // calculate what to do with turn
                 val decision: CharacterDecision
                 decision = try {
-                    player.makeDecision(turn.playerName, GameState(turn.gameState)).buildProtoClassCharacterDecision();
+                    ProtoFactory.CharacterDecision(player.makeDecision(turn.playerName, GameState(turn.gameState)))
                 } catch (e: Exception){
                     val buffer: Writer = StringWriter()
                     e.printStackTrace(PrintWriter(buffer))
@@ -80,6 +82,20 @@ class Server {
                 val message = "200".toByteArray()
                 exchange.sendResponseHeaders(200, message.size.toLong())
                 exchange.responseBody.write(message)
+            }
+
+            // Add handler to shutdown endpoint to close this server
+            server.createContext("/shutdown") { exchange: HttpExchange ->
+                val message = "200".toByteArray()
+                exchange.sendResponseHeaders(200, message.size.toLong())
+                exchange.responseBody.write(message)
+
+                // Close MemoryObject Redis connection
+                memory.saveAndClose()
+
+                // Wait up to 10 seconds to finish current exchanges,
+                // then close this server
+                server.stop(10000)
             }
 
             // Start server
