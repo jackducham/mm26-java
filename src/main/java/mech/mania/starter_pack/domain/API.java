@@ -1,4 +1,4 @@
-package mech.mania.starter_pack;
+package mech.mania.starter_pack.domain;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.MessageLite;
@@ -44,7 +44,7 @@ public class API {
      *
      * @return
      */
-    public ApiProtos.APIFindEnemiesResponse findEnemies() {
+    public ApiProtos.APIFindEnemiesByDistanceResponse findEnemies() {
         return findEnemies(gameState, playerName);
     }
 
@@ -53,8 +53,8 @@ public class API {
      *
      * @return
      */
-    public ApiProtos.APIFindMonstersResponse findMonsters() {
-        return findMonsters(gameState, playerName);
+    public ApiProtos.APIFindMonstersByExpResponse findMonsters(CharacterProtos.Position position) {
+        return findMonsters(gameState, position);
     }
 
 
@@ -62,7 +62,7 @@ public class API {
      *
      * @return
      */
-    public ApiProtos.APIFindEnemiesInRangeResponse findEnemiesInRange() {
+    public ApiProtos.APIFindEnemiesInRangeOfAttackByDistanceResponse findEnemiesInRange() {
         return findEnemiesInRange(gameState, playerName);
     }
 
@@ -71,7 +71,7 @@ public class API {
      *
      * @return
      */
-    public ApiProtos.APICanBeAttackedResponse canBeAttacked() {
+    public ApiProtos.APIInRangeOfAttackResponse canBeAttacked() {
         return canBeAttacked(gameState, playerName);
     }
 
@@ -80,8 +80,8 @@ public class API {
      *
      * @return
      */
-    public ApiProtos.APIFindClosestPortalResponse findClosestPortal() {
-        return findClosestPortal(gameState, playerName);
+    public ApiProtos.APIFindClosestPortalResponse findClosestPortal(CharacterProtos.Position position) {
+        return findClosestPortal(gameState, position);
     }
 
 
@@ -107,7 +107,7 @@ public class API {
      * @param position
      * @return
      */
-    public ApiProtos.APIAllEnemiesHitResponse findAllEnemiesHit(CharacterProtos.Position position) {
+    public ApiProtos.APIFindAllEnemiesHitResponse findAllEnemiesHit(CharacterProtos.Position position) {
         return findAllEnemiesHit(gameState, playerName, position);
     }
 
@@ -117,7 +117,7 @@ public class API {
      * @param range
      * @return
      */
-    public ApiProtos.APIItemsInRangeResponse findItemsInRange(int range) {
+    public ApiProtos.APIFindItemsInRangeByDistanceResponse findItemsInRange(int range) {
         return findItemsInRange(gameState, playerName, range);
     }
 
@@ -141,14 +141,14 @@ public class API {
     }
 
 
-    private ApiProtos.APIFindEnemiesResponse findEnemies(GameStateProtos.GameState gameState,
+    private ApiProtos.APIFindEnemiesByDistanceResponse findEnemies(GameStateProtos.GameState gameState,
                                                         String playerName) {
-        ApiProtos.APIFindEnemiesRequest request = ApiProtos.APIFindEnemiesRequest.newBuilder()
+        ApiProtos.APIFindEnemiesByDistanceRequest request = ApiProtos.APIFindEnemiesByDistanceRequest.newBuilder()
                 .setGameState(gameState)
                 .setPlayerName(playerName)
                 .build();
         try {
-            return ApiProtos.APIFindEnemiesResponse.parseFrom(makeApiRequest("findEnemies", request));
+            return ApiProtos.APIFindEnemiesByDistanceResponse.parseFrom(makeApiRequest("findEnemies", request));
         } catch (InvalidProtocolBufferException e) {
             LOGGER.warning("Exception occurred in parsing API response: " + e);
         }
@@ -156,14 +156,14 @@ public class API {
     }
 
 
-    private ApiProtos.APIFindMonstersResponse findMonsters(GameStateProtos.GameState gameState,
-                                                          String playerName) {
-        ApiProtos.APIFindMonstersRequest request = ApiProtos.APIFindMonstersRequest.newBuilder()
+    private ApiProtos.APIFindMonstersByExpResponse findMonsters(GameStateProtos.GameState gameState,
+                                                          CharacterProtos.Position position) {
+        ApiProtos.APIFindMonstersByExpRequest request = ApiProtos.APIFindMonstersByExpRequest.newBuilder()
                 .setGameState(gameState)
-                .setPlayerName(playerName)
+                .setPosition(position)
                 .build();
         try {
-            return ApiProtos.APIFindMonstersResponse.parseFrom(makeApiRequest("findMonsters", request));
+            return ApiProtos.APIFindMonstersByExpResponse.parseFrom(makeApiRequest("findMonsters", request));
         } catch (InvalidProtocolBufferException e) {
             LOGGER.warning("Exception occurred in parsing API response: " + e);
         }
@@ -171,28 +171,28 @@ public class API {
     }
 
 
-    private ApiProtos.APIFindEnemiesInRangeResponse findEnemiesInRange(GameStateProtos.GameState gameState,
+    private ApiProtos.APIFindEnemiesInRangeOfAttackByDistanceResponse findEnemiesInRange(GameStateProtos.GameState gameState,
                                                                       String playerName) {
-        ApiProtos.APIFindEnemiesInRangeRequest request = ApiProtos.APIFindEnemiesInRangeRequest.newBuilder()
+        ApiProtos.APIFindEnemiesInRangeOfAttackByDistanceRequest request = ApiProtos.APIFindEnemiesInRangeOfAttackByDistanceRequest.newBuilder()
                 .setGameState(gameState)
                 .setPlayerName(playerName)
                 .build();
         try {
-            return ApiProtos.APIFindEnemiesInRangeResponse.parseFrom(makeApiRequest("findEnemiesInRange", request));
+            return ApiProtos.APIFindEnemiesInRangeOfAttackByDistanceResponse.parseFrom(makeApiRequest("findEnemiesInRange", request));
         } catch (InvalidProtocolBufferException e) {
             LOGGER.warning("Exception occurred in parsing API response: " + e);
         }
         return null;
     }
 
-    private ApiProtos.APICanBeAttackedResponse canBeAttacked(GameStateProtos.GameState gameState,
+    private ApiProtos.APIInRangeOfAttackResponse canBeAttacked(GameStateProtos.GameState gameState,
                                                             String playerName) {
-        ApiProtos.APICanBeAttackedRequest request = ApiProtos.APICanBeAttackedRequest.newBuilder()
+        ApiProtos.APIInRangeOfAttackRequest request = ApiProtos.APIInRangeOfAttackRequest.newBuilder()
                 .setGameState(gameState)
                 .setPlayerName(playerName)
                 .build();
         try {
-            return ApiProtos.APICanBeAttackedResponse.parseFrom(makeApiRequest("canBeAttacked", request));
+            return ApiProtos.APIInRangeOfAttackResponse.parseFrom(makeApiRequest("canBeAttacked", request));
         } catch (InvalidProtocolBufferException e) {
             LOGGER.warning("Exception occurred in parsing API response: " + e);
         }
@@ -200,10 +200,10 @@ public class API {
     }
 
     private ApiProtos.APIFindClosestPortalResponse findClosestPortal(GameStateProtos.GameState gameState,
-                                                                    String playerName) {
+                                                                    CharacterProtos.Position position) {
         ApiProtos.APIFindClosestPortalRequest request = ApiProtos.APIFindClosestPortalRequest.newBuilder()
                 .setGameState(gameState)
-                .setPlayerName(playerName)
+                .setPosition(position)
                 .build();
         try {
             return ApiProtos.APIFindClosestPortalResponse.parseFrom(makeApiRequest("findClosestPortal", request));
@@ -213,32 +213,32 @@ public class API {
         return null;
     }
 
-    private ApiProtos.APIAllEnemiesHitResponse findAllEnemiesHit(GameStateProtos.GameState gameState,
+    private ApiProtos.APIFindAllEnemiesHitResponse findAllEnemiesHit(GameStateProtos.GameState gameState,
                                                                 String playerName,
                                                                 CharacterProtos.Position position) {
-        ApiProtos.APIAllEnemiesHitRequest request = ApiProtos.APIAllEnemiesHitRequest.newBuilder()
+        ApiProtos.APIFindAllEnemiesHitRequest request = ApiProtos.APIFindAllEnemiesHitRequest.newBuilder()
                 .setGameState(gameState)
                 .setPlayerName(playerName)
-                .setTargetSpot(position)
+                .setPosition(position)
                 .build();
         try {
-            return ApiProtos.APIAllEnemiesHitResponse.parseFrom(makeApiRequest("findAllEnemiesHit", request));
+            return ApiProtos.APIFindAllEnemiesHitResponse.parseFrom(makeApiRequest("findAllEnemiesHit", request));
         } catch (InvalidProtocolBufferException e) {
             LOGGER.warning("Exception occurred in parsing API response: " + e);
         }
         return null;
     }
 
-    private ApiProtos.APIItemsInRangeResponse findItemsInRange(GameStateProtos.GameState gameState,
+    private ApiProtos.APIFindItemsInRangeByDistanceResponse findItemsInRange(GameStateProtos.GameState gameState,
                                                               String playerName,
                                                               int range) {
-        ApiProtos.APIItemsInRangeRequest request = ApiProtos.APIItemsInRangeRequest.newBuilder()
+        ApiProtos.APIFindItemsInRangeByDistanceRequest request = ApiProtos.APIFindItemsInRangeByDistanceRequest.newBuilder()
                 .setGameState(gameState)
                 .setPlayerName(playerName)
                 .setRange(range)
                 .build();
         try {
-            return ApiProtos.APIItemsInRangeResponse.parseFrom(makeApiRequest("itemsInRange", request));
+            return ApiProtos.APIFindItemsInRangeByDistanceResponse.parseFrom(makeApiRequest("itemsInRange", request));
         } catch (InvalidProtocolBufferException e) {
             LOGGER.warning("Exception occurred in parsing API response: " + e);
         }
