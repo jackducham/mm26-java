@@ -2,16 +2,16 @@ package mech.mania.starter_pack.domain.model.items;
 
 import mech.mania.engine.domain.model.ItemProtos;
 
-public class Hat extends Wearable {
+public class Accessory extends Wearable {
     private MagicEffect magicEffect;
 
     /**
-     * Creates a Hat object based on a given Protocol Buffer.
-     * @param hatProto the protocol buffer to be copied
+     * Creates an Accessory object based on a given Protocol Buffer.
+     * @param accessoryProto the protocol buffer to be copied
      */
-    public Hat(ItemProtos.Hat hatProto) {
-        super(new StatusModifier(hatProto.getStats()));
-        switch (hatProto.getMagicEffect()) {
+    public Accessory(ItemProtos.Accessory accessoryProto) {
+        super(new StatusModifier(accessoryProto.getStats()));
+        switch (accessoryProto.getMagicEffect()) {
             case SHOES_BOOST:
                 this.magicEffect = MagicEffect.SHOES_BOOST;
                 break;
@@ -43,5 +43,4 @@ public class Hat extends Wearable {
     public MagicEffect getMagicEffect() {
         return magicEffect;
     }
-
 }
