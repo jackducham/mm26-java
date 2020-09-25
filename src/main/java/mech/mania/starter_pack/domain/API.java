@@ -174,9 +174,21 @@ public class API {
         return result;
     }
 
+    /**
+     * Determines if the given position is in the attack range of any enemy
+     * @param position: the position to test the safety of
+     * @return 0 if not in range, 1 if in range, 2 if error
+     */
+    public int inRangeOfAttack(GameState gameState, Position position) {
+        ApiProtos.APIInRangeOfAttackResponse response =
+                canBeAttacked(ProtoFactory.GameState(gameState), ProtoFactory.Position(position), playerName);
+        if(response == null) return 2;
+        return response.getInRangeOfAttack() ? 1 : 0;
+    }
+
 
     /**
-     * Finds all items within a given range of the given position
+     * Finds all items within a given range of the given position,
      * @param position The position around which to search
      * @param range The range to search within
      * @return A List of Items found in the search
