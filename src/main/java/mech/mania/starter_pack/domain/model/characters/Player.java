@@ -5,6 +5,8 @@ import mech.mania.engine.domain.model.CharacterProtos;
 import mech.mania.engine.domain.model.ItemProtos;
 import mech.mania.starter_pack.domain.model.items.*;
 
+import java.util.Map;
+
 import static java.lang.Math.max;
 
 public class Player extends Character {
@@ -14,6 +16,26 @@ public class Player extends Character {
     private final Clothes clothes;
     private final Shoes shoes;
     private final Item[] inventory;
+
+    public Player(final String name, final int baseSpeed, final int baseMaxHealth,
+                   final int baseAttack, final int baseDefense, int currentHealth,
+                   int experience, int ticksSinceDeath, boolean isDead, Position position,
+                   Position spawnPoint, Weapon weapon, int activeEffectsTempStatusModifierCount,
+                   TempStatusModifier[] activeEffectsTempStatusModifier,
+                   String[] activeEffectsSource, boolean[] activeEffectsIsPlayer,
+                   Map<String, Integer> taggedPlayersDamageMap,
+                   final Hat hat, final Accessory accessory, final Clothes clothes,
+                   final Shoes shoes, final Item[] inventory) {
+        super(name, baseSpeed, baseMaxHealth, baseAttack, baseDefense, currentHealth,
+                experience, ticksSinceDeath, isDead, position, spawnPoint, weapon,
+                activeEffectsTempStatusModifierCount, activeEffectsTempStatusModifier,
+                activeEffectsSource, activeEffectsIsPlayer, taggedPlayersDamageMap);
+        this.hat = hat;
+        this.accessory = accessory;
+        this.clothes = clothes;
+        this.shoes = shoes;
+        this.inventory = inventory;
+    }
 
 
     public Player(CharacterProtos.Player playerProto) {
