@@ -188,7 +188,7 @@ public class API {
 
 
     /**
-     * Finds all items within a given range of the given position,
+     * Finds all items within a given range of the given position
      * @param position The position around which to search
      * @param range The range to search within
      * @return A List of Items found in the search
