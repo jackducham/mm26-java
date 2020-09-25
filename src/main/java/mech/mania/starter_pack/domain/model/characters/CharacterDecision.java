@@ -1,6 +1,7 @@
 package mech.mania.starter_pack.domain.model.characters;
 
 import mech.mania.engine.domain.model.CharacterProtos;
+import mech.mania.engine.domain.model.ProtoFactory;
 
 public class CharacterDecision {
     public enum decisionTypes {
@@ -69,7 +70,7 @@ public class CharacterDecision {
 
         decisionBuilder.setIndex(this.index);
         if(actionPosition != null) {
-            decisionBuilder.setTargetPosition(this.actionPosition.buildProtoClass());
+            decisionBuilder.setTargetPosition(ProtoFactory.Position(actionPosition));
         }
 
         return decisionBuilder.build();

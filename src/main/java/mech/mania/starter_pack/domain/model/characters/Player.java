@@ -43,7 +43,7 @@ public class Player extends Character {
                     inventory[i] = new Weapon(protoItem.getWeapon());
                     break;
                 case CONSUMABLE:
-                    inventory[i] = new Consumable(protoItem.getConsumable().getMaxStack(), protoItem.getConsumable());
+                    inventory[i] = new Consumable(protoItem.getConsumable());
             }
         }
     }
@@ -51,6 +51,10 @@ public class Player extends Character {
 
     public Hat getHat() {
         return hat;
+    }
+
+    public Accessory getAccessory() {
+        return accessory;
     }
 
     public Clothes getClothes() {

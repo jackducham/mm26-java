@@ -9,11 +9,10 @@ public class Consumable extends Item {
 
     /**
      * Creates a Consumable based on a Protocol Buffer with a given maximum number of stacks.
-     * @param maxStack the maximum of this item that can be kept in one inventory slot
      * @param consumableProto the protocol buffer to be copied
      */
-    public Consumable(int maxStack, ItemProtos.Consumable consumableProto) {
-        super(maxStack);
+    public Consumable(ItemProtos.Consumable consumableProto) {
+        super(consumableProto.getMaxStack());
         this.effect = new TempStatusModifier(consumableProto.getEffect());
         this.stacks = consumableProto.getStacks();
     }

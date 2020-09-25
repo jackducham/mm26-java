@@ -188,7 +188,7 @@ public class API {
         if(response == null) return result;
         for(ItemProtos.Item i : response.getItemsList()){
             if(i.hasClothes()) result.add(new Clothes(i.getClothes()));
-            else if(i.hasConsumable()) result.add(new Consumable(i.getMaxStack(), i.getConsumable()));
+            else if(i.hasConsumable()) result.add(new Consumable(i.getConsumable()));
             else if(i.hasHat()) result.add(new Hat(i.getHat()));
             else if(i.hasShoes()) result.add(new Shoes(i.getShoes()));
             else if(i.hasWeapon()) result.add(new Weapon(i.getWeapon()));

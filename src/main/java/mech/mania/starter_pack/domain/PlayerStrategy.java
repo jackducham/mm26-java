@@ -15,7 +15,7 @@ public class PlayerStrategy implements Strategy {
 
     /**
      * This API object gives you access to a few helper functions including pathfinding!
-     * You'll have to reinitialize it with the new GameState and your playerName ever turn.
+     * You'll have to reinitialize it with the new GameState and your playerName every turn.
      */
     private API api;
 
