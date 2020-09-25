@@ -19,31 +19,6 @@ public final class ItemProtos {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * Stand-in for inheritance
-     * </pre>
-     *
-     * <code>int32 max_stack = 1;</code>
-     * @return The maxStack.
-     */
-    int getMaxStack();
-
-    /**
-     * <code>.item.StatusModifier stats = 2;</code>
-     * @return Whether the stats field is set.
-     */
-    boolean hasStats();
-    /**
-     * <code>.item.StatusModifier stats = 2;</code>
-     * @return The stats.
-     */
-    mech.mania.engine.domain.model.ItemProtos.StatusModifier getStats();
-    /**
-     * <code>.item.StatusModifier stats = 2;</code>
-     */
-    mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder getStatsOrBuilder();
-
-    /**
      * <code>.item.Clothes clothes = 3;</code>
      * @return Whether the clothes field is set.
      */
@@ -123,7 +98,7 @@ public final class ItemProtos {
   /**
    * Protobuf type {@code item.Item}
    */
-  public  static final class Item extends
+  public static final class Item extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:item.Item)
       ItemOrBuilder {
@@ -165,24 +140,6 @@ public final class ItemProtos {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              maxStack_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder subBuilder = null;
-              if (stats_ != null) {
-                subBuilder = stats_.toBuilder();
-              }
-              stats_ = input.readMessage(mech.mania.engine.domain.model.ItemProtos.StatusModifier.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(stats_);
-                stats_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
             case 26: {
               mech.mania.engine.domain.model.ItemProtos.Clothes.Builder subBuilder = null;
               if (itemCase_ == 3) {
@@ -332,48 +289,12 @@ public final class ItemProtos {
           itemCase_);
     }
 
-    public static final int MAX_STACK_FIELD_NUMBER = 1;
-    private int maxStack_;
-    /**
-     * <pre>
-     * Stand-in for inheritance
-     * </pre>
-     *
-     * <code>int32 max_stack = 1;</code>
-     * @return The maxStack.
-     */
-    public int getMaxStack() {
-      return maxStack_;
-    }
-
-    public static final int STATS_FIELD_NUMBER = 2;
-    private mech.mania.engine.domain.model.ItemProtos.StatusModifier stats_;
-    /**
-     * <code>.item.StatusModifier stats = 2;</code>
-     * @return Whether the stats field is set.
-     */
-    public boolean hasStats() {
-      return stats_ != null;
-    }
-    /**
-     * <code>.item.StatusModifier stats = 2;</code>
-     * @return The stats.
-     */
-    public mech.mania.engine.domain.model.ItemProtos.StatusModifier getStats() {
-      return stats_ == null ? mech.mania.engine.domain.model.ItemProtos.StatusModifier.getDefaultInstance() : stats_;
-    }
-    /**
-     * <code>.item.StatusModifier stats = 2;</code>
-     */
-    public mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder getStatsOrBuilder() {
-      return getStats();
-    }
-
     public static final int CLOTHES_FIELD_NUMBER = 3;
     /**
      * <code>.item.Clothes clothes = 3;</code>
      * @return Whether the clothes field is set.
      */
+    @java.lang.Override
     public boolean hasClothes() {
       return itemCase_ == 3;
     }
@@ -381,6 +302,7 @@ public final class ItemProtos {
      * <code>.item.Clothes clothes = 3;</code>
      * @return The clothes.
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.Clothes getClothes() {
       if (itemCase_ == 3) {
          return (mech.mania.engine.domain.model.ItemProtos.Clothes) item_;
@@ -390,6 +312,7 @@ public final class ItemProtos {
     /**
      * <code>.item.Clothes clothes = 3;</code>
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.ClothesOrBuilder getClothesOrBuilder() {
       if (itemCase_ == 3) {
          return (mech.mania.engine.domain.model.ItemProtos.Clothes) item_;
@@ -402,6 +325,7 @@ public final class ItemProtos {
      * <code>.item.Hat hat = 4;</code>
      * @return Whether the hat field is set.
      */
+    @java.lang.Override
     public boolean hasHat() {
       return itemCase_ == 4;
     }
@@ -409,6 +333,7 @@ public final class ItemProtos {
      * <code>.item.Hat hat = 4;</code>
      * @return The hat.
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.Hat getHat() {
       if (itemCase_ == 4) {
          return (mech.mania.engine.domain.model.ItemProtos.Hat) item_;
@@ -418,6 +343,7 @@ public final class ItemProtos {
     /**
      * <code>.item.Hat hat = 4;</code>
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.HatOrBuilder getHatOrBuilder() {
       if (itemCase_ == 4) {
          return (mech.mania.engine.domain.model.ItemProtos.Hat) item_;
@@ -430,6 +356,7 @@ public final class ItemProtos {
      * <code>.item.Shoes shoes = 5;</code>
      * @return Whether the shoes field is set.
      */
+    @java.lang.Override
     public boolean hasShoes() {
       return itemCase_ == 5;
     }
@@ -437,6 +364,7 @@ public final class ItemProtos {
      * <code>.item.Shoes shoes = 5;</code>
      * @return The shoes.
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.Shoes getShoes() {
       if (itemCase_ == 5) {
          return (mech.mania.engine.domain.model.ItemProtos.Shoes) item_;
@@ -446,6 +374,7 @@ public final class ItemProtos {
     /**
      * <code>.item.Shoes shoes = 5;</code>
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.ShoesOrBuilder getShoesOrBuilder() {
       if (itemCase_ == 5) {
          return (mech.mania.engine.domain.model.ItemProtos.Shoes) item_;
@@ -458,6 +387,7 @@ public final class ItemProtos {
      * <code>.item.Weapon weapon = 6;</code>
      * @return Whether the weapon field is set.
      */
+    @java.lang.Override
     public boolean hasWeapon() {
       return itemCase_ == 6;
     }
@@ -465,6 +395,7 @@ public final class ItemProtos {
      * <code>.item.Weapon weapon = 6;</code>
      * @return The weapon.
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.Weapon getWeapon() {
       if (itemCase_ == 6) {
          return (mech.mania.engine.domain.model.ItemProtos.Weapon) item_;
@@ -474,6 +405,7 @@ public final class ItemProtos {
     /**
      * <code>.item.Weapon weapon = 6;</code>
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.WeaponOrBuilder getWeaponOrBuilder() {
       if (itemCase_ == 6) {
          return (mech.mania.engine.domain.model.ItemProtos.Weapon) item_;
@@ -486,6 +418,7 @@ public final class ItemProtos {
      * <code>.item.Consumable consumable = 7;</code>
      * @return Whether the consumable field is set.
      */
+    @java.lang.Override
     public boolean hasConsumable() {
       return itemCase_ == 7;
     }
@@ -493,6 +426,7 @@ public final class ItemProtos {
      * <code>.item.Consumable consumable = 7;</code>
      * @return The consumable.
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.Consumable getConsumable() {
       if (itemCase_ == 7) {
          return (mech.mania.engine.domain.model.ItemProtos.Consumable) item_;
@@ -502,6 +436,7 @@ public final class ItemProtos {
     /**
      * <code>.item.Consumable consumable = 7;</code>
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.ConsumableOrBuilder getConsumableOrBuilder() {
       if (itemCase_ == 7) {
          return (mech.mania.engine.domain.model.ItemProtos.Consumable) item_;
@@ -523,12 +458,6 @@ public final class ItemProtos {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (maxStack_ != 0) {
-        output.writeInt32(1, maxStack_);
-      }
-      if (stats_ != null) {
-        output.writeMessage(2, getStats());
-      }
       if (itemCase_ == 3) {
         output.writeMessage(3, (mech.mania.engine.domain.model.ItemProtos.Clothes) item_);
       }
@@ -553,14 +482,6 @@ public final class ItemProtos {
       if (size != -1) return size;
 
       size = 0;
-      if (maxStack_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, maxStack_);
-      }
-      if (stats_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getStats());
-      }
       if (itemCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, (mech.mania.engine.domain.model.ItemProtos.Clothes) item_);
@@ -596,13 +517,6 @@ public final class ItemProtos {
       }
       mech.mania.engine.domain.model.ItemProtos.Item other = (mech.mania.engine.domain.model.ItemProtos.Item) obj;
 
-      if (getMaxStack()
-          != other.getMaxStack()) return false;
-      if (hasStats() != other.hasStats()) return false;
-      if (hasStats()) {
-        if (!getStats()
-            .equals(other.getStats())) return false;
-      }
       if (!getItemCase().equals(other.getItemCase())) return false;
       switch (itemCase_) {
         case 3:
@@ -639,12 +553,6 @@ public final class ItemProtos {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MAX_STACK_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxStack();
-      if (hasStats()) {
-        hash = (37 * hash) + STATS_FIELD_NUMBER;
-        hash = (53 * hash) + getStats().hashCode();
-      }
       switch (itemCase_) {
         case 3:
           hash = (37 * hash) + CLOTHES_FIELD_NUMBER;
@@ -802,14 +710,6 @@ public final class ItemProtos {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        maxStack_ = 0;
-
-        if (statsBuilder_ == null) {
-          stats_ = null;
-        } else {
-          stats_ = null;
-          statsBuilder_ = null;
-        }
         itemCase_ = 0;
         item_ = null;
         return this;
@@ -838,12 +738,6 @@ public final class ItemProtos {
       @java.lang.Override
       public mech.mania.engine.domain.model.ItemProtos.Item buildPartial() {
         mech.mania.engine.domain.model.ItemProtos.Item result = new mech.mania.engine.domain.model.ItemProtos.Item(this);
-        result.maxStack_ = maxStack_;
-        if (statsBuilder_ == null) {
-          result.stats_ = stats_;
-        } else {
-          result.stats_ = statsBuilder_.build();
-        }
         if (itemCase_ == 3) {
           if (clothesBuilder_ == null) {
             result.item_ = item_;
@@ -928,12 +822,6 @@ public final class ItemProtos {
 
       public Builder mergeFrom(mech.mania.engine.domain.model.ItemProtos.Item other) {
         if (other == mech.mania.engine.domain.model.ItemProtos.Item.getDefaultInstance()) return this;
-        if (other.getMaxStack() != 0) {
-          setMaxStack(other.getMaxStack());
-        }
-        if (other.hasStats()) {
-          mergeStats(other.getStats());
-        }
         switch (other.getItemCase()) {
           case CLOTHES: {
             mergeClothes(other.getClothes());
@@ -1003,173 +891,13 @@ public final class ItemProtos {
       }
 
 
-      private int maxStack_ ;
-      /**
-       * <pre>
-       * Stand-in for inheritance
-       * </pre>
-       *
-       * <code>int32 max_stack = 1;</code>
-       * @return The maxStack.
-       */
-      public int getMaxStack() {
-        return maxStack_;
-      }
-      /**
-       * <pre>
-       * Stand-in for inheritance
-       * </pre>
-       *
-       * <code>int32 max_stack = 1;</code>
-       * @param value The maxStack to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMaxStack(int value) {
-        
-        maxStack_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Stand-in for inheritance
-       * </pre>
-       *
-       * <code>int32 max_stack = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMaxStack() {
-        
-        maxStack_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private mech.mania.engine.domain.model.ItemProtos.StatusModifier stats_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          mech.mania.engine.domain.model.ItemProtos.StatusModifier, mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder, mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder> statsBuilder_;
-      /**
-       * <code>.item.StatusModifier stats = 2;</code>
-       * @return Whether the stats field is set.
-       */
-      public boolean hasStats() {
-        return statsBuilder_ != null || stats_ != null;
-      }
-      /**
-       * <code>.item.StatusModifier stats = 2;</code>
-       * @return The stats.
-       */
-      public mech.mania.engine.domain.model.ItemProtos.StatusModifier getStats() {
-        if (statsBuilder_ == null) {
-          return stats_ == null ? mech.mania.engine.domain.model.ItemProtos.StatusModifier.getDefaultInstance() : stats_;
-        } else {
-          return statsBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.item.StatusModifier stats = 2;</code>
-       */
-      public Builder setStats(mech.mania.engine.domain.model.ItemProtos.StatusModifier value) {
-        if (statsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          stats_ = value;
-          onChanged();
-        } else {
-          statsBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.item.StatusModifier stats = 2;</code>
-       */
-      public Builder setStats(
-          mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder builderForValue) {
-        if (statsBuilder_ == null) {
-          stats_ = builderForValue.build();
-          onChanged();
-        } else {
-          statsBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.item.StatusModifier stats = 2;</code>
-       */
-      public Builder mergeStats(mech.mania.engine.domain.model.ItemProtos.StatusModifier value) {
-        if (statsBuilder_ == null) {
-          if (stats_ != null) {
-            stats_ =
-              mech.mania.engine.domain.model.ItemProtos.StatusModifier.newBuilder(stats_).mergeFrom(value).buildPartial();
-          } else {
-            stats_ = value;
-          }
-          onChanged();
-        } else {
-          statsBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.item.StatusModifier stats = 2;</code>
-       */
-      public Builder clearStats() {
-        if (statsBuilder_ == null) {
-          stats_ = null;
-          onChanged();
-        } else {
-          stats_ = null;
-          statsBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.item.StatusModifier stats = 2;</code>
-       */
-      public mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder getStatsBuilder() {
-        
-        onChanged();
-        return getStatsFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.item.StatusModifier stats = 2;</code>
-       */
-      public mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder getStatsOrBuilder() {
-        if (statsBuilder_ != null) {
-          return statsBuilder_.getMessageOrBuilder();
-        } else {
-          return stats_ == null ?
-              mech.mania.engine.domain.model.ItemProtos.StatusModifier.getDefaultInstance() : stats_;
-        }
-      }
-      /**
-       * <code>.item.StatusModifier stats = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          mech.mania.engine.domain.model.ItemProtos.StatusModifier, mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder, mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder> 
-          getStatsFieldBuilder() {
-        if (statsBuilder_ == null) {
-          statsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              mech.mania.engine.domain.model.ItemProtos.StatusModifier, mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder, mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder>(
-                  getStats(),
-                  getParentForChildren(),
-                  isClean());
-          stats_ = null;
-        }
-        return statsBuilder_;
-      }
-
       private com.google.protobuf.SingleFieldBuilderV3<
           mech.mania.engine.domain.model.ItemProtos.Clothes, mech.mania.engine.domain.model.ItemProtos.Clothes.Builder, mech.mania.engine.domain.model.ItemProtos.ClothesOrBuilder> clothesBuilder_;
       /**
        * <code>.item.Clothes clothes = 3;</code>
        * @return Whether the clothes field is set.
        */
+      @java.lang.Override
       public boolean hasClothes() {
         return itemCase_ == 3;
       }
@@ -1177,6 +905,7 @@ public final class ItemProtos {
        * <code>.item.Clothes clothes = 3;</code>
        * @return The clothes.
        */
+      @java.lang.Override
       public mech.mania.engine.domain.model.ItemProtos.Clothes getClothes() {
         if (clothesBuilder_ == null) {
           if (itemCase_ == 3) {
@@ -1270,6 +999,7 @@ public final class ItemProtos {
       /**
        * <code>.item.Clothes clothes = 3;</code>
        */
+      @java.lang.Override
       public mech.mania.engine.domain.model.ItemProtos.ClothesOrBuilder getClothesOrBuilder() {
         if ((itemCase_ == 3) && (clothesBuilder_ != null)) {
           return clothesBuilder_.getMessageOrBuilder();
@@ -1308,6 +1038,7 @@ public final class ItemProtos {
        * <code>.item.Hat hat = 4;</code>
        * @return Whether the hat field is set.
        */
+      @java.lang.Override
       public boolean hasHat() {
         return itemCase_ == 4;
       }
@@ -1315,6 +1046,7 @@ public final class ItemProtos {
        * <code>.item.Hat hat = 4;</code>
        * @return The hat.
        */
+      @java.lang.Override
       public mech.mania.engine.domain.model.ItemProtos.Hat getHat() {
         if (hatBuilder_ == null) {
           if (itemCase_ == 4) {
@@ -1408,6 +1140,7 @@ public final class ItemProtos {
       /**
        * <code>.item.Hat hat = 4;</code>
        */
+      @java.lang.Override
       public mech.mania.engine.domain.model.ItemProtos.HatOrBuilder getHatOrBuilder() {
         if ((itemCase_ == 4) && (hatBuilder_ != null)) {
           return hatBuilder_.getMessageOrBuilder();
@@ -1446,6 +1179,7 @@ public final class ItemProtos {
        * <code>.item.Shoes shoes = 5;</code>
        * @return Whether the shoes field is set.
        */
+      @java.lang.Override
       public boolean hasShoes() {
         return itemCase_ == 5;
       }
@@ -1453,6 +1187,7 @@ public final class ItemProtos {
        * <code>.item.Shoes shoes = 5;</code>
        * @return The shoes.
        */
+      @java.lang.Override
       public mech.mania.engine.domain.model.ItemProtos.Shoes getShoes() {
         if (shoesBuilder_ == null) {
           if (itemCase_ == 5) {
@@ -1546,6 +1281,7 @@ public final class ItemProtos {
       /**
        * <code>.item.Shoes shoes = 5;</code>
        */
+      @java.lang.Override
       public mech.mania.engine.domain.model.ItemProtos.ShoesOrBuilder getShoesOrBuilder() {
         if ((itemCase_ == 5) && (shoesBuilder_ != null)) {
           return shoesBuilder_.getMessageOrBuilder();
@@ -1584,6 +1320,7 @@ public final class ItemProtos {
        * <code>.item.Weapon weapon = 6;</code>
        * @return Whether the weapon field is set.
        */
+      @java.lang.Override
       public boolean hasWeapon() {
         return itemCase_ == 6;
       }
@@ -1591,6 +1328,7 @@ public final class ItemProtos {
        * <code>.item.Weapon weapon = 6;</code>
        * @return The weapon.
        */
+      @java.lang.Override
       public mech.mania.engine.domain.model.ItemProtos.Weapon getWeapon() {
         if (weaponBuilder_ == null) {
           if (itemCase_ == 6) {
@@ -1684,6 +1422,7 @@ public final class ItemProtos {
       /**
        * <code>.item.Weapon weapon = 6;</code>
        */
+      @java.lang.Override
       public mech.mania.engine.domain.model.ItemProtos.WeaponOrBuilder getWeaponOrBuilder() {
         if ((itemCase_ == 6) && (weaponBuilder_ != null)) {
           return weaponBuilder_.getMessageOrBuilder();
@@ -1722,6 +1461,7 @@ public final class ItemProtos {
        * <code>.item.Consumable consumable = 7;</code>
        * @return Whether the consumable field is set.
        */
+      @java.lang.Override
       public boolean hasConsumable() {
         return itemCase_ == 7;
       }
@@ -1729,6 +1469,7 @@ public final class ItemProtos {
        * <code>.item.Consumable consumable = 7;</code>
        * @return The consumable.
        */
+      @java.lang.Override
       public mech.mania.engine.domain.model.ItemProtos.Consumable getConsumable() {
         if (consumableBuilder_ == null) {
           if (itemCase_ == 7) {
@@ -1822,6 +1563,7 @@ public final class ItemProtos {
       /**
        * <code>.item.Consumable consumable = 7;</code>
        */
+      @java.lang.Override
       public mech.mania.engine.domain.model.ItemProtos.ConsumableOrBuilder getConsumableOrBuilder() {
         if ((itemCase_ == 7) && (consumableBuilder_ != null)) {
           return consumableBuilder_.getMessageOrBuilder();
@@ -1911,24 +1653,50 @@ public final class ItemProtos {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>int32 max_stack = 1;</code>
+     * @return The maxStack.
+     */
+    int getMaxStack();
+
+    /**
+     * <code>.item.StatusModifier stats = 2;</code>
      * @return Whether the stats field is set.
      */
     boolean hasStats();
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      * @return The stats.
      */
     mech.mania.engine.domain.model.ItemProtos.StatusModifier getStats();
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      */
     mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder getStatsOrBuilder();
+
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 3;</code>
+     * @return The sprite.
+     */
+    java.lang.String getSprite();
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 3;</code>
+     * @return The bytes for sprite.
+     */
+    com.google.protobuf.ByteString
+        getSpriteBytes();
   }
   /**
    * Protobuf type {@code item.Clothes}
    */
-  public  static final class Clothes extends
+  public static final class Clothes extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:item.Clothes)
       ClothesOrBuilder {
@@ -1938,6 +1706,7 @@ public final class ItemProtos {
       super(builder);
     }
     private Clothes() {
+      sprite_ = "";
     }
 
     @java.lang.Override
@@ -1970,7 +1739,12 @@ public final class ItemProtos {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              maxStack_ = input.readInt32();
+              break;
+            }
+            case 18: {
               mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder subBuilder = null;
               if (stats_ != null) {
                 subBuilder = stats_.toBuilder();
@@ -1981,6 +1755,12 @@ public final class ItemProtos {
                 stats_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sprite_ = s;
               break;
             }
             default: {
@@ -2015,27 +1795,87 @@ public final class ItemProtos {
               mech.mania.engine.domain.model.ItemProtos.Clothes.class, mech.mania.engine.domain.model.ItemProtos.Clothes.Builder.class);
     }
 
-    public static final int STATS_FIELD_NUMBER = 1;
+    public static final int MAX_STACK_FIELD_NUMBER = 1;
+    private int maxStack_;
+    /**
+     * <code>int32 max_stack = 1;</code>
+     * @return The maxStack.
+     */
+    @java.lang.Override
+    public int getMaxStack() {
+      return maxStack_;
+    }
+
+    public static final int STATS_FIELD_NUMBER = 2;
     private mech.mania.engine.domain.model.ItemProtos.StatusModifier stats_;
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      * @return Whether the stats field is set.
      */
+    @java.lang.Override
     public boolean hasStats() {
       return stats_ != null;
     }
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      * @return The stats.
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.StatusModifier getStats() {
       return stats_ == null ? mech.mania.engine.domain.model.ItemProtos.StatusModifier.getDefaultInstance() : stats_;
     }
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder getStatsOrBuilder() {
       return getStats();
+    }
+
+    public static final int SPRITE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object sprite_;
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 3;</code>
+     * @return The sprite.
+     */
+    @java.lang.Override
+    public java.lang.String getSprite() {
+      java.lang.Object ref = sprite_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sprite_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 3;</code>
+     * @return The bytes for sprite.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpriteBytes() {
+      java.lang.Object ref = sprite_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sprite_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2052,8 +1892,14 @@ public final class ItemProtos {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (maxStack_ != 0) {
+        output.writeInt32(1, maxStack_);
+      }
       if (stats_ != null) {
-        output.writeMessage(1, getStats());
+        output.writeMessage(2, getStats());
+      }
+      if (!getSpriteBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sprite_);
       }
       unknownFields.writeTo(output);
     }
@@ -2064,9 +1910,16 @@ public final class ItemProtos {
       if (size != -1) return size;
 
       size = 0;
+      if (maxStack_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, maxStack_);
+      }
       if (stats_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getStats());
+          .computeMessageSize(2, getStats());
+      }
+      if (!getSpriteBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sprite_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2083,11 +1936,15 @@ public final class ItemProtos {
       }
       mech.mania.engine.domain.model.ItemProtos.Clothes other = (mech.mania.engine.domain.model.ItemProtos.Clothes) obj;
 
+      if (getMaxStack()
+          != other.getMaxStack()) return false;
       if (hasStats() != other.hasStats()) return false;
       if (hasStats()) {
         if (!getStats()
             .equals(other.getStats())) return false;
       }
+      if (!getSprite()
+          .equals(other.getSprite())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2099,10 +1956,14 @@ public final class ItemProtos {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MAX_STACK_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxStack();
       if (hasStats()) {
         hash = (37 * hash) + STATS_FIELD_NUMBER;
         hash = (53 * hash) + getStats().hashCode();
       }
+      hash = (37 * hash) + SPRITE_FIELD_NUMBER;
+      hash = (53 * hash) + getSprite().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2236,12 +2097,16 @@ public final class ItemProtos {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        maxStack_ = 0;
+
         if (statsBuilder_ == null) {
           stats_ = null;
         } else {
           stats_ = null;
           statsBuilder_ = null;
         }
+        sprite_ = "";
+
         return this;
       }
 
@@ -2268,11 +2133,13 @@ public final class ItemProtos {
       @java.lang.Override
       public mech.mania.engine.domain.model.ItemProtos.Clothes buildPartial() {
         mech.mania.engine.domain.model.ItemProtos.Clothes result = new mech.mania.engine.domain.model.ItemProtos.Clothes(this);
+        result.maxStack_ = maxStack_;
         if (statsBuilder_ == null) {
           result.stats_ = stats_;
         } else {
           result.stats_ = statsBuilder_.build();
         }
+        result.sprite_ = sprite_;
         onBuilt();
         return result;
       }
@@ -2321,8 +2188,15 @@ public final class ItemProtos {
 
       public Builder mergeFrom(mech.mania.engine.domain.model.ItemProtos.Clothes other) {
         if (other == mech.mania.engine.domain.model.ItemProtos.Clothes.getDefaultInstance()) return this;
+        if (other.getMaxStack() != 0) {
+          setMaxStack(other.getMaxStack());
+        }
         if (other.hasStats()) {
           mergeStats(other.getStats());
+        }
+        if (!other.getSprite().isEmpty()) {
+          sprite_ = other.sprite_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2353,18 +2227,49 @@ public final class ItemProtos {
         return this;
       }
 
+      private int maxStack_ ;
+      /**
+       * <code>int32 max_stack = 1;</code>
+       * @return The maxStack.
+       */
+      @java.lang.Override
+      public int getMaxStack() {
+        return maxStack_;
+      }
+      /**
+       * <code>int32 max_stack = 1;</code>
+       * @param value The maxStack to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxStack(int value) {
+        
+        maxStack_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 max_stack = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxStack() {
+        
+        maxStack_ = 0;
+        onChanged();
+        return this;
+      }
+
       private mech.mania.engine.domain.model.ItemProtos.StatusModifier stats_;
       private com.google.protobuf.SingleFieldBuilderV3<
           mech.mania.engine.domain.model.ItemProtos.StatusModifier, mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder, mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder> statsBuilder_;
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        * @return Whether the stats field is set.
        */
       public boolean hasStats() {
         return statsBuilder_ != null || stats_ != null;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        * @return The stats.
        */
       public mech.mania.engine.domain.model.ItemProtos.StatusModifier getStats() {
@@ -2375,7 +2280,7 @@ public final class ItemProtos {
         }
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public Builder setStats(mech.mania.engine.domain.model.ItemProtos.StatusModifier value) {
         if (statsBuilder_ == null) {
@@ -2391,7 +2296,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public Builder setStats(
           mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder builderForValue) {
@@ -2405,7 +2310,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public Builder mergeStats(mech.mania.engine.domain.model.ItemProtos.StatusModifier value) {
         if (statsBuilder_ == null) {
@@ -2423,7 +2328,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public Builder clearStats() {
         if (statsBuilder_ == null) {
@@ -2437,7 +2342,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder getStatsBuilder() {
         
@@ -2445,7 +2350,7 @@ public final class ItemProtos {
         return getStatsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder getStatsOrBuilder() {
         if (statsBuilder_ != null) {
@@ -2456,7 +2361,7 @@ public final class ItemProtos {
         }
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           mech.mania.engine.domain.model.ItemProtos.StatusModifier, mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder, mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder> 
@@ -2470,6 +2375,102 @@ public final class ItemProtos {
           stats_ = null;
         }
         return statsBuilder_;
+      }
+
+      private java.lang.Object sprite_ = "";
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 3;</code>
+       * @return The sprite.
+       */
+      public java.lang.String getSprite() {
+        java.lang.Object ref = sprite_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sprite_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 3;</code>
+       * @return The bytes for sprite.
+       */
+      public com.google.protobuf.ByteString
+          getSpriteBytes() {
+        java.lang.Object ref = sprite_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sprite_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 3;</code>
+       * @param value The sprite to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSprite(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sprite_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSprite() {
+        
+        sprite_ = getDefaultInstance().getSprite();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 3;</code>
+       * @param value The bytes for sprite to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpriteBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sprite_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2529,35 +2530,61 @@ public final class ItemProtos {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>int32 max_stack = 1;</code>
+     * @return The maxStack.
+     */
+    int getMaxStack();
+
+    /**
+     * <code>.item.StatusModifier stats = 2;</code>
      * @return Whether the stats field is set.
      */
     boolean hasStats();
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      * @return The stats.
      */
     mech.mania.engine.domain.model.ItemProtos.StatusModifier getStats();
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      */
     mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder getStatsOrBuilder();
 
     /**
-     * <code>.item.Hat.HatEffect hat_effect = 2;</code>
+     * <code>.item.Hat.HatEffect hat_effect = 3;</code>
      * @return The enum numeric value on the wire for hatEffect.
      */
     int getHatEffectValue();
     /**
-     * <code>.item.Hat.HatEffect hat_effect = 2;</code>
+     * <code>.item.Hat.HatEffect hat_effect = 3;</code>
      * @return The hatEffect.
      */
     mech.mania.engine.domain.model.ItemProtos.Hat.HatEffect getHatEffect();
+
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 4;</code>
+     * @return The sprite.
+     */
+    java.lang.String getSprite();
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 4;</code>
+     * @return The bytes for sprite.
+     */
+    com.google.protobuf.ByteString
+        getSpriteBytes();
   }
   /**
    * Protobuf type {@code item.Hat}
    */
-  public  static final class Hat extends
+  public static final class Hat extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:item.Hat)
       HatOrBuilder {
@@ -2568,6 +2595,7 @@ public final class ItemProtos {
     }
     private Hat() {
       hatEffect_ = 0;
+      sprite_ = "";
     }
 
     @java.lang.Override
@@ -2600,7 +2628,12 @@ public final class ItemProtos {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              maxStack_ = input.readInt32();
+              break;
+            }
+            case 18: {
               mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder subBuilder = null;
               if (stats_ != null) {
                 subBuilder = stats_.toBuilder();
@@ -2613,10 +2646,16 @@ public final class ItemProtos {
 
               break;
             }
-            case 16: {
+            case 24: {
               int rawValue = input.readEnum();
 
               hatEffect_ = rawValue;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sprite_ = s;
               break;
             }
             default: {
@@ -2720,6 +2759,10 @@ public final class ItemProtos {
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -2754,46 +2797,106 @@ public final class ItemProtos {
       // @@protoc_insertion_point(enum_scope:item.Hat.HatEffect)
     }
 
-    public static final int STATS_FIELD_NUMBER = 1;
+    public static final int MAX_STACK_FIELD_NUMBER = 1;
+    private int maxStack_;
+    /**
+     * <code>int32 max_stack = 1;</code>
+     * @return The maxStack.
+     */
+    @java.lang.Override
+    public int getMaxStack() {
+      return maxStack_;
+    }
+
+    public static final int STATS_FIELD_NUMBER = 2;
     private mech.mania.engine.domain.model.ItemProtos.StatusModifier stats_;
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      * @return Whether the stats field is set.
      */
+    @java.lang.Override
     public boolean hasStats() {
       return stats_ != null;
     }
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      * @return The stats.
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.StatusModifier getStats() {
       return stats_ == null ? mech.mania.engine.domain.model.ItemProtos.StatusModifier.getDefaultInstance() : stats_;
     }
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder getStatsOrBuilder() {
       return getStats();
     }
 
-    public static final int HAT_EFFECT_FIELD_NUMBER = 2;
+    public static final int HAT_EFFECT_FIELD_NUMBER = 3;
     private int hatEffect_;
     /**
-     * <code>.item.Hat.HatEffect hat_effect = 2;</code>
+     * <code>.item.Hat.HatEffect hat_effect = 3;</code>
      * @return The enum numeric value on the wire for hatEffect.
      */
-    public int getHatEffectValue() {
+    @java.lang.Override public int getHatEffectValue() {
       return hatEffect_;
     }
     /**
-     * <code>.item.Hat.HatEffect hat_effect = 2;</code>
+     * <code>.item.Hat.HatEffect hat_effect = 3;</code>
      * @return The hatEffect.
      */
-    public mech.mania.engine.domain.model.ItemProtos.Hat.HatEffect getHatEffect() {
+    @java.lang.Override public mech.mania.engine.domain.model.ItemProtos.Hat.HatEffect getHatEffect() {
       @SuppressWarnings("deprecation")
       mech.mania.engine.domain.model.ItemProtos.Hat.HatEffect result = mech.mania.engine.domain.model.ItemProtos.Hat.HatEffect.valueOf(hatEffect_);
       return result == null ? mech.mania.engine.domain.model.ItemProtos.Hat.HatEffect.UNRECOGNIZED : result;
+    }
+
+    public static final int SPRITE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object sprite_;
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 4;</code>
+     * @return The sprite.
+     */
+    @java.lang.Override
+    public java.lang.String getSprite() {
+      java.lang.Object ref = sprite_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sprite_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 4;</code>
+     * @return The bytes for sprite.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpriteBytes() {
+      java.lang.Object ref = sprite_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sprite_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2810,11 +2913,17 @@ public final class ItemProtos {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (maxStack_ != 0) {
+        output.writeInt32(1, maxStack_);
+      }
       if (stats_ != null) {
-        output.writeMessage(1, getStats());
+        output.writeMessage(2, getStats());
       }
       if (hatEffect_ != mech.mania.engine.domain.model.ItemProtos.Hat.HatEffect.TEST.getNumber()) {
-        output.writeEnum(2, hatEffect_);
+        output.writeEnum(3, hatEffect_);
+      }
+      if (!getSpriteBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sprite_);
       }
       unknownFields.writeTo(output);
     }
@@ -2825,13 +2934,20 @@ public final class ItemProtos {
       if (size != -1) return size;
 
       size = 0;
+      if (maxStack_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, maxStack_);
+      }
       if (stats_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getStats());
+          .computeMessageSize(2, getStats());
       }
       if (hatEffect_ != mech.mania.engine.domain.model.ItemProtos.Hat.HatEffect.TEST.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, hatEffect_);
+          .computeEnumSize(3, hatEffect_);
+      }
+      if (!getSpriteBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sprite_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2848,12 +2964,16 @@ public final class ItemProtos {
       }
       mech.mania.engine.domain.model.ItemProtos.Hat other = (mech.mania.engine.domain.model.ItemProtos.Hat) obj;
 
+      if (getMaxStack()
+          != other.getMaxStack()) return false;
       if (hasStats() != other.hasStats()) return false;
       if (hasStats()) {
         if (!getStats()
             .equals(other.getStats())) return false;
       }
       if (hatEffect_ != other.hatEffect_) return false;
+      if (!getSprite()
+          .equals(other.getSprite())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2865,12 +2985,16 @@ public final class ItemProtos {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MAX_STACK_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxStack();
       if (hasStats()) {
         hash = (37 * hash) + STATS_FIELD_NUMBER;
         hash = (53 * hash) + getStats().hashCode();
       }
       hash = (37 * hash) + HAT_EFFECT_FIELD_NUMBER;
       hash = (53 * hash) + hatEffect_;
+      hash = (37 * hash) + SPRITE_FIELD_NUMBER;
+      hash = (53 * hash) + getSprite().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3004,6 +3128,8 @@ public final class ItemProtos {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        maxStack_ = 0;
+
         if (statsBuilder_ == null) {
           stats_ = null;
         } else {
@@ -3011,6 +3137,8 @@ public final class ItemProtos {
           statsBuilder_ = null;
         }
         hatEffect_ = 0;
+
+        sprite_ = "";
 
         return this;
       }
@@ -3038,12 +3166,14 @@ public final class ItemProtos {
       @java.lang.Override
       public mech.mania.engine.domain.model.ItemProtos.Hat buildPartial() {
         mech.mania.engine.domain.model.ItemProtos.Hat result = new mech.mania.engine.domain.model.ItemProtos.Hat(this);
+        result.maxStack_ = maxStack_;
         if (statsBuilder_ == null) {
           result.stats_ = stats_;
         } else {
           result.stats_ = statsBuilder_.build();
         }
         result.hatEffect_ = hatEffect_;
+        result.sprite_ = sprite_;
         onBuilt();
         return result;
       }
@@ -3092,11 +3222,18 @@ public final class ItemProtos {
 
       public Builder mergeFrom(mech.mania.engine.domain.model.ItemProtos.Hat other) {
         if (other == mech.mania.engine.domain.model.ItemProtos.Hat.getDefaultInstance()) return this;
+        if (other.getMaxStack() != 0) {
+          setMaxStack(other.getMaxStack());
+        }
         if (other.hasStats()) {
           mergeStats(other.getStats());
         }
         if (other.hatEffect_ != 0) {
           setHatEffectValue(other.getHatEffectValue());
+        }
+        if (!other.getSprite().isEmpty()) {
+          sprite_ = other.sprite_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3127,18 +3264,49 @@ public final class ItemProtos {
         return this;
       }
 
+      private int maxStack_ ;
+      /**
+       * <code>int32 max_stack = 1;</code>
+       * @return The maxStack.
+       */
+      @java.lang.Override
+      public int getMaxStack() {
+        return maxStack_;
+      }
+      /**
+       * <code>int32 max_stack = 1;</code>
+       * @param value The maxStack to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxStack(int value) {
+        
+        maxStack_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 max_stack = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxStack() {
+        
+        maxStack_ = 0;
+        onChanged();
+        return this;
+      }
+
       private mech.mania.engine.domain.model.ItemProtos.StatusModifier stats_;
       private com.google.protobuf.SingleFieldBuilderV3<
           mech.mania.engine.domain.model.ItemProtos.StatusModifier, mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder, mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder> statsBuilder_;
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        * @return Whether the stats field is set.
        */
       public boolean hasStats() {
         return statsBuilder_ != null || stats_ != null;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        * @return The stats.
        */
       public mech.mania.engine.domain.model.ItemProtos.StatusModifier getStats() {
@@ -3149,7 +3317,7 @@ public final class ItemProtos {
         }
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public Builder setStats(mech.mania.engine.domain.model.ItemProtos.StatusModifier value) {
         if (statsBuilder_ == null) {
@@ -3165,7 +3333,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public Builder setStats(
           mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder builderForValue) {
@@ -3179,7 +3347,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public Builder mergeStats(mech.mania.engine.domain.model.ItemProtos.StatusModifier value) {
         if (statsBuilder_ == null) {
@@ -3197,7 +3365,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public Builder clearStats() {
         if (statsBuilder_ == null) {
@@ -3211,7 +3379,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder getStatsBuilder() {
         
@@ -3219,7 +3387,7 @@ public final class ItemProtos {
         return getStatsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder getStatsOrBuilder() {
         if (statsBuilder_ != null) {
@@ -3230,7 +3398,7 @@ public final class ItemProtos {
         }
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           mech.mania.engine.domain.model.ItemProtos.StatusModifier, mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder, mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder> 
@@ -3248,33 +3416,35 @@ public final class ItemProtos {
 
       private int hatEffect_ = 0;
       /**
-       * <code>.item.Hat.HatEffect hat_effect = 2;</code>
+       * <code>.item.Hat.HatEffect hat_effect = 3;</code>
        * @return The enum numeric value on the wire for hatEffect.
        */
-      public int getHatEffectValue() {
+      @java.lang.Override public int getHatEffectValue() {
         return hatEffect_;
       }
       /**
-       * <code>.item.Hat.HatEffect hat_effect = 2;</code>
+       * <code>.item.Hat.HatEffect hat_effect = 3;</code>
        * @param value The enum numeric value on the wire for hatEffect to set.
        * @return This builder for chaining.
        */
       public Builder setHatEffectValue(int value) {
+        
         hatEffect_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>.item.Hat.HatEffect hat_effect = 2;</code>
+       * <code>.item.Hat.HatEffect hat_effect = 3;</code>
        * @return The hatEffect.
        */
+      @java.lang.Override
       public mech.mania.engine.domain.model.ItemProtos.Hat.HatEffect getHatEffect() {
         @SuppressWarnings("deprecation")
         mech.mania.engine.domain.model.ItemProtos.Hat.HatEffect result = mech.mania.engine.domain.model.ItemProtos.Hat.HatEffect.valueOf(hatEffect_);
         return result == null ? mech.mania.engine.domain.model.ItemProtos.Hat.HatEffect.UNRECOGNIZED : result;
       }
       /**
-       * <code>.item.Hat.HatEffect hat_effect = 2;</code>
+       * <code>.item.Hat.HatEffect hat_effect = 3;</code>
        * @param value The hatEffect to set.
        * @return This builder for chaining.
        */
@@ -3288,12 +3458,108 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.Hat.HatEffect hat_effect = 2;</code>
+       * <code>.item.Hat.HatEffect hat_effect = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearHatEffect() {
         
         hatEffect_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sprite_ = "";
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 4;</code>
+       * @return The sprite.
+       */
+      public java.lang.String getSprite() {
+        java.lang.Object ref = sprite_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sprite_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 4;</code>
+       * @return The bytes for sprite.
+       */
+      public com.google.protobuf.ByteString
+          getSpriteBytes() {
+        java.lang.Object ref = sprite_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sprite_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 4;</code>
+       * @param value The sprite to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSprite(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sprite_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSprite() {
+        
+        sprite_ = getDefaultInstance().getSprite();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 4;</code>
+       * @param value The bytes for sprite to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpriteBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sprite_ = value;
         onChanged();
         return this;
       }
@@ -3355,24 +3621,50 @@ public final class ItemProtos {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>int32 max_stack = 1;</code>
+     * @return The maxStack.
+     */
+    int getMaxStack();
+
+    /**
+     * <code>.item.StatusModifier stats = 2;</code>
      * @return Whether the stats field is set.
      */
     boolean hasStats();
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      * @return The stats.
      */
     mech.mania.engine.domain.model.ItemProtos.StatusModifier getStats();
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      */
     mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder getStatsOrBuilder();
+
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 3;</code>
+     * @return The sprite.
+     */
+    java.lang.String getSprite();
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 3;</code>
+     * @return The bytes for sprite.
+     */
+    com.google.protobuf.ByteString
+        getSpriteBytes();
   }
   /**
    * Protobuf type {@code item.Shoes}
    */
-  public  static final class Shoes extends
+  public static final class Shoes extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:item.Shoes)
       ShoesOrBuilder {
@@ -3382,6 +3674,7 @@ public final class ItemProtos {
       super(builder);
     }
     private Shoes() {
+      sprite_ = "";
     }
 
     @java.lang.Override
@@ -3414,7 +3707,12 @@ public final class ItemProtos {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              maxStack_ = input.readInt32();
+              break;
+            }
+            case 18: {
               mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder subBuilder = null;
               if (stats_ != null) {
                 subBuilder = stats_.toBuilder();
@@ -3425,6 +3723,12 @@ public final class ItemProtos {
                 stats_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sprite_ = s;
               break;
             }
             default: {
@@ -3459,27 +3763,87 @@ public final class ItemProtos {
               mech.mania.engine.domain.model.ItemProtos.Shoes.class, mech.mania.engine.domain.model.ItemProtos.Shoes.Builder.class);
     }
 
-    public static final int STATS_FIELD_NUMBER = 1;
+    public static final int MAX_STACK_FIELD_NUMBER = 1;
+    private int maxStack_;
+    /**
+     * <code>int32 max_stack = 1;</code>
+     * @return The maxStack.
+     */
+    @java.lang.Override
+    public int getMaxStack() {
+      return maxStack_;
+    }
+
+    public static final int STATS_FIELD_NUMBER = 2;
     private mech.mania.engine.domain.model.ItemProtos.StatusModifier stats_;
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      * @return Whether the stats field is set.
      */
+    @java.lang.Override
     public boolean hasStats() {
       return stats_ != null;
     }
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      * @return The stats.
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.StatusModifier getStats() {
       return stats_ == null ? mech.mania.engine.domain.model.ItemProtos.StatusModifier.getDefaultInstance() : stats_;
     }
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder getStatsOrBuilder() {
       return getStats();
+    }
+
+    public static final int SPRITE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object sprite_;
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 3;</code>
+     * @return The sprite.
+     */
+    @java.lang.Override
+    public java.lang.String getSprite() {
+      java.lang.Object ref = sprite_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sprite_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 3;</code>
+     * @return The bytes for sprite.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpriteBytes() {
+      java.lang.Object ref = sprite_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sprite_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3496,8 +3860,14 @@ public final class ItemProtos {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (maxStack_ != 0) {
+        output.writeInt32(1, maxStack_);
+      }
       if (stats_ != null) {
-        output.writeMessage(1, getStats());
+        output.writeMessage(2, getStats());
+      }
+      if (!getSpriteBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sprite_);
       }
       unknownFields.writeTo(output);
     }
@@ -3508,9 +3878,16 @@ public final class ItemProtos {
       if (size != -1) return size;
 
       size = 0;
+      if (maxStack_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, maxStack_);
+      }
       if (stats_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getStats());
+          .computeMessageSize(2, getStats());
+      }
+      if (!getSpriteBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sprite_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3527,11 +3904,15 @@ public final class ItemProtos {
       }
       mech.mania.engine.domain.model.ItemProtos.Shoes other = (mech.mania.engine.domain.model.ItemProtos.Shoes) obj;
 
+      if (getMaxStack()
+          != other.getMaxStack()) return false;
       if (hasStats() != other.hasStats()) return false;
       if (hasStats()) {
         if (!getStats()
             .equals(other.getStats())) return false;
       }
+      if (!getSprite()
+          .equals(other.getSprite())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3543,10 +3924,14 @@ public final class ItemProtos {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MAX_STACK_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxStack();
       if (hasStats()) {
         hash = (37 * hash) + STATS_FIELD_NUMBER;
         hash = (53 * hash) + getStats().hashCode();
       }
+      hash = (37 * hash) + SPRITE_FIELD_NUMBER;
+      hash = (53 * hash) + getSprite().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3680,12 +4065,16 @@ public final class ItemProtos {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        maxStack_ = 0;
+
         if (statsBuilder_ == null) {
           stats_ = null;
         } else {
           stats_ = null;
           statsBuilder_ = null;
         }
+        sprite_ = "";
+
         return this;
       }
 
@@ -3712,11 +4101,13 @@ public final class ItemProtos {
       @java.lang.Override
       public mech.mania.engine.domain.model.ItemProtos.Shoes buildPartial() {
         mech.mania.engine.domain.model.ItemProtos.Shoes result = new mech.mania.engine.domain.model.ItemProtos.Shoes(this);
+        result.maxStack_ = maxStack_;
         if (statsBuilder_ == null) {
           result.stats_ = stats_;
         } else {
           result.stats_ = statsBuilder_.build();
         }
+        result.sprite_ = sprite_;
         onBuilt();
         return result;
       }
@@ -3765,8 +4156,15 @@ public final class ItemProtos {
 
       public Builder mergeFrom(mech.mania.engine.domain.model.ItemProtos.Shoes other) {
         if (other == mech.mania.engine.domain.model.ItemProtos.Shoes.getDefaultInstance()) return this;
+        if (other.getMaxStack() != 0) {
+          setMaxStack(other.getMaxStack());
+        }
         if (other.hasStats()) {
           mergeStats(other.getStats());
+        }
+        if (!other.getSprite().isEmpty()) {
+          sprite_ = other.sprite_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3797,18 +4195,49 @@ public final class ItemProtos {
         return this;
       }
 
+      private int maxStack_ ;
+      /**
+       * <code>int32 max_stack = 1;</code>
+       * @return The maxStack.
+       */
+      @java.lang.Override
+      public int getMaxStack() {
+        return maxStack_;
+      }
+      /**
+       * <code>int32 max_stack = 1;</code>
+       * @param value The maxStack to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxStack(int value) {
+        
+        maxStack_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 max_stack = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxStack() {
+        
+        maxStack_ = 0;
+        onChanged();
+        return this;
+      }
+
       private mech.mania.engine.domain.model.ItemProtos.StatusModifier stats_;
       private com.google.protobuf.SingleFieldBuilderV3<
           mech.mania.engine.domain.model.ItemProtos.StatusModifier, mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder, mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder> statsBuilder_;
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        * @return Whether the stats field is set.
        */
       public boolean hasStats() {
         return statsBuilder_ != null || stats_ != null;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        * @return The stats.
        */
       public mech.mania.engine.domain.model.ItemProtos.StatusModifier getStats() {
@@ -3819,7 +4248,7 @@ public final class ItemProtos {
         }
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public Builder setStats(mech.mania.engine.domain.model.ItemProtos.StatusModifier value) {
         if (statsBuilder_ == null) {
@@ -3835,7 +4264,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public Builder setStats(
           mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder builderForValue) {
@@ -3849,7 +4278,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public Builder mergeStats(mech.mania.engine.domain.model.ItemProtos.StatusModifier value) {
         if (statsBuilder_ == null) {
@@ -3867,7 +4296,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public Builder clearStats() {
         if (statsBuilder_ == null) {
@@ -3881,7 +4310,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder getStatsBuilder() {
         
@@ -3889,7 +4318,7 @@ public final class ItemProtos {
         return getStatsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder getStatsOrBuilder() {
         if (statsBuilder_ != null) {
@@ -3900,7 +4329,7 @@ public final class ItemProtos {
         }
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           mech.mania.engine.domain.model.ItemProtos.StatusModifier, mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder, mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder> 
@@ -3914,6 +4343,102 @@ public final class ItemProtos {
           stats_ = null;
         }
         return statsBuilder_;
+      }
+
+      private java.lang.Object sprite_ = "";
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 3;</code>
+       * @return The sprite.
+       */
+      public java.lang.String getSprite() {
+        java.lang.Object ref = sprite_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sprite_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 3;</code>
+       * @return The bytes for sprite.
+       */
+      public com.google.protobuf.ByteString
+          getSpriteBytes() {
+        java.lang.Object ref = sprite_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sprite_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 3;</code>
+       * @param value The sprite to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSprite(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sprite_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSprite() {
+        
+        sprite_ = getDefaultInstance().getSprite();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 3;</code>
+       * @param value The bytes for sprite to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpriteBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sprite_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3973,57 +4498,83 @@ public final class ItemProtos {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>int32 max_stack = 1;</code>
+     * @return The maxStack.
+     */
+    int getMaxStack();
+
+    /**
+     * <code>.item.StatusModifier stats = 2;</code>
      * @return Whether the stats field is set.
      */
     boolean hasStats();
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      * @return The stats.
      */
     mech.mania.engine.domain.model.ItemProtos.StatusModifier getStats();
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      */
     mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder getStatsOrBuilder();
 
     /**
-     * <code>int32 range = 2;</code>
+     * <code>int32 range = 3;</code>
      * @return The range.
      */
     int getRange();
 
     /**
-     * <code>int32 splash_radius = 3;</code>
+     * <code>int32 splash_radius = 4;</code>
      * @return The splashRadius.
      */
     int getSplashRadius();
 
     /**
-     * <code>int32 attack = 4;</code>
+     * <code>int32 attack = 5;</code>
      * @return The attack.
      */
     int getAttack();
 
     /**
-     * <code>.item.TempStatusModifier on_hit_effect = 5;</code>
+     * <code>.item.TempStatusModifier on_hit_effect = 6;</code>
      * @return Whether the onHitEffect field is set.
      */
     boolean hasOnHitEffect();
     /**
-     * <code>.item.TempStatusModifier on_hit_effect = 5;</code>
+     * <code>.item.TempStatusModifier on_hit_effect = 6;</code>
      * @return The onHitEffect.
      */
     mech.mania.engine.domain.model.ItemProtos.TempStatusModifier getOnHitEffect();
     /**
-     * <code>.item.TempStatusModifier on_hit_effect = 5;</code>
+     * <code>.item.TempStatusModifier on_hit_effect = 6;</code>
      */
     mech.mania.engine.domain.model.ItemProtos.TempStatusModifierOrBuilder getOnHitEffectOrBuilder();
+
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 7;</code>
+     * @return The sprite.
+     */
+    java.lang.String getSprite();
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 7;</code>
+     * @return The bytes for sprite.
+     */
+    com.google.protobuf.ByteString
+        getSpriteBytes();
   }
   /**
    * Protobuf type {@code item.Weapon}
    */
-  public  static final class Weapon extends
+  public static final class Weapon extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:item.Weapon)
       WeaponOrBuilder {
@@ -4033,6 +4584,7 @@ public final class ItemProtos {
       super(builder);
     }
     private Weapon() {
+      sprite_ = "";
     }
 
     @java.lang.Override
@@ -4065,7 +4617,12 @@ public final class ItemProtos {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              maxStack_ = input.readInt32();
+              break;
+            }
+            case 18: {
               mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder subBuilder = null;
               if (stats_ != null) {
                 subBuilder = stats_.toBuilder();
@@ -4078,22 +4635,22 @@ public final class ItemProtos {
 
               break;
             }
-            case 16: {
+            case 24: {
 
               range_ = input.readInt32();
               break;
             }
-            case 24: {
+            case 32: {
 
               splashRadius_ = input.readInt32();
               break;
             }
-            case 32: {
+            case 40: {
 
               attack_ = input.readInt32();
               break;
             }
-            case 42: {
+            case 50: {
               mech.mania.engine.domain.model.ItemProtos.TempStatusModifier.Builder subBuilder = null;
               if (onHitEffect_ != null) {
                 subBuilder = onHitEffect_.toBuilder();
@@ -4104,6 +4661,12 @@ public final class ItemProtos {
                 onHitEffect_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sprite_ = s;
               break;
             }
             default: {
@@ -4138,80 +4701,146 @@ public final class ItemProtos {
               mech.mania.engine.domain.model.ItemProtos.Weapon.class, mech.mania.engine.domain.model.ItemProtos.Weapon.Builder.class);
     }
 
-    public static final int STATS_FIELD_NUMBER = 1;
+    public static final int MAX_STACK_FIELD_NUMBER = 1;
+    private int maxStack_;
+    /**
+     * <code>int32 max_stack = 1;</code>
+     * @return The maxStack.
+     */
+    @java.lang.Override
+    public int getMaxStack() {
+      return maxStack_;
+    }
+
+    public static final int STATS_FIELD_NUMBER = 2;
     private mech.mania.engine.domain.model.ItemProtos.StatusModifier stats_;
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      * @return Whether the stats field is set.
      */
+    @java.lang.Override
     public boolean hasStats() {
       return stats_ != null;
     }
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      * @return The stats.
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.StatusModifier getStats() {
       return stats_ == null ? mech.mania.engine.domain.model.ItemProtos.StatusModifier.getDefaultInstance() : stats_;
     }
     /**
-     * <code>.item.StatusModifier stats = 1;</code>
+     * <code>.item.StatusModifier stats = 2;</code>
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder getStatsOrBuilder() {
       return getStats();
     }
 
-    public static final int RANGE_FIELD_NUMBER = 2;
+    public static final int RANGE_FIELD_NUMBER = 3;
     private int range_;
     /**
-     * <code>int32 range = 2;</code>
+     * <code>int32 range = 3;</code>
      * @return The range.
      */
+    @java.lang.Override
     public int getRange() {
       return range_;
     }
 
-    public static final int SPLASH_RADIUS_FIELD_NUMBER = 3;
+    public static final int SPLASH_RADIUS_FIELD_NUMBER = 4;
     private int splashRadius_;
     /**
-     * <code>int32 splash_radius = 3;</code>
+     * <code>int32 splash_radius = 4;</code>
      * @return The splashRadius.
      */
+    @java.lang.Override
     public int getSplashRadius() {
       return splashRadius_;
     }
 
-    public static final int ATTACK_FIELD_NUMBER = 4;
+    public static final int ATTACK_FIELD_NUMBER = 5;
     private int attack_;
     /**
-     * <code>int32 attack = 4;</code>
+     * <code>int32 attack = 5;</code>
      * @return The attack.
      */
+    @java.lang.Override
     public int getAttack() {
       return attack_;
     }
 
-    public static final int ON_HIT_EFFECT_FIELD_NUMBER = 5;
+    public static final int ON_HIT_EFFECT_FIELD_NUMBER = 6;
     private mech.mania.engine.domain.model.ItemProtos.TempStatusModifier onHitEffect_;
     /**
-     * <code>.item.TempStatusModifier on_hit_effect = 5;</code>
+     * <code>.item.TempStatusModifier on_hit_effect = 6;</code>
      * @return Whether the onHitEffect field is set.
      */
+    @java.lang.Override
     public boolean hasOnHitEffect() {
       return onHitEffect_ != null;
     }
     /**
-     * <code>.item.TempStatusModifier on_hit_effect = 5;</code>
+     * <code>.item.TempStatusModifier on_hit_effect = 6;</code>
      * @return The onHitEffect.
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.TempStatusModifier getOnHitEffect() {
       return onHitEffect_ == null ? mech.mania.engine.domain.model.ItemProtos.TempStatusModifier.getDefaultInstance() : onHitEffect_;
     }
     /**
-     * <code>.item.TempStatusModifier on_hit_effect = 5;</code>
+     * <code>.item.TempStatusModifier on_hit_effect = 6;</code>
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.TempStatusModifierOrBuilder getOnHitEffectOrBuilder() {
       return getOnHitEffect();
+    }
+
+    public static final int SPRITE_FIELD_NUMBER = 7;
+    private volatile java.lang.Object sprite_;
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 7;</code>
+     * @return The sprite.
+     */
+    @java.lang.Override
+    public java.lang.String getSprite() {
+      java.lang.Object ref = sprite_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sprite_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 7;</code>
+     * @return The bytes for sprite.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpriteBytes() {
+      java.lang.Object ref = sprite_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sprite_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4228,20 +4857,26 @@ public final class ItemProtos {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (maxStack_ != 0) {
+        output.writeInt32(1, maxStack_);
+      }
       if (stats_ != null) {
-        output.writeMessage(1, getStats());
+        output.writeMessage(2, getStats());
       }
       if (range_ != 0) {
-        output.writeInt32(2, range_);
+        output.writeInt32(3, range_);
       }
       if (splashRadius_ != 0) {
-        output.writeInt32(3, splashRadius_);
+        output.writeInt32(4, splashRadius_);
       }
       if (attack_ != 0) {
-        output.writeInt32(4, attack_);
+        output.writeInt32(5, attack_);
       }
       if (onHitEffect_ != null) {
-        output.writeMessage(5, getOnHitEffect());
+        output.writeMessage(6, getOnHitEffect());
+      }
+      if (!getSpriteBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, sprite_);
       }
       unknownFields.writeTo(output);
     }
@@ -4252,25 +4887,32 @@ public final class ItemProtos {
       if (size != -1) return size;
 
       size = 0;
+      if (maxStack_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, maxStack_);
+      }
       if (stats_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getStats());
+          .computeMessageSize(2, getStats());
       }
       if (range_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, range_);
+          .computeInt32Size(3, range_);
       }
       if (splashRadius_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, splashRadius_);
+          .computeInt32Size(4, splashRadius_);
       }
       if (attack_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, attack_);
+          .computeInt32Size(5, attack_);
       }
       if (onHitEffect_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getOnHitEffect());
+          .computeMessageSize(6, getOnHitEffect());
+      }
+      if (!getSpriteBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, sprite_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4287,6 +4929,8 @@ public final class ItemProtos {
       }
       mech.mania.engine.domain.model.ItemProtos.Weapon other = (mech.mania.engine.domain.model.ItemProtos.Weapon) obj;
 
+      if (getMaxStack()
+          != other.getMaxStack()) return false;
       if (hasStats() != other.hasStats()) return false;
       if (hasStats()) {
         if (!getStats()
@@ -4303,6 +4947,8 @@ public final class ItemProtos {
         if (!getOnHitEffect()
             .equals(other.getOnHitEffect())) return false;
       }
+      if (!getSprite()
+          .equals(other.getSprite())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4314,6 +4960,8 @@ public final class ItemProtos {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MAX_STACK_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxStack();
       if (hasStats()) {
         hash = (37 * hash) + STATS_FIELD_NUMBER;
         hash = (53 * hash) + getStats().hashCode();
@@ -4328,6 +4976,8 @@ public final class ItemProtos {
         hash = (37 * hash) + ON_HIT_EFFECT_FIELD_NUMBER;
         hash = (53 * hash) + getOnHitEffect().hashCode();
       }
+      hash = (37 * hash) + SPRITE_FIELD_NUMBER;
+      hash = (53 * hash) + getSprite().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4461,6 +5111,8 @@ public final class ItemProtos {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        maxStack_ = 0;
+
         if (statsBuilder_ == null) {
           stats_ = null;
         } else {
@@ -4479,6 +5131,8 @@ public final class ItemProtos {
           onHitEffect_ = null;
           onHitEffectBuilder_ = null;
         }
+        sprite_ = "";
+
         return this;
       }
 
@@ -4505,6 +5159,7 @@ public final class ItemProtos {
       @java.lang.Override
       public mech.mania.engine.domain.model.ItemProtos.Weapon buildPartial() {
         mech.mania.engine.domain.model.ItemProtos.Weapon result = new mech.mania.engine.domain.model.ItemProtos.Weapon(this);
+        result.maxStack_ = maxStack_;
         if (statsBuilder_ == null) {
           result.stats_ = stats_;
         } else {
@@ -4518,6 +5173,7 @@ public final class ItemProtos {
         } else {
           result.onHitEffect_ = onHitEffectBuilder_.build();
         }
+        result.sprite_ = sprite_;
         onBuilt();
         return result;
       }
@@ -4566,6 +5222,9 @@ public final class ItemProtos {
 
       public Builder mergeFrom(mech.mania.engine.domain.model.ItemProtos.Weapon other) {
         if (other == mech.mania.engine.domain.model.ItemProtos.Weapon.getDefaultInstance()) return this;
+        if (other.getMaxStack() != 0) {
+          setMaxStack(other.getMaxStack());
+        }
         if (other.hasStats()) {
           mergeStats(other.getStats());
         }
@@ -4580,6 +5239,10 @@ public final class ItemProtos {
         }
         if (other.hasOnHitEffect()) {
           mergeOnHitEffect(other.getOnHitEffect());
+        }
+        if (!other.getSprite().isEmpty()) {
+          sprite_ = other.sprite_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4610,18 +5273,49 @@ public final class ItemProtos {
         return this;
       }
 
+      private int maxStack_ ;
+      /**
+       * <code>int32 max_stack = 1;</code>
+       * @return The maxStack.
+       */
+      @java.lang.Override
+      public int getMaxStack() {
+        return maxStack_;
+      }
+      /**
+       * <code>int32 max_stack = 1;</code>
+       * @param value The maxStack to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxStack(int value) {
+        
+        maxStack_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 max_stack = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxStack() {
+        
+        maxStack_ = 0;
+        onChanged();
+        return this;
+      }
+
       private mech.mania.engine.domain.model.ItemProtos.StatusModifier stats_;
       private com.google.protobuf.SingleFieldBuilderV3<
           mech.mania.engine.domain.model.ItemProtos.StatusModifier, mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder, mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder> statsBuilder_;
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        * @return Whether the stats field is set.
        */
       public boolean hasStats() {
         return statsBuilder_ != null || stats_ != null;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        * @return The stats.
        */
       public mech.mania.engine.domain.model.ItemProtos.StatusModifier getStats() {
@@ -4632,7 +5326,7 @@ public final class ItemProtos {
         }
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public Builder setStats(mech.mania.engine.domain.model.ItemProtos.StatusModifier value) {
         if (statsBuilder_ == null) {
@@ -4648,7 +5342,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public Builder setStats(
           mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder builderForValue) {
@@ -4662,7 +5356,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public Builder mergeStats(mech.mania.engine.domain.model.ItemProtos.StatusModifier value) {
         if (statsBuilder_ == null) {
@@ -4680,7 +5374,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public Builder clearStats() {
         if (statsBuilder_ == null) {
@@ -4694,7 +5388,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder getStatsBuilder() {
         
@@ -4702,7 +5396,7 @@ public final class ItemProtos {
         return getStatsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       public mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder getStatsOrBuilder() {
         if (statsBuilder_ != null) {
@@ -4713,7 +5407,7 @@ public final class ItemProtos {
         }
       }
       /**
-       * <code>.item.StatusModifier stats = 1;</code>
+       * <code>.item.StatusModifier stats = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           mech.mania.engine.domain.model.ItemProtos.StatusModifier, mech.mania.engine.domain.model.ItemProtos.StatusModifier.Builder, mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder> 
@@ -4731,14 +5425,15 @@ public final class ItemProtos {
 
       private int range_ ;
       /**
-       * <code>int32 range = 2;</code>
+       * <code>int32 range = 3;</code>
        * @return The range.
        */
+      @java.lang.Override
       public int getRange() {
         return range_;
       }
       /**
-       * <code>int32 range = 2;</code>
+       * <code>int32 range = 3;</code>
        * @param value The range to set.
        * @return This builder for chaining.
        */
@@ -4749,7 +5444,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>int32 range = 2;</code>
+       * <code>int32 range = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRange() {
@@ -4761,14 +5456,15 @@ public final class ItemProtos {
 
       private int splashRadius_ ;
       /**
-       * <code>int32 splash_radius = 3;</code>
+       * <code>int32 splash_radius = 4;</code>
        * @return The splashRadius.
        */
+      @java.lang.Override
       public int getSplashRadius() {
         return splashRadius_;
       }
       /**
-       * <code>int32 splash_radius = 3;</code>
+       * <code>int32 splash_radius = 4;</code>
        * @param value The splashRadius to set.
        * @return This builder for chaining.
        */
@@ -4779,7 +5475,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>int32 splash_radius = 3;</code>
+       * <code>int32 splash_radius = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearSplashRadius() {
@@ -4791,14 +5487,15 @@ public final class ItemProtos {
 
       private int attack_ ;
       /**
-       * <code>int32 attack = 4;</code>
+       * <code>int32 attack = 5;</code>
        * @return The attack.
        */
+      @java.lang.Override
       public int getAttack() {
         return attack_;
       }
       /**
-       * <code>int32 attack = 4;</code>
+       * <code>int32 attack = 5;</code>
        * @param value The attack to set.
        * @return This builder for chaining.
        */
@@ -4809,7 +5506,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>int32 attack = 4;</code>
+       * <code>int32 attack = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearAttack() {
@@ -4823,14 +5520,14 @@ public final class ItemProtos {
       private com.google.protobuf.SingleFieldBuilderV3<
           mech.mania.engine.domain.model.ItemProtos.TempStatusModifier, mech.mania.engine.domain.model.ItemProtos.TempStatusModifier.Builder, mech.mania.engine.domain.model.ItemProtos.TempStatusModifierOrBuilder> onHitEffectBuilder_;
       /**
-       * <code>.item.TempStatusModifier on_hit_effect = 5;</code>
+       * <code>.item.TempStatusModifier on_hit_effect = 6;</code>
        * @return Whether the onHitEffect field is set.
        */
       public boolean hasOnHitEffect() {
         return onHitEffectBuilder_ != null || onHitEffect_ != null;
       }
       /**
-       * <code>.item.TempStatusModifier on_hit_effect = 5;</code>
+       * <code>.item.TempStatusModifier on_hit_effect = 6;</code>
        * @return The onHitEffect.
        */
       public mech.mania.engine.domain.model.ItemProtos.TempStatusModifier getOnHitEffect() {
@@ -4841,7 +5538,7 @@ public final class ItemProtos {
         }
       }
       /**
-       * <code>.item.TempStatusModifier on_hit_effect = 5;</code>
+       * <code>.item.TempStatusModifier on_hit_effect = 6;</code>
        */
       public Builder setOnHitEffect(mech.mania.engine.domain.model.ItemProtos.TempStatusModifier value) {
         if (onHitEffectBuilder_ == null) {
@@ -4857,7 +5554,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.TempStatusModifier on_hit_effect = 5;</code>
+       * <code>.item.TempStatusModifier on_hit_effect = 6;</code>
        */
       public Builder setOnHitEffect(
           mech.mania.engine.domain.model.ItemProtos.TempStatusModifier.Builder builderForValue) {
@@ -4871,7 +5568,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.TempStatusModifier on_hit_effect = 5;</code>
+       * <code>.item.TempStatusModifier on_hit_effect = 6;</code>
        */
       public Builder mergeOnHitEffect(mech.mania.engine.domain.model.ItemProtos.TempStatusModifier value) {
         if (onHitEffectBuilder_ == null) {
@@ -4889,7 +5586,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.TempStatusModifier on_hit_effect = 5;</code>
+       * <code>.item.TempStatusModifier on_hit_effect = 6;</code>
        */
       public Builder clearOnHitEffect() {
         if (onHitEffectBuilder_ == null) {
@@ -4903,7 +5600,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.TempStatusModifier on_hit_effect = 5;</code>
+       * <code>.item.TempStatusModifier on_hit_effect = 6;</code>
        */
       public mech.mania.engine.domain.model.ItemProtos.TempStatusModifier.Builder getOnHitEffectBuilder() {
         
@@ -4911,7 +5608,7 @@ public final class ItemProtos {
         return getOnHitEffectFieldBuilder().getBuilder();
       }
       /**
-       * <code>.item.TempStatusModifier on_hit_effect = 5;</code>
+       * <code>.item.TempStatusModifier on_hit_effect = 6;</code>
        */
       public mech.mania.engine.domain.model.ItemProtos.TempStatusModifierOrBuilder getOnHitEffectOrBuilder() {
         if (onHitEffectBuilder_ != null) {
@@ -4922,7 +5619,7 @@ public final class ItemProtos {
         }
       }
       /**
-       * <code>.item.TempStatusModifier on_hit_effect = 5;</code>
+       * <code>.item.TempStatusModifier on_hit_effect = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           mech.mania.engine.domain.model.ItemProtos.TempStatusModifier, mech.mania.engine.domain.model.ItemProtos.TempStatusModifier.Builder, mech.mania.engine.domain.model.ItemProtos.TempStatusModifierOrBuilder> 
@@ -4936,6 +5633,102 @@ public final class ItemProtos {
           onHitEffect_ = null;
         }
         return onHitEffectBuilder_;
+      }
+
+      private java.lang.Object sprite_ = "";
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 7;</code>
+       * @return The sprite.
+       */
+      public java.lang.String getSprite() {
+        java.lang.Object ref = sprite_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sprite_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 7;</code>
+       * @return The bytes for sprite.
+       */
+      public com.google.protobuf.ByteString
+          getSpriteBytes() {
+        java.lang.Object ref = sprite_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sprite_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 7;</code>
+       * @param value The sprite to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSprite(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sprite_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSprite() {
+        
+        sprite_ = getDefaultInstance().getSprite();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 7;</code>
+       * @param value The bytes for sprite to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpriteBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sprite_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4995,30 +5788,56 @@ public final class ItemProtos {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.item.TempStatusModifier effect = 1;</code>
+     * <code>int32 max_stack = 1;</code>
+     * @return The maxStack.
+     */
+    int getMaxStack();
+
+    /**
+     * <code>.item.TempStatusModifier effect = 2;</code>
      * @return Whether the effect field is set.
      */
     boolean hasEffect();
     /**
-     * <code>.item.TempStatusModifier effect = 1;</code>
+     * <code>.item.TempStatusModifier effect = 2;</code>
      * @return The effect.
      */
     mech.mania.engine.domain.model.ItemProtos.TempStatusModifier getEffect();
     /**
-     * <code>.item.TempStatusModifier effect = 1;</code>
+     * <code>.item.TempStatusModifier effect = 2;</code>
      */
     mech.mania.engine.domain.model.ItemProtos.TempStatusModifierOrBuilder getEffectOrBuilder();
 
     /**
-     * <code>int32 stacks = 2;</code>
+     * <code>int32 stacks = 3;</code>
      * @return The stacks.
      */
     int getStacks();
+
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 4;</code>
+     * @return The sprite.
+     */
+    java.lang.String getSprite();
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 4;</code>
+     * @return The bytes for sprite.
+     */
+    com.google.protobuf.ByteString
+        getSpriteBytes();
   }
   /**
    * Protobuf type {@code item.Consumable}
    */
-  public  static final class Consumable extends
+  public static final class Consumable extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:item.Consumable)
       ConsumableOrBuilder {
@@ -5028,6 +5847,7 @@ public final class ItemProtos {
       super(builder);
     }
     private Consumable() {
+      sprite_ = "";
     }
 
     @java.lang.Override
@@ -5060,7 +5880,12 @@ public final class ItemProtos {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              maxStack_ = input.readInt32();
+              break;
+            }
+            case 18: {
               mech.mania.engine.domain.model.ItemProtos.TempStatusModifier.Builder subBuilder = null;
               if (effect_ != null) {
                 subBuilder = effect_.toBuilder();
@@ -5073,9 +5898,15 @@ public final class ItemProtos {
 
               break;
             }
-            case 16: {
+            case 24: {
 
               stacks_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sprite_ = s;
               break;
             }
             default: {
@@ -5110,37 +5941,98 @@ public final class ItemProtos {
               mech.mania.engine.domain.model.ItemProtos.Consumable.class, mech.mania.engine.domain.model.ItemProtos.Consumable.Builder.class);
     }
 
-    public static final int EFFECT_FIELD_NUMBER = 1;
+    public static final int MAX_STACK_FIELD_NUMBER = 1;
+    private int maxStack_;
+    /**
+     * <code>int32 max_stack = 1;</code>
+     * @return The maxStack.
+     */
+    @java.lang.Override
+    public int getMaxStack() {
+      return maxStack_;
+    }
+
+    public static final int EFFECT_FIELD_NUMBER = 2;
     private mech.mania.engine.domain.model.ItemProtos.TempStatusModifier effect_;
     /**
-     * <code>.item.TempStatusModifier effect = 1;</code>
+     * <code>.item.TempStatusModifier effect = 2;</code>
      * @return Whether the effect field is set.
      */
+    @java.lang.Override
     public boolean hasEffect() {
       return effect_ != null;
     }
     /**
-     * <code>.item.TempStatusModifier effect = 1;</code>
+     * <code>.item.TempStatusModifier effect = 2;</code>
      * @return The effect.
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.TempStatusModifier getEffect() {
       return effect_ == null ? mech.mania.engine.domain.model.ItemProtos.TempStatusModifier.getDefaultInstance() : effect_;
     }
     /**
-     * <code>.item.TempStatusModifier effect = 1;</code>
+     * <code>.item.TempStatusModifier effect = 2;</code>
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.TempStatusModifierOrBuilder getEffectOrBuilder() {
       return getEffect();
     }
 
-    public static final int STACKS_FIELD_NUMBER = 2;
+    public static final int STACKS_FIELD_NUMBER = 3;
     private int stacks_;
     /**
-     * <code>int32 stacks = 2;</code>
+     * <code>int32 stacks = 3;</code>
      * @return The stacks.
      */
+    @java.lang.Override
     public int getStacks() {
       return stacks_;
+    }
+
+    public static final int SPRITE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object sprite_;
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 4;</code>
+     * @return The sprite.
+     */
+    @java.lang.Override
+    public java.lang.String getSprite() {
+      java.lang.Object ref = sprite_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sprite_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Filepath to sprite for this item
+     * </pre>
+     *
+     * <code>string sprite = 4;</code>
+     * @return The bytes for sprite.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpriteBytes() {
+      java.lang.Object ref = sprite_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sprite_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5157,11 +6049,17 @@ public final class ItemProtos {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (maxStack_ != 0) {
+        output.writeInt32(1, maxStack_);
+      }
       if (effect_ != null) {
-        output.writeMessage(1, getEffect());
+        output.writeMessage(2, getEffect());
       }
       if (stacks_ != 0) {
-        output.writeInt32(2, stacks_);
+        output.writeInt32(3, stacks_);
+      }
+      if (!getSpriteBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sprite_);
       }
       unknownFields.writeTo(output);
     }
@@ -5172,13 +6070,20 @@ public final class ItemProtos {
       if (size != -1) return size;
 
       size = 0;
+      if (maxStack_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, maxStack_);
+      }
       if (effect_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getEffect());
+          .computeMessageSize(2, getEffect());
       }
       if (stacks_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, stacks_);
+          .computeInt32Size(3, stacks_);
+      }
+      if (!getSpriteBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sprite_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5195,6 +6100,8 @@ public final class ItemProtos {
       }
       mech.mania.engine.domain.model.ItemProtos.Consumable other = (mech.mania.engine.domain.model.ItemProtos.Consumable) obj;
 
+      if (getMaxStack()
+          != other.getMaxStack()) return false;
       if (hasEffect() != other.hasEffect()) return false;
       if (hasEffect()) {
         if (!getEffect()
@@ -5202,6 +6109,8 @@ public final class ItemProtos {
       }
       if (getStacks()
           != other.getStacks()) return false;
+      if (!getSprite()
+          .equals(other.getSprite())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5213,12 +6122,16 @@ public final class ItemProtos {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MAX_STACK_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxStack();
       if (hasEffect()) {
         hash = (37 * hash) + EFFECT_FIELD_NUMBER;
         hash = (53 * hash) + getEffect().hashCode();
       }
       hash = (37 * hash) + STACKS_FIELD_NUMBER;
       hash = (53 * hash) + getStacks();
+      hash = (37 * hash) + SPRITE_FIELD_NUMBER;
+      hash = (53 * hash) + getSprite().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5352,6 +6265,8 @@ public final class ItemProtos {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        maxStack_ = 0;
+
         if (effectBuilder_ == null) {
           effect_ = null;
         } else {
@@ -5359,6 +6274,8 @@ public final class ItemProtos {
           effectBuilder_ = null;
         }
         stacks_ = 0;
+
+        sprite_ = "";
 
         return this;
       }
@@ -5386,12 +6303,14 @@ public final class ItemProtos {
       @java.lang.Override
       public mech.mania.engine.domain.model.ItemProtos.Consumable buildPartial() {
         mech.mania.engine.domain.model.ItemProtos.Consumable result = new mech.mania.engine.domain.model.ItemProtos.Consumable(this);
+        result.maxStack_ = maxStack_;
         if (effectBuilder_ == null) {
           result.effect_ = effect_;
         } else {
           result.effect_ = effectBuilder_.build();
         }
         result.stacks_ = stacks_;
+        result.sprite_ = sprite_;
         onBuilt();
         return result;
       }
@@ -5440,11 +6359,18 @@ public final class ItemProtos {
 
       public Builder mergeFrom(mech.mania.engine.domain.model.ItemProtos.Consumable other) {
         if (other == mech.mania.engine.domain.model.ItemProtos.Consumable.getDefaultInstance()) return this;
+        if (other.getMaxStack() != 0) {
+          setMaxStack(other.getMaxStack());
+        }
         if (other.hasEffect()) {
           mergeEffect(other.getEffect());
         }
         if (other.getStacks() != 0) {
           setStacks(other.getStacks());
+        }
+        if (!other.getSprite().isEmpty()) {
+          sprite_ = other.sprite_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5475,18 +6401,49 @@ public final class ItemProtos {
         return this;
       }
 
+      private int maxStack_ ;
+      /**
+       * <code>int32 max_stack = 1;</code>
+       * @return The maxStack.
+       */
+      @java.lang.Override
+      public int getMaxStack() {
+        return maxStack_;
+      }
+      /**
+       * <code>int32 max_stack = 1;</code>
+       * @param value The maxStack to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxStack(int value) {
+        
+        maxStack_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 max_stack = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxStack() {
+        
+        maxStack_ = 0;
+        onChanged();
+        return this;
+      }
+
       private mech.mania.engine.domain.model.ItemProtos.TempStatusModifier effect_;
       private com.google.protobuf.SingleFieldBuilderV3<
           mech.mania.engine.domain.model.ItemProtos.TempStatusModifier, mech.mania.engine.domain.model.ItemProtos.TempStatusModifier.Builder, mech.mania.engine.domain.model.ItemProtos.TempStatusModifierOrBuilder> effectBuilder_;
       /**
-       * <code>.item.TempStatusModifier effect = 1;</code>
+       * <code>.item.TempStatusModifier effect = 2;</code>
        * @return Whether the effect field is set.
        */
       public boolean hasEffect() {
         return effectBuilder_ != null || effect_ != null;
       }
       /**
-       * <code>.item.TempStatusModifier effect = 1;</code>
+       * <code>.item.TempStatusModifier effect = 2;</code>
        * @return The effect.
        */
       public mech.mania.engine.domain.model.ItemProtos.TempStatusModifier getEffect() {
@@ -5497,7 +6454,7 @@ public final class ItemProtos {
         }
       }
       /**
-       * <code>.item.TempStatusModifier effect = 1;</code>
+       * <code>.item.TempStatusModifier effect = 2;</code>
        */
       public Builder setEffect(mech.mania.engine.domain.model.ItemProtos.TempStatusModifier value) {
         if (effectBuilder_ == null) {
@@ -5513,7 +6470,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.TempStatusModifier effect = 1;</code>
+       * <code>.item.TempStatusModifier effect = 2;</code>
        */
       public Builder setEffect(
           mech.mania.engine.domain.model.ItemProtos.TempStatusModifier.Builder builderForValue) {
@@ -5527,7 +6484,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.TempStatusModifier effect = 1;</code>
+       * <code>.item.TempStatusModifier effect = 2;</code>
        */
       public Builder mergeEffect(mech.mania.engine.domain.model.ItemProtos.TempStatusModifier value) {
         if (effectBuilder_ == null) {
@@ -5545,7 +6502,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.TempStatusModifier effect = 1;</code>
+       * <code>.item.TempStatusModifier effect = 2;</code>
        */
       public Builder clearEffect() {
         if (effectBuilder_ == null) {
@@ -5559,7 +6516,7 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>.item.TempStatusModifier effect = 1;</code>
+       * <code>.item.TempStatusModifier effect = 2;</code>
        */
       public mech.mania.engine.domain.model.ItemProtos.TempStatusModifier.Builder getEffectBuilder() {
         
@@ -5567,7 +6524,7 @@ public final class ItemProtos {
         return getEffectFieldBuilder().getBuilder();
       }
       /**
-       * <code>.item.TempStatusModifier effect = 1;</code>
+       * <code>.item.TempStatusModifier effect = 2;</code>
        */
       public mech.mania.engine.domain.model.ItemProtos.TempStatusModifierOrBuilder getEffectOrBuilder() {
         if (effectBuilder_ != null) {
@@ -5578,7 +6535,7 @@ public final class ItemProtos {
         }
       }
       /**
-       * <code>.item.TempStatusModifier effect = 1;</code>
+       * <code>.item.TempStatusModifier effect = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           mech.mania.engine.domain.model.ItemProtos.TempStatusModifier, mech.mania.engine.domain.model.ItemProtos.TempStatusModifier.Builder, mech.mania.engine.domain.model.ItemProtos.TempStatusModifierOrBuilder> 
@@ -5596,14 +6553,15 @@ public final class ItemProtos {
 
       private int stacks_ ;
       /**
-       * <code>int32 stacks = 2;</code>
+       * <code>int32 stacks = 3;</code>
        * @return The stacks.
        */
+      @java.lang.Override
       public int getStacks() {
         return stacks_;
       }
       /**
-       * <code>int32 stacks = 2;</code>
+       * <code>int32 stacks = 3;</code>
        * @param value The stacks to set.
        * @return This builder for chaining.
        */
@@ -5614,12 +6572,108 @@ public final class ItemProtos {
         return this;
       }
       /**
-       * <code>int32 stacks = 2;</code>
+       * <code>int32 stacks = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearStacks() {
         
         stacks_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sprite_ = "";
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 4;</code>
+       * @return The sprite.
+       */
+      public java.lang.String getSprite() {
+        java.lang.Object ref = sprite_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sprite_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 4;</code>
+       * @return The bytes for sprite.
+       */
+      public com.google.protobuf.ByteString
+          getSpriteBytes() {
+        java.lang.Object ref = sprite_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sprite_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 4;</code>
+       * @param value The sprite to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSprite(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sprite_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSprite() {
+        
+        sprite_ = getDefaultInstance().getSprite();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filepath to sprite for this item
+       * </pre>
+       *
+       * <code>string sprite = 4;</code>
+       * @param value The bytes for sprite to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpriteBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sprite_ = value;
         onChanged();
         return this;
       }
@@ -5749,7 +6803,7 @@ public final class ItemProtos {
   /**
    * Protobuf type {@code item.StatusModifier}
    */
-  public  static final class StatusModifier extends
+  public static final class StatusModifier extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:item.StatusModifier)
       StatusModifierOrBuilder {
@@ -5884,6 +6938,7 @@ public final class ItemProtos {
      * <code>int32 flat_speed_change = 1;</code>
      * @return The flatSpeedChange.
      */
+    @java.lang.Override
     public int getFlatSpeedChange() {
       return flatSpeedChange_;
     }
@@ -5894,6 +6949,7 @@ public final class ItemProtos {
      * <code>double percent_speed_change = 2;</code>
      * @return The percentSpeedChange.
      */
+    @java.lang.Override
     public double getPercentSpeedChange() {
       return percentSpeedChange_;
     }
@@ -5904,6 +6960,7 @@ public final class ItemProtos {
      * <code>int32 flat_health_change = 3;</code>
      * @return The flatHealthChange.
      */
+    @java.lang.Override
     public int getFlatHealthChange() {
       return flatHealthChange_;
     }
@@ -5914,6 +6971,7 @@ public final class ItemProtos {
      * <code>double percent_health_change = 4;</code>
      * @return The percentHealthChange.
      */
+    @java.lang.Override
     public double getPercentHealthChange() {
       return percentHealthChange_;
     }
@@ -5924,6 +6982,7 @@ public final class ItemProtos {
      * <code>int32 flat_experience_change = 5;</code>
      * @return The flatExperienceChange.
      */
+    @java.lang.Override
     public int getFlatExperienceChange() {
       return flatExperienceChange_;
     }
@@ -5934,6 +6993,7 @@ public final class ItemProtos {
      * <code>double percent_experience_change = 6;</code>
      * @return The percentExperienceChange.
      */
+    @java.lang.Override
     public double getPercentExperienceChange() {
       return percentExperienceChange_;
     }
@@ -5944,6 +7004,7 @@ public final class ItemProtos {
      * <code>int32 flat_attack_change = 7;</code>
      * @return The flatAttackChange.
      */
+    @java.lang.Override
     public int getFlatAttackChange() {
       return flatAttackChange_;
     }
@@ -5954,6 +7015,7 @@ public final class ItemProtos {
      * <code>double percent_attack_change = 8;</code>
      * @return The percentAttackChange.
      */
+    @java.lang.Override
     public double getPercentAttackChange() {
       return percentAttackChange_;
     }
@@ -5964,6 +7026,7 @@ public final class ItemProtos {
      * <code>int32 flat_defense_change = 9;</code>
      * @return The flatDefenseChange.
      */
+    @java.lang.Override
     public int getFlatDefenseChange() {
       return flatDefenseChange_;
     }
@@ -5974,6 +7037,7 @@ public final class ItemProtos {
      * <code>double percent_defense_change = 10;</code>
      * @return The percentDefenseChange.
      */
+    @java.lang.Override
     public double getPercentDefenseChange() {
       return percentDefenseChange_;
     }
@@ -5984,6 +7048,7 @@ public final class ItemProtos {
      * <code>int32 flat_regen_per_turn = 11;</code>
      * @return The flatRegenPerTurn.
      */
+    @java.lang.Override
     public int getFlatRegenPerTurn() {
       return flatRegenPerTurn_;
     }
@@ -6475,6 +7540,7 @@ public final class ItemProtos {
        * <code>int32 flat_speed_change = 1;</code>
        * @return The flatSpeedChange.
        */
+      @java.lang.Override
       public int getFlatSpeedChange() {
         return flatSpeedChange_;
       }
@@ -6505,6 +7571,7 @@ public final class ItemProtos {
        * <code>double percent_speed_change = 2;</code>
        * @return The percentSpeedChange.
        */
+      @java.lang.Override
       public double getPercentSpeedChange() {
         return percentSpeedChange_;
       }
@@ -6535,6 +7602,7 @@ public final class ItemProtos {
        * <code>int32 flat_health_change = 3;</code>
        * @return The flatHealthChange.
        */
+      @java.lang.Override
       public int getFlatHealthChange() {
         return flatHealthChange_;
       }
@@ -6565,6 +7633,7 @@ public final class ItemProtos {
        * <code>double percent_health_change = 4;</code>
        * @return The percentHealthChange.
        */
+      @java.lang.Override
       public double getPercentHealthChange() {
         return percentHealthChange_;
       }
@@ -6595,6 +7664,7 @@ public final class ItemProtos {
        * <code>int32 flat_experience_change = 5;</code>
        * @return The flatExperienceChange.
        */
+      @java.lang.Override
       public int getFlatExperienceChange() {
         return flatExperienceChange_;
       }
@@ -6625,6 +7695,7 @@ public final class ItemProtos {
        * <code>double percent_experience_change = 6;</code>
        * @return The percentExperienceChange.
        */
+      @java.lang.Override
       public double getPercentExperienceChange() {
         return percentExperienceChange_;
       }
@@ -6655,6 +7726,7 @@ public final class ItemProtos {
        * <code>int32 flat_attack_change = 7;</code>
        * @return The flatAttackChange.
        */
+      @java.lang.Override
       public int getFlatAttackChange() {
         return flatAttackChange_;
       }
@@ -6685,6 +7757,7 @@ public final class ItemProtos {
        * <code>double percent_attack_change = 8;</code>
        * @return The percentAttackChange.
        */
+      @java.lang.Override
       public double getPercentAttackChange() {
         return percentAttackChange_;
       }
@@ -6715,6 +7788,7 @@ public final class ItemProtos {
        * <code>int32 flat_defense_change = 9;</code>
        * @return The flatDefenseChange.
        */
+      @java.lang.Override
       public int getFlatDefenseChange() {
         return flatDefenseChange_;
       }
@@ -6745,6 +7819,7 @@ public final class ItemProtos {
        * <code>double percent_defense_change = 10;</code>
        * @return The percentDefenseChange.
        */
+      @java.lang.Override
       public double getPercentDefenseChange() {
         return percentDefenseChange_;
       }
@@ -6775,6 +7850,7 @@ public final class ItemProtos {
        * <code>int32 flat_regen_per_turn = 11;</code>
        * @return The flatRegenPerTurn.
        */
+      @java.lang.Override
       public int getFlatRegenPerTurn() {
         return flatRegenPerTurn_;
       }
@@ -6898,7 +7974,7 @@ public final class ItemProtos {
   /**
    * Protobuf type {@code item.TempStatusModifier}
    */
-  public  static final class TempStatusModifier extends
+  public static final class TempStatusModifier extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:item.TempStatusModifier)
       TempStatusModifierOrBuilder {
@@ -7011,6 +8087,7 @@ public final class ItemProtos {
      * <code>.item.StatusModifier stats = 1;</code>
      * @return Whether the stats field is set.
      */
+    @java.lang.Override
     public boolean hasStats() {
       return stats_ != null;
     }
@@ -7018,12 +8095,14 @@ public final class ItemProtos {
      * <code>.item.StatusModifier stats = 1;</code>
      * @return The stats.
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.StatusModifier getStats() {
       return stats_ == null ? mech.mania.engine.domain.model.ItemProtos.StatusModifier.getDefaultInstance() : stats_;
     }
     /**
      * <code>.item.StatusModifier stats = 1;</code>
      */
+    @java.lang.Override
     public mech.mania.engine.domain.model.ItemProtos.StatusModifierOrBuilder getStatsOrBuilder() {
       return getStats();
     }
@@ -7034,6 +8113,7 @@ public final class ItemProtos {
      * <code>int32 flat_damage_per_turn = 2;</code>
      * @return The flatDamagePerTurn.
      */
+    @java.lang.Override
     public int getFlatDamagePerTurn() {
       return flatDamagePerTurn_;
     }
@@ -7044,6 +8124,7 @@ public final class ItemProtos {
      * <code>double percent_damage_per_turn = 3;</code>
      * @return The percentDamagePerTurn.
      */
+    @java.lang.Override
     public double getPercentDamagePerTurn() {
       return percentDamagePerTurn_;
     }
@@ -7054,6 +8135,7 @@ public final class ItemProtos {
      * <code>int32 flat_regen_per_turn = 4;</code>
      * @return The flatRegenPerTurn.
      */
+    @java.lang.Override
     public int getFlatRegenPerTurn() {
       return flatRegenPerTurn_;
     }
@@ -7064,6 +8146,7 @@ public final class ItemProtos {
      * <code>int32 turns_left = 5;</code>
      * @return The turnsLeft.
      */
+    @java.lang.Override
     public int getTurnsLeft() {
       return turnsLeft_;
     }
@@ -7577,6 +8660,7 @@ public final class ItemProtos {
        * <code>int32 flat_damage_per_turn = 2;</code>
        * @return The flatDamagePerTurn.
        */
+      @java.lang.Override
       public int getFlatDamagePerTurn() {
         return flatDamagePerTurn_;
       }
@@ -7607,6 +8691,7 @@ public final class ItemProtos {
        * <code>double percent_damage_per_turn = 3;</code>
        * @return The percentDamagePerTurn.
        */
+      @java.lang.Override
       public double getPercentDamagePerTurn() {
         return percentDamagePerTurn_;
       }
@@ -7637,6 +8722,7 @@ public final class ItemProtos {
        * <code>int32 flat_regen_per_turn = 4;</code>
        * @return The flatRegenPerTurn.
        */
+      @java.lang.Override
       public int getFlatRegenPerTurn() {
         return flatRegenPerTurn_;
       }
@@ -7667,6 +8753,7 @@ public final class ItemProtos {
        * <code>int32 turns_left = 5;</code>
        * @return The turnsLeft.
        */
+      @java.lang.Override
       public int getTurnsLeft() {
         return turnsLeft_;
       }
@@ -7793,23 +8880,26 @@ public final class ItemProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nitem.proto\022\004item\"\350\001\n\004Item\022\021\n\tmax_stack" +
-      "\030\001 \001(\005\022#\n\005stats\030\002 \001(\0132\024.item.StatusModif" +
-      "ier\022 \n\007clothes\030\003 \001(\0132\r.item.ClothesH\000\022\030\n" +
-      "\003hat\030\004 \001(\0132\t.item.HatH\000\022\034\n\005shoes\030\005 \001(\0132\013" +
-      ".item.ShoesH\000\022\036\n\006weapon\030\006 \001(\0132\014.item.Wea" +
-      "ponH\000\022&\n\nconsumable\030\007 \001(\0132\020.item.Consuma" +
-      "bleH\000B\006\n\004item\".\n\007Clothes\022#\n\005stats\030\001 \001(\0132" +
-      "\024.item.StatusModifier\"j\n\003Hat\022#\n\005stats\030\001 " +
-      "\001(\0132\024.item.StatusModifier\022\'\n\nhat_effect\030" +
-      "\002 \001(\0162\023.item.Hat.HatEffect\"\025\n\tHatEffect\022" +
-      "\010\n\004TEST\020\000\",\n\005Shoes\022#\n\005stats\030\001 \001(\0132\024.item" +
-      ".StatusModifier\"\224\001\n\006Weapon\022#\n\005stats\030\001 \001(" +
-      "\0132\024.item.StatusModifier\022\r\n\005range\030\002 \001(\005\022\025" +
-      "\n\rsplash_radius\030\003 \001(\005\022\016\n\006attack\030\004 \001(\005\022/\n" +
-      "\ron_hit_effect\030\005 \001(\0132\030.item.TempStatusMo" +
-      "difier\"F\n\nConsumable\022(\n\006effect\030\001 \001(\0132\030.i" +
-      "tem.TempStatusModifier\022\016\n\006stacks\030\002 \001(\005\"\334" +
+      "\n\nitem.proto\022\004item\"\260\001\n\004Item\022 \n\007clothes\030\003" +
+      " \001(\0132\r.item.ClothesH\000\022\030\n\003hat\030\004 \001(\0132\t.ite" +
+      "m.HatH\000\022\034\n\005shoes\030\005 \001(\0132\013.item.ShoesH\000\022\036\n" +
+      "\006weapon\030\006 \001(\0132\014.item.WeaponH\000\022&\n\nconsuma" +
+      "ble\030\007 \001(\0132\020.item.ConsumableH\000B\006\n\004item\"Q\n" +
+      "\007Clothes\022\021\n\tmax_stack\030\001 \001(\005\022#\n\005stats\030\002 \001" +
+      "(\0132\024.item.StatusModifier\022\016\n\006sprite\030\003 \001(\t" +
+      "\"\215\001\n\003Hat\022\021\n\tmax_stack\030\001 \001(\005\022#\n\005stats\030\002 \001" +
+      "(\0132\024.item.StatusModifier\022\'\n\nhat_effect\030\003" +
+      " \001(\0162\023.item.Hat.HatEffect\022\016\n\006sprite\030\004 \001(" +
+      "\t\"\025\n\tHatEffect\022\010\n\004TEST\020\000\"O\n\005Shoes\022\021\n\tmax" +
+      "_stack\030\001 \001(\005\022#\n\005stats\030\002 \001(\0132\024.item.Statu" +
+      "sModifier\022\016\n\006sprite\030\003 \001(\t\"\267\001\n\006Weapon\022\021\n\t" +
+      "max_stack\030\001 \001(\005\022#\n\005stats\030\002 \001(\0132\024.item.St" +
+      "atusModifier\022\r\n\005range\030\003 \001(\005\022\025\n\rsplash_ra" +
+      "dius\030\004 \001(\005\022\016\n\006attack\030\005 \001(\005\022/\n\ron_hit_eff" +
+      "ect\030\006 \001(\0132\030.item.TempStatusModifier\022\016\n\006s" +
+      "prite\030\007 \001(\t\"i\n\nConsumable\022\021\n\tmax_stack\030\001" +
+      " \001(\005\022(\n\006effect\030\002 \001(\0132\030.item.TempStatusMo" +
+      "difier\022\016\n\006stacks\030\003 \001(\005\022\016\n\006sprite\030\004 \001(\t\"\334" +
       "\002\n\016StatusModifier\022\031\n\021flat_speed_change\030\001" +
       " \001(\005\022\034\n\024percent_speed_change\030\002 \001(\001\022\032\n\022fl" +
       "at_health_change\030\003 \001(\005\022\035\n\025percent_health" +
@@ -7835,37 +8925,37 @@ public final class ItemProtos {
     internal_static_item_Item_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_item_Item_descriptor,
-        new java.lang.String[] { "MaxStack", "Stats", "Clothes", "Hat", "Shoes", "Weapon", "Consumable", "Item", });
+        new java.lang.String[] { "Clothes", "Hat", "Shoes", "Weapon", "Consumable", "Item", });
     internal_static_item_Clothes_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_item_Clothes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_item_Clothes_descriptor,
-        new java.lang.String[] { "Stats", });
+        new java.lang.String[] { "MaxStack", "Stats", "Sprite", });
     internal_static_item_Hat_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_item_Hat_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_item_Hat_descriptor,
-        new java.lang.String[] { "Stats", "HatEffect", });
+        new java.lang.String[] { "MaxStack", "Stats", "HatEffect", "Sprite", });
     internal_static_item_Shoes_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_item_Shoes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_item_Shoes_descriptor,
-        new java.lang.String[] { "Stats", });
+        new java.lang.String[] { "MaxStack", "Stats", "Sprite", });
     internal_static_item_Weapon_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_item_Weapon_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_item_Weapon_descriptor,
-        new java.lang.String[] { "Stats", "Range", "SplashRadius", "Attack", "OnHitEffect", });
+        new java.lang.String[] { "MaxStack", "Stats", "Range", "SplashRadius", "Attack", "OnHitEffect", "Sprite", });
     internal_static_item_Consumable_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_item_Consumable_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_item_Consumable_descriptor,
-        new java.lang.String[] { "Effect", "Stacks", });
+        new java.lang.String[] { "MaxStack", "Effect", "Stacks", "Sprite", });
     internal_static_item_StatusModifier_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_item_StatusModifier_fieldAccessorTable = new

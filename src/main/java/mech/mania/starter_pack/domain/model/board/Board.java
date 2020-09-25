@@ -11,13 +11,13 @@ public class Board {
     private final List<Position> portals;
 
     public Board(BoardProtos.Board board) {
-        int rows = board.getRows();
-        int cols = board.getColumns();
-        grid = new Tile[rows][cols];
+        int width = board.getWidth();
+        int height = board.getHeight();
+        grid = new Tile[width][height];
 
-        for (int r = 0; r < rows; r++) {
-            for (int c = 0; c < cols; c++) {
-                grid[r][c] = new Tile(board.getGrid(r * c + c));
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                grid[x][y] = new Tile(board.getGrid(x * height + y));
             }
         }
 
