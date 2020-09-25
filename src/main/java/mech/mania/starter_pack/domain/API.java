@@ -94,7 +94,7 @@ public class API {
      * @param position The position to assume you are at
      * @return A List of Characters sorted by distance.
      */
-    public List<Character> findEnemiesInRange(Position position) {
+    public List<Character> findEnemiesInRangeOfAttack(Position position) {
         List<Character> result = new ArrayList<>();
         ApiProtos.APIFindEnemiesInRangeOfAttackByDistanceResponse response =
                 findEnemiesInRange(ProtoFactory.GameState(gameState), ProtoFactory.Position(position), playerName);

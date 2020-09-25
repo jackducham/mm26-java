@@ -6,6 +6,12 @@ public class Consumable extends Item {
     protected final TempStatusModifier effect;
     private final int stacks;
 
+    public Consumable(int maxStack, final TempStatusModifier effect, final int stacks) {
+        super(maxStack);
+        this.effect = effect;
+        this.stacks = stacks;
+    }
+
 
     /**
      * Creates a Consumable based on a Protocol Buffer with a given maximum number of stacks.

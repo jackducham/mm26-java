@@ -5,6 +5,11 @@ import mech.mania.engine.domain.model.ItemProtos;
 public class Hat extends Wearable {
     private MagicEffect magicEffect;
 
+    public Hat(StatusModifier stats, MagicEffect magicEffect) {
+        super(stats);
+        this.magicEffect = magicEffect;
+    }
+
     /**
      * Creates a Hat object based on a given Protocol Buffer.
      * @param hatProto the protocol buffer to be copied
