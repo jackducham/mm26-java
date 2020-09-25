@@ -38,7 +38,7 @@ public class API {
      * @param end The position to end at
      * @return A list of Position objects from start to end or an empty list if no path is possible.
      */
-    public List<Position> pathFinding(Position start, Position end) {
+    public List<Position> findPath(Position start, Position end) {
         List<Position> path = new ArrayList<>();
 
         ApiProtos.APIPathFindingResponse response =
@@ -121,7 +121,7 @@ public class API {
     /**
      * @return The list of current players sorted by total XP
      */
-    public List<Player> leaderBoard() {
+    public List<Player> getLeaderboard() {
         ApiProtos.APILeaderBoardRequest request = ApiProtos.APILeaderBoardRequest.newBuilder()
                 .setGameState(ProtoFactory.GameState(gameState))
                 .build();
