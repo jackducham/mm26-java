@@ -94,7 +94,7 @@ public class API {
      * @param position The position to assume you are at
      * @return A List of Characters sorted by distance.
      */
-    public List<Character> findEnemiesInRange(Position position) {
+    public List<Character> findEnemiesInRangeOfAttack(Position position) {
         List<Character> result = new ArrayList<>();
         ApiProtos.APIFindEnemiesInRangeOfAttackByDistanceResponse response =
                 findEnemiesInRange(ProtoFactory.GameState(gameState), ProtoFactory.Position(position), playerName);
@@ -121,7 +121,7 @@ public class API {
     /**
      * @return The list of current players sorted by total XP
      */
-    public List<Player> leaderBoard() {
+    public List<Player> getLeaderboard() {
         ApiProtos.APILeaderBoardRequest request = ApiProtos.APILeaderBoardRequest.newBuilder()
                 .setGameState(ProtoFactory.GameState(gameState))
                 .build();
@@ -164,11 +164,11 @@ public class API {
      * @param position The position to assume you are at
      * @return 0 if not in range, 1 if in range, 2 if error
      */
-    public int inRangeOfAttack(GameState gameState, Position position) {
+    public boolean inRangeOfAttack(Position position) {
         ApiProtos.APIInRangeOfAttackResponse response =
                 canBeAttacked(ProtoFactory.GameState(gameState), ProtoFactory.Position(position), playerName);
-        if(response == null) return 2;
-        return response.getInRangeOfAttack() ? 1 : 0;
+        if(response == null) return false;
+        return response.getInRangeOfAttack();
     }
 
 
