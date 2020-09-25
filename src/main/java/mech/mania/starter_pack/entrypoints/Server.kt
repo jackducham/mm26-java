@@ -15,12 +15,17 @@ import java.io.StringWriter
 import java.io.Writer
 import java.net.InetSocketAddress
 import java.util.logging.Logger
+import org.slf4j.LoggerFactory
+import ch.qos.logback.classic.Level
+import ch.qos.logback.classic.Logger as SLF4Logger
 
 
 /**
  * main function for running the server with no onReceive and onSend
  */
 fun main(args: Array<String>) {
+    val root: SLF4Logger = LoggerFactory.getLogger(SLF4Logger.ROOT_LOGGER_NAME) as SLF4Logger
+    root.level = Level.INFO
     Server().startServer(args[0].toInt(), {}, {})
 }
 
@@ -49,7 +54,7 @@ class Server {
                 // read in input from server
                 // once the turn is parsed, use that turn to call a passed in function
                 val turn = PlayerTurn.parseFrom(exchange.requestBody)
-                logger.info("received playerTurn: " + turn.playerName)
+                logger.info("Received playerTurn for player: " + turn.playerName + ", turn: " + turn.gameState.stateId)
                 onReceive(turn)
 
                 // calculate what to do with turn
@@ -73,7 +78,7 @@ class Server {
                 decision.writeTo(exchange.responseBody)
                 exchange.responseBody.flush()
                 exchange.responseBody.close()
-                logger.info("sent playerDecision")
+                logger.info("Sent playerDecision")
                 onSend(decision)
             }
 
