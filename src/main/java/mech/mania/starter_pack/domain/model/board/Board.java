@@ -15,9 +15,9 @@ public class Board {
         int height = board.getHeight();
         grid = new Tile[width][height];
 
-        for (int r = 0; r < width; r++) {
-            for (int c = 0; c < height; c++) {
-                grid[r][c] = new Tile(board.getGrid(r * c + c));
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                grid[x][y] = new Tile(board.getGrid(x * height + y));
             }
         }
 

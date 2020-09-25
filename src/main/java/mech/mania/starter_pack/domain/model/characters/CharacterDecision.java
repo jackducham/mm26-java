@@ -42,37 +42,15 @@ public class CharacterDecision {
         this.index = actionIndex;
     }
 
-    public CharacterProtos.CharacterDecision buildProtoClassCharacterDecision(){
-        CharacterProtos.CharacterDecision.Builder decisionBuilder = CharacterProtos.CharacterDecision.newBuilder();
-        switch(this.decision) {
-            case NONE:
-                decisionBuilder.setDecisionType(CharacterProtos.DecisionType.NONE);
-                break;
-            case MOVE:
-                decisionBuilder.setDecisionType(CharacterProtos.DecisionType.MOVE);
-                break;
-            case ATTACK:
-                decisionBuilder.setDecisionType(CharacterProtos.DecisionType.ATTACK);
-                break;
-            case EQUIP:
-                decisionBuilder.setDecisionType(CharacterProtos.DecisionType.EQUIP);
-                break;
-            case DROP:
-                decisionBuilder.setDecisionType(CharacterProtos.DecisionType.DROP);
-                break;
-            case PICKUP:
-                decisionBuilder.setDecisionType(CharacterProtos.DecisionType.PICKUP);
-                break;
-            case PORTAL:
-                decisionBuilder.setDecisionType(CharacterProtos.DecisionType.PORTAL);
-                break;
-        }
+    public decisionTypes getDecision() {
+        return decision;
+    }
 
-        decisionBuilder.setIndex(this.index);
-        if(actionPosition != null) {
-            decisionBuilder.setTargetPosition(ProtoFactory.Position(actionPosition));
-        }
+    public Position getActionPosition() {
+        return actionPosition;
+    }
 
-        return decisionBuilder.build();
+    public int getIndex() {
+        return index;
     }
 }

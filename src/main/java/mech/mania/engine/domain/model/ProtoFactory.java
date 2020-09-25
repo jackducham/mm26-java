@@ -3,15 +3,48 @@ package mech.mania.engine.domain.model;
 import mech.mania.starter_pack.domain.model.GameState;
 import mech.mania.starter_pack.domain.model.board.Board;
 import mech.mania.starter_pack.domain.model.board.Tile;
+import mech.mania.starter_pack.domain.model.characters.*;
 import mech.mania.starter_pack.domain.model.characters.Character;
-import mech.mania.starter_pack.domain.model.characters.Monster;
-import mech.mania.starter_pack.domain.model.characters.Player;
-import mech.mania.starter_pack.domain.model.characters.Position;
 import mech.mania.starter_pack.domain.model.items.*;
 
 import java.util.List;
 
 public class ProtoFactory {
+
+    public static CharacterProtos.CharacterDecision CharacterDecision(CharacterDecision characterDecision){
+        CharacterProtos.CharacterDecision.Builder decisionBuilder = CharacterProtos.CharacterDecision.newBuilder();
+        switch(characterDecision.getDecision()) {
+            case NONE:
+                decisionBuilder.setDecisionType(CharacterProtos.DecisionType.NONE);
+                break;
+            case MOVE:
+                decisionBuilder.setDecisionType(CharacterProtos.DecisionType.MOVE);
+                break;
+            case ATTACK:
+                decisionBuilder.setDecisionType(CharacterProtos.DecisionType.ATTACK);
+                break;
+            case EQUIP:
+                decisionBuilder.setDecisionType(CharacterProtos.DecisionType.EQUIP);
+                break;
+            case DROP:
+                decisionBuilder.setDecisionType(CharacterProtos.DecisionType.DROP);
+                break;
+            case PICKUP:
+                decisionBuilder.setDecisionType(CharacterProtos.DecisionType.PICKUP);
+                break;
+            case PORTAL:
+                decisionBuilder.setDecisionType(CharacterProtos.DecisionType.PORTAL);
+                break;
+        }
+
+        decisionBuilder.setIndex(characterDecision.getIndex());
+        if(characterDecision.getActionPosition() != null) {
+            decisionBuilder.setTargetPosition(ProtoFactory.Position(characterDecision.getActionPosition()));
+        }
+
+        return decisionBuilder.build();
+    }
+
     public static CharacterProtos.Position Position(Position position) {
         CharacterProtos.Position.Builder positionBuilder = CharacterProtos.Position.newBuilder();
         positionBuilder.setX(position.getX());

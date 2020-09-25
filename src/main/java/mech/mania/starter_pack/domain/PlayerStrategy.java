@@ -11,13 +11,11 @@ public class PlayerStrategy implements Strategy {
      * (https://github.com/jackducham/mm26-infra/blob/ready-for-release-94/memory-object/API.md)
      * for details on usage.
      */
-    private MemoryObject memory = new MemoryObject();
+    private MemoryObject memory;
 
-    /**
-     * This API object gives you access to a few helper functions including pathfinding!
-     * You'll have to reinitialize it with the new GameState and your playerName every turn.
-     */
-    private API api;
+    public PlayerStrategy(MemoryObject memory){
+        this.memory = memory;
+    }
 
     /**
      * TODO: implement your strategy here! Return a CharacterDecision using either of the following constructors:
@@ -27,7 +25,11 @@ public class PlayerStrategy implements Strategy {
      * The default constructor makes no decision -- your player will not act in the next turn
      */
     public CharacterDecision makeDecision(String playerName, GameState gameState){
-        api = new API(gameState, playerName);
+        /**
+         * This API object gives you access to a few helper functions including pathfinding!
+         * You'll have to reinitialize it with the new GameState and your playerName ever turn.
+         */
+        API api = new API(gameState, playerName);
 
         Player myPlayer = gameState.getAllPlayers().get(playerName);
 
