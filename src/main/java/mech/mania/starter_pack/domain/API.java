@@ -105,21 +105,6 @@ public class API {
         return result;
     }
 
-
-    /**
-     * Find out if you would be in range of an attack if you were at the given position
-     * @param position The position to assume you are at
-     * @return True if you would be in range of an attack and false otherwise. Returns false if an error occurs.
-     */
-    public boolean canBeAttacked(Position position) {
-        ApiProtos.APIInRangeOfAttackResponse response =
-                canBeAttacked(ProtoFactory.GameState(gameState), ProtoFactory.Position(position), playerName);
-
-        if(response == null) return false;
-        return response.getInRangeOfAttack();
-    }
-
-
     /**
      * Finds the closest portal to the given position
      * @param position The position to begin searching from
@@ -172,6 +157,18 @@ public class API {
             result.add(gameState.getCharacter(c.getName()));
         }
         return result;
+    }
+
+    /**
+     * Find out if you would be in range of an attack if you were at the given position
+     * @param position The position to assume you are at
+     * @return 0 if not in range, 1 if in range, 2 if error
+     */
+    public int inRangeOfAttack(GameState gameState, Position position) {
+        ApiProtos.APIInRangeOfAttackResponse response =
+                canBeAttacked(ProtoFactory.GameState(gameState), ProtoFactory.Position(position), playerName);
+        if(response == null) return 2;
+        return response.getInRangeOfAttack() ? 1 : 0;
     }
 
 
