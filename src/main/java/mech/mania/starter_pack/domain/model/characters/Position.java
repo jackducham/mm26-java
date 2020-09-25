@@ -9,6 +9,12 @@ public class Position {
     private final int y;
     private final String board_id;
 
+    public Position(final int x, final int y, final String board_id) {
+        this.x = x;
+        this.y = y;
+        this.board_id = board_id;
+    }
+
     public Position(CharacterProtos.Position positionProto) {
         x = positionProto.getX();
         y = positionProto.getY();
