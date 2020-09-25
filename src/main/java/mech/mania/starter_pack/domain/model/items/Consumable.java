@@ -15,6 +15,7 @@ public class Consumable extends Item {
         super(consumableProto.getMaxStack());
         this.effect = new TempStatusModifier(consumableProto.getEffect());
         this.stacks = consumableProto.getStacks();
+        this.turnsToDeletion = consumableProto.getTurnsToDeletion();
     }
 
     /**

@@ -9,6 +9,7 @@ public class Shoes extends Wearable {
      */
     public Shoes(ItemProtos.Shoes shoesProto) {
         super(new StatusModifier(shoesProto.getStats()));
+        this.turnsToDeletion = shoesProto.getTurnsToDeletion();
     }
 
 }
