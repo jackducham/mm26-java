@@ -2,7 +2,14 @@ package mech.mania.starter_pack.domain;
 
 import mech.mania.starter_pack.domain.model.GameState;
 import mech.mania.starter_pack.domain.model.characters.*;
+import mech.mania.starter_pack.domain.model.characters.Character;
+import mech.mania.starter_pack.domain.model.items.*;
+import mech.mania.starter_pack.domain.model.board.*;
 import mech.mania.starter_pack.domain.memory.MemoryObject;
+import mech.mania.starter_pack.domain.model.board.Tile.TileType;
+
+import java.util.List;
+
 
 public class PlayerStrategy implements Strategy {
     /**
@@ -25,7 +32,7 @@ public class PlayerStrategy implements Strategy {
      * The default constructor makes no decision -- your player will not act in the next turn
      */
     public CharacterDecision makeDecision(String playerName, GameState gameState){
-        /**
+        /*
          * This API object gives you access to a few helper functions including pathfinding!
          * You'll have to reinitialize it with the new GameState and your playerName ever turn.
          */

@@ -7,7 +7,7 @@ COPY .mvn .mvn
 COPY pom.xml .
 COPY src src
 
-RUN mvn install -Dmaven.test.skip=true
+RUN mvn install -Dmaven.test.skip=true --quiet
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
 FROM maven:3.6.3-jdk-11-slim

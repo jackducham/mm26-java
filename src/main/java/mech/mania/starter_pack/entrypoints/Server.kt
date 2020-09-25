@@ -49,7 +49,7 @@ class Server {
                 // read in input from server
                 // once the turn is parsed, use that turn to call a passed in function
                 val turn = PlayerTurn.parseFrom(exchange.requestBody)
-                logger.info("received playerTurn: " + turn.playerName)
+                logger.info("Received playerTurn for player: " + turn.playerName + ", turn: " + turn.gameState.stateId)
                 onReceive(turn)
 
                 // calculate what to do with turn
@@ -73,7 +73,7 @@ class Server {
                 decision.writeTo(exchange.responseBody)
                 exchange.responseBody.flush()
                 exchange.responseBody.close()
-                logger.info("sent playerDecision")
+                logger.info("Sent playerDecision")
                 onSend(decision)
             }
 
