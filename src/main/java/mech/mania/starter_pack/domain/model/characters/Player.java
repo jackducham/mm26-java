@@ -69,6 +69,13 @@ public class Player extends Character {
         return inventory;
     }
 
+    /**
+     * Checks if either hat or accessory has the chosen MagicEffect
+     */
+    public boolean hasMagicEffect(MagicEffect effect){
+        return (hat != null && hat.getMagicEffect() == effect)
+                || (accessory != null && accessory.getMagicEffect() == effect);
+    }
 
     @Override
     public int getSpeed() {
@@ -90,12 +97,9 @@ public class Player extends Character {
         if (shoes != null) {
             flatChange += shoes.getStats().getFlatSpeedChange();
             percentChange += shoes.getStats().getPercentSpeedChange();
-
-            if((hat != null && hat.getMagicEffect().equals(MagicEffect.SHOES_BOOST)) ||
-                    (accessory != null && accessory.getMagicEffect().equals(MagicEffect.SHOES_BOOST))) {
+            if (hasMagicEffect(MagicEffect.SHOES_BOOST)) {
                 flatChange += shoes.getStats().getFlatSpeedChange();
             }
-
         }
         if (weapon != null) {
             flatChange += weapon.getStats().getFlatSpeedChange();
@@ -181,9 +185,7 @@ public class Player extends Character {
         if (weapon != null) {
             flatChange += weapon.getStats().getFlatAttackChange();
             percentChange += weapon.getStats().getPercentAttackChange();
-
-            if((hat != null && hat.getMagicEffect().equals(MagicEffect.WEAPON_BOOST)) ||
-                    accessory != null && accessory.getMagicEffect().equals(MagicEffect.WEAPON_BOOST)) {
+            if (hasMagicEffect(MagicEffect.WEAPON_BOOST)) {
                 flatChange += (weapon.getStats().getFlatAttackChange() * 0.5);
             }
         }
@@ -220,10 +222,10 @@ public class Player extends Character {
             flatChange += clothes.getStats().getFlatDefenseChange();
             percentChange += clothes.getStats().getPercentDefenseChange();
 
-            if((hat != null && hat.getMagicEffect().equals(MagicEffect.CLOTHES_BOOST)) ||
-                    accessory != null && accessory.getMagicEffect().equals(MagicEffect.CLOTHES_BOOST)) {
+            if(hasMagicEffect(MagicEffect.CLOTHES_BOOST)) {
                 flatChange += clothes.getStats().getFlatDefenseChange();
             }
+
         }
         if (shoes != null) {
             flatChange += shoes.getStats().getFlatDefenseChange();
