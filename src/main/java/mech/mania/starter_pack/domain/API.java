@@ -162,7 +162,7 @@ public class API {
     /**
      * Find out if you would be in range of an attack if you were at the given position
      * @param position The position to assume you are at
-     * @return 0 if not in range, 1 if in range, 2 if error
+     * @return Whether or not the player is in range
      */
     public boolean inRangeOfAttack(Position position) {
         ApiProtos.APIInRangeOfAttackResponse response =
