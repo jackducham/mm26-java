@@ -162,13 +162,13 @@ public class API {
     /**
      * Find out if you would be in range of an attack if you were at the given position
      * @param position The position to assume you are at
-     * @return 0 if not in range, 1 if in range, 2 if error
+     * @return Whether or not the position is in range of an attack
      */
-    public int inRangeOfAttack(GameState gameState, Position position) {
+    public Boolean inRangeOfAttack(Position position) {
         ApiProtos.APIInRangeOfAttackResponse response =
                 canBeAttacked(ProtoFactory.GameState(gameState), ProtoFactory.Position(position), playerName);
-        if(response == null) return 2;
-        return response.getInRangeOfAttack() ? 1 : 0;
+        if(response == null) return null;
+        return response.getInRangeOfAttack();
     }
 
 
