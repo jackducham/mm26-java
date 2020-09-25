@@ -9,7 +9,7 @@ Welcome to MechMania 26! This is the **Java Starter Pack**. In this repository i
 
 ## The Do's
 - **Do** implement your strategy in `PlayerStrategy.java`. This file is used by the rest of our code to send your decision to the game engine. Make sure you return a `CharacterDecision` object.
-- ***TODO: create API.java*** ~~**Do** use the helper functions in `API.java` to assist you in implementing your strategy. You can always write your own additional helper functions as well, although we recommend not putting them in `API.java`.~~
+- **Do** use the helper functions in `API.java` to assist you in implementing your strategy. You can always write your own additional helper functions as well, although we recommend not putting them in `API.java`.
 - **Do** create new files to help organize your code as you wish!
 - **Do** use the objects defined in the `starter_pack.domain.model` package to help you.
 
