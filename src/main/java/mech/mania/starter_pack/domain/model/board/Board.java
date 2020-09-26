@@ -46,7 +46,7 @@ public class Board {
     }
 
     public Tile getTileAtPosition(Position position) {
-        return getGrid()[position.getY()][position.getX()];
+        return getGrid()[position.getX()][position.getY()];
     }
 
 }
