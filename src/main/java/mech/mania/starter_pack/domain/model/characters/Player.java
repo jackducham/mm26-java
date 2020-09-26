@@ -290,4 +290,17 @@ public class Player extends Character {
         return -1;
     }
 
+    /**
+     * @return index of first filled inventory space, -1 if none
+     */
+    public int getFirstInventoryIndex() {
+        for (int i = 0; i < INVENTORY_SIZE; i++) {
+            Item item = inventory[i];
+            if (item != null) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
 }

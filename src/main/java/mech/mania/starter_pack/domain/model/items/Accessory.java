@@ -38,6 +38,7 @@ public class Accessory extends Wearable {
      */
     public Accessory(ItemProtos.Accessory accessoryProto) {
         super(new StatusModifier(accessoryProto.getStats()));
+        this.turnsToDeletion = accessoryProto.getTurnsToDeletion();
         switch (accessoryProto.getMagicEffect()) {
             case SHOES_BOOST:
                 this.magicEffect = MagicEffect.SHOES_BOOST;

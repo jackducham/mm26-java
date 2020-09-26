@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 
 public class API {
     private static final Logger LOGGER = Logger.getLogger(API.class.getName());
-    private static final String API_URL = "http://localhost:8082/api/";
+    private static final String API_URL = "http://engine-main.mechmania.io:8082/api/";
 
     private final GameState gameState;
     private final String playerName;
@@ -38,7 +38,7 @@ public class API {
      * @param end The position to end at
      * @return A list of Position objects from start to end or an empty list if no path is possible.
      */
-    public List<Position> pathFinding(Position start, Position end) {
+    public List<Position> findPath(Position start, Position end) {
         List<Position> path = new ArrayList<>();
 
         ApiProtos.APIPathFindingResponse response =
@@ -162,12 +162,12 @@ public class API {
     /**
      * Find out if you would be in range of an attack if you were at the given position
      * @param position The position to assume you are at
-     * @return Whether or not the player is in range
+     * @return Whether or not the position is in range of an attack
      */
-    public boolean inRangeOfAttack(Position position) {
+    public Boolean inRangeOfAttack(Position position) {
         ApiProtos.APIInRangeOfAttackResponse response =
                 canBeAttacked(ProtoFactory.GameState(gameState), ProtoFactory.Position(position), playerName);
-        if(response == null) return false;
+        if(response == null) return null;
         return response.getInRangeOfAttack();
     }
 
@@ -301,7 +301,7 @@ public class API {
                 .build();
         try {
             return ApiProtos.APIFindAllEnemiesHitResponse.parseFrom(makeApiRequest("findAllEnemiesHit", request));
-        } catch (InvalidProtocolBufferException e) {
+        } catch (Exception e) {
             LOGGER.warning("Exception occurred in parsing API response: " + e);
         }
         return null;
@@ -319,7 +319,7 @@ public class API {
                 .build();
         try {
             return ApiProtos.APIFindItemsInRangeByDistanceResponse.parseFrom(makeApiRequest("itemsInRange", request));
-        } catch (InvalidProtocolBufferException e) {
+        } catch (Exception e) {
             LOGGER.warning("Exception occurred in parsing API response: " + e);
         }
         return null;

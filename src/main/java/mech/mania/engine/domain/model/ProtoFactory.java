@@ -88,7 +88,7 @@ public class ProtoFactory {
         List<Position> portals = board.getPortals();
         for (int r = 0; r < grid.length; r++) {
             for (int c = 0; c < grid[r].length; c++) {
-                boardBuilder.addGrid(r * grid[c].length + c, Tile(grid[r][c]));
+                boardBuilder.addGrid(r * grid[r].length + c, Tile(grid[r][c]));
             }
         }
 
@@ -153,7 +153,7 @@ public class ProtoFactory {
 
         for (int i = 0; i < Player.INVENTORY_SIZE; i++) {
             Item curItem = player.getInventory()[i];
-            playerBuilder.setInventory(i, Item(curItem));
+            playerBuilder.addInventory(Item(curItem));
         }
 
         if (player.getHat() != null) {
@@ -195,6 +195,7 @@ public class ProtoFactory {
     public static ItemProtos.Clothes Clothes(Clothes clothes) {
         ItemProtos.Clothes.Builder clothesBuilder = ItemProtos.Clothes.newBuilder();
         clothesBuilder.setStats(StatusModifier(clothes.getStats()));
+        clothesBuilder.setTurnsToDeletion(clothes.getTurnsToDeletion());
 
         return clothesBuilder.build();
     }
@@ -204,6 +205,7 @@ public class ProtoFactory {
         consumableBuilder.setMaxStack(consumable.getMaxStack());
         consumableBuilder.setStacks(consumable.getStacks());
         consumableBuilder.setEffect(TempStatusModifier(consumable.getEffect()));
+        consumableBuilder.setTurnsToDeletion(consumable.getTurnsToDeletion());
 
         ItemProtos.Item.Builder itemBuilder = ItemProtos.Item.newBuilder();
         itemBuilder.setConsumable(consumableBuilder.build());
@@ -215,6 +217,7 @@ public class ProtoFactory {
         ItemProtos.Hat.Builder hatBuilder = ItemProtos.Hat.newBuilder();
 
         hatBuilder.setStats(StatusModifier(hat.getStats()));
+        hatBuilder.setTurnsToDeletion(hat.getTurnsToDeletion());
 
         switch(hat.getMagicEffect()){
             default:
@@ -247,6 +250,7 @@ public class ProtoFactory {
         ItemProtos.Accessory.Builder accessoryBuilder = ItemProtos.Accessory.newBuilder();
 
         accessoryBuilder.setStats(StatusModifier(accessory.getStats()));
+        accessoryBuilder.setTurnsToDeletion(accessory.getTurnsToDeletion());
 
         switch(accessory.getMagicEffect()){
             default:
@@ -278,6 +282,7 @@ public class ProtoFactory {
     public static ItemProtos.Shoes Shoes(Shoes shoes){
         ItemProtos.Shoes.Builder shoesBuilder = ItemProtos.Shoes.newBuilder();
         shoesBuilder.setStats(StatusModifier(shoes.getStats()));
+        shoesBuilder.setTurnsToDeletion(shoes.getTurnsToDeletion());
         return shoesBuilder.build();
     }
 
@@ -315,6 +320,7 @@ public class ProtoFactory {
         weaponBuilder.setSplashRadius(weapon.getSplashRadius());
         weaponBuilder.setOnHitEffect(TempStatusModifier(weapon.getOnHitEffect()));
         weaponBuilder.setAttack(weapon.getAttack());
+        weaponBuilder.setTurnsToDeletion(weapon.getTurnsToDeletion());
 
         return weaponBuilder.build();
     }

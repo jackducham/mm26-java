@@ -16,6 +16,7 @@ public class Hat extends Wearable {
      */
     public Hat(ItemProtos.Hat hatProto) {
         super(new StatusModifier(hatProto.getStats()));
+        this.turnsToDeletion = hatProto.getTurnsToDeletion();
         switch (hatProto.getMagicEffect()) {
             case SHOES_BOOST:
                 this.magicEffect = MagicEffect.SHOES_BOOST;

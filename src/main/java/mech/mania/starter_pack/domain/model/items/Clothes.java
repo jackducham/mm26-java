@@ -14,6 +14,6 @@ public class Clothes extends Wearable {
      */
     public Clothes(ItemProtos.Clothes clothesProto) {
         super(new StatusModifier(clothesProto.getStats()));
+        this.turnsToDeletion = clothesProto.getTurnsToDeletion();
     }
-
 }
