@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 
 public class API {
     private static final Logger LOGGER = Logger.getLogger(API.class.getName());
-    private static final String API_URL = "http://localhost:8082/api/";
+    private static final String API_URL = "http://engine-main.mechmania.io:8082/api/";
 
     private final GameState gameState;
     private final String playerName;
