@@ -31,7 +31,7 @@ public class Board {
             }
         }
 
-        portals = new ArrayList<>(board.getPortalsCount());
+        portals = new ArrayList<>();
         for (int i = 0; i < board.getPortalsCount(); i++) {
             portals.add(i, new Position(board.getPortals(i)));
         }
