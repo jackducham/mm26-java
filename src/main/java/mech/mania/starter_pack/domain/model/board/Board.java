@@ -35,4 +35,8 @@ public class Board {
         return portals;
     }
 
+    public Tile getTileAtPosition(Position position) {
+        return getGrid()[position.getY()][position.getX()];
+    }
+
 }
