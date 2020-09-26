@@ -75,7 +75,7 @@ public class ProtoFactory {
         List<Item> items = tile.getItems();
         for (int i = 0; i < items.size(); i++) {
             Item curItem = items.get(i);
-            tileBuilder.setItems(i, Item(curItem));
+            tileBuilder.addItems(Item(curItem));
         }
 
         return tileBuilder.build();
@@ -124,9 +124,9 @@ public class ProtoFactory {
         }
 
         for (int i = 0; i < character.getActiveEffects().size(); i++) {
-            characterBuilder.setActiveEffectsTempStatusModifier(i, TempStatusModifier(character.getActiveEffects().get(i).getFirst()));
-            characterBuilder.setActiveEffectsSource(i, character.getActiveEffects().get(i).getSecond());
-            characterBuilder.setActiveEffectsIsPlayer(i, character.getActiveEffects().get(i).getThird());
+            characterBuilder.addActiveEffectsTempStatusModifier(TempStatusModifier(character.getActiveEffects().get(i).getFirst()));
+            characterBuilder.addActiveEffectsSource(character.getActiveEffects().get(i).getSecond());
+            characterBuilder.addActiveEffectsIsPlayer(character.getActiveEffects().get(i).getThird());
         }
 
         characterBuilder.putAllTaggedPlayersDamage(character.getTaggedPlayersDamage());
