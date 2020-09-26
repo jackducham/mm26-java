@@ -41,6 +41,44 @@ public abstract class Character {
     // map of attackers to amount of actual damage done
     protected Map<String, Integer> taggedPlayersDamage;
 
+    public Character(final String name, final int baseSpeed, final int baseMaxHealth,
+                     final int baseAttack, final int baseDefense, int currentHealth,
+                     int experience, int ticksSinceDeath, boolean isDead, Position position,
+                     Position spawnPoint, Weapon weapon, int activeEffectsTempStatusModifierCount,
+                     TempStatusModifier[] activeEffectsTempStatusModifier,
+                     String[] activeEffectsSource, boolean[] activeEffectsIsPlayer,
+                     Map<String, Integer> taggedPlayersDamageMap) {
+        this.name = name;
+
+        this.baseSpeed = baseSpeed;
+        this.baseMaxHealth = baseMaxHealth;
+        this.baseAttack = baseAttack;
+        this.baseDefense = baseDefense;
+
+        this.currentHealth = currentHealth;
+        this.experience = experience;
+
+        this.ticksSinceDeath = ticksSinceDeath;
+        this.isDead = isDead;
+
+        this.position = position;
+        this.spawnPoint = spawnPoint;
+
+        this.weapon = weapon;
+
+        // Build activeEffects triple
+        this.activeEffects = new ArrayList<>();
+        for(int i = 0; i < activeEffectsTempStatusModifierCount; i++){
+            activeEffects.add(new Triple<>(
+                    activeEffectsTempStatusModifier[i],
+                    activeEffectsSource[i],
+                    activeEffectsIsPlayer[i]
+            ));
+        }
+
+        this.taggedPlayersDamage = taggedPlayersDamageMap;
+    }
+
     /**
      * Constructor for Characters built from protos
      */

@@ -1,13 +1,10 @@
 package mech.mania.starter_pack.domain.model.characters;
 
-import mech.mania.engine.domain.model.CharacterProtos;
-import mech.mania.engine.domain.model.ProtoFactory;
-
 public class CharacterDecision {
-    public enum decisionTypes {
+    public enum DecisionType {
         NONE, MOVE, ATTACK, EQUIP, DROP, PICKUP, PORTAL
     }
-    private final decisionTypes decision;
+    private final DecisionType decision;
     private final Position actionPosition;
     private final int index;
 
@@ -15,7 +12,7 @@ public class CharacterDecision {
      * Creates a decision to do nothing
      */
     public CharacterDecision(){
-        this.decision = decisionTypes.NONE;
+        this.decision = DecisionType.NONE;
         this.actionPosition = null;
         this.index = -1;
     }
@@ -25,7 +22,7 @@ public class CharacterDecision {
      * @param decision Should be one of MOVE or ATTACK
      * @param actionPosition The position at which to apply the decision
      */
-    public CharacterDecision(decisionTypes decision, Position actionPosition) {
+    public CharacterDecision(DecisionType decision, Position actionPosition) {
         this.decision = decision;
         this.actionPosition = actionPosition;
         this.index = -1;
@@ -36,13 +33,13 @@ public class CharacterDecision {
      * @param decision Should be one of EQUIP, DROP, PICKUP, or PORTAL
      * @param actionIndex The index (of inventory, tile item list, or board portal list)
      */
-    public CharacterDecision(decisionTypes decision, int actionIndex) {
+    public CharacterDecision(DecisionType decision, int actionIndex) {
         this.decision = decision;
         this.actionPosition = null;
         this.index = actionIndex;
     }
 
-    public decisionTypes getDecision() {
+    public DecisionType getDecision() {
         return decision;
     }
 

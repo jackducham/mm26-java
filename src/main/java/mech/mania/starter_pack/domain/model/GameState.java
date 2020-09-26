@@ -152,6 +152,30 @@ public class GameState {
                 .collect(Collectors.toList());
     }
 
+    public GameState(Map<String, Board> boardNamesMap, int stateId, Map<String, Monster> monsterNamesMap,
+                     Map<String, Player> playerNamesMap) {
+        boardNames = new HashMap<>();
+
+        for (String boardId : boardNamesMap.keySet()) {
+            boardNames.put(boardId, boardNamesMap.get(boardId));
+        }
+
+        turnNumber = stateId;
+
+        playerNames = new HashMap<>();
+        monsterNames = new HashMap<>();
+
+        for (String monsterName : monsterNamesMap.keySet()) {
+            Monster newMonster = monsterNamesMap.get(monsterName);
+            monsterNames.put(newMonster.getName(), newMonster);
+        }
+
+        for (String playerName : playerNamesMap.keySet()) {
+            Player newPlayer = playerNamesMap.get(playerName);
+            playerNames.put(newPlayer.getName(), newPlayer);
+        }
+    }
+
 
     /**
      * Builds a GameState object from a given Protocol Buffer.

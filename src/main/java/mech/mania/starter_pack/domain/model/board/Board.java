@@ -10,14 +10,24 @@ public class Board {
     private final Tile[][] grid;
     private final List<Position> portals;
 
-    public Board(BoardProtos.Board board) {
-        int rows = board.getRows();
-        int cols = board.getColumns();
-        grid = new Tile[rows][cols];
+    public Board(int width, int height, Tile[] grid, Position[] portals) {
+        this.grid = new Tile[width][height];
 
-        for (int r = 0; r < rows; r++) {
-            for (int c = 0; c < cols; c++) {
-                grid[r][c] = new Tile(board.getGrid(r * c + c));
+        for (int x = 0; x < width; x++) {
+            if (height >= 0) System.arraycopy(grid, x * height, this.grid[x], 0, height);
+        }
+
+        this.portals = List.of(portals);
+    }
+
+    public Board(BoardProtos.Board board) {
+        int width = board.getWidth();
+        int height = board.getHeight();
+        grid = new Tile[width][height];
+
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                grid[x][y] = new Tile(board.getGrid(x * height + y));
             }
         }
 

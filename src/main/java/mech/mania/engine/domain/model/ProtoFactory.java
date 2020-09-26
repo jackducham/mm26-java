@@ -88,7 +88,7 @@ public class ProtoFactory {
         List<Position> portals = board.getPortals();
         for (int r = 0; r < grid.length; r++) {
             for (int c = 0; c < grid[r].length; c++) {
-                boardBuilder.addGrid(r * grid[c].length + c, Tile(grid[r][c]));
+                boardBuilder.addGrid(r * grid[r].length + c, Tile(grid[r][c]));
             }
         }
 
@@ -96,8 +96,8 @@ public class ProtoFactory {
             boardBuilder.addPortals(i, Position(portals.get(i)));
         }
 
-        boardBuilder.setRows(grid.length);
-        boardBuilder.setColumns(grid[0].length);
+        boardBuilder.setWidth(grid.length);
+        boardBuilder.setHeight(grid[0].length);
 
         return boardBuilder.build();
     }
@@ -164,6 +164,9 @@ public class ProtoFactory {
         if (player.getShoes() != null) {
             playerBuilder.setShoes(Shoes(player.getShoes()));
         }
+        if(player.getAccessory() != null){
+            playerBuilder.setAccessory(Accessory(player.getAccessory()));
+        }
 
         return playerBuilder.build();
     }
@@ -181,6 +184,8 @@ public class ProtoFactory {
             itemBuilder.setWeapon(Weapon((Weapon)item));
         } else if (item instanceof Consumable) {
             itemBuilder.setConsumable(Consumable((Consumable)item));
+        } else if (item instanceof Accessory){
+            itemBuilder.setAccessory(Accessory((Accessory)item));
         }
 
         return itemBuilder.build();
@@ -189,17 +194,19 @@ public class ProtoFactory {
     public static ItemProtos.Clothes Clothes(Clothes clothes) {
         ItemProtos.Clothes.Builder clothesBuilder = ItemProtos.Clothes.newBuilder();
         clothesBuilder.setStats(StatusModifier(clothes.getStats()));
+        clothesBuilder.setTurnsToDeletion(clothes.getTurnsToDeletion());
 
         return clothesBuilder.build();
     }
 
     public static ItemProtos.Consumable Consumable(Consumable consumable) {
         ItemProtos.Consumable.Builder consumableBuilder = ItemProtos.Consumable.newBuilder();
+        consumableBuilder.setMaxStack(consumable.getMaxStack());
         consumableBuilder.setStacks(consumable.getStacks());
         consumableBuilder.setEffect(TempStatusModifier(consumable.getEffect()));
+        consumableBuilder.setTurnsToDeletion(consumable.getTurnsToDeletion());
 
         ItemProtos.Item.Builder itemBuilder = ItemProtos.Item.newBuilder();
-        itemBuilder.setMaxStack(consumable.getMaxStack());
         itemBuilder.setConsumable(consumableBuilder.build());
 
         return consumableBuilder.build();
@@ -209,14 +216,72 @@ public class ProtoFactory {
         ItemProtos.Hat.Builder hatBuilder = ItemProtos.Hat.newBuilder();
 
         hatBuilder.setStats(StatusModifier(hat.getStats()));
-        // TODO: add HatEffect
+        hatBuilder.setTurnsToDeletion(hat.getTurnsToDeletion());
+
+        switch(hat.getMagicEffect()){
+            default:
+                hatBuilder.setMagicEffect(ItemProtos.MagicEffect.NONE);
+                break;
+            case CLOTHES_BOOST:
+                hatBuilder.setMagicEffect(ItemProtos.MagicEffect.CLOTHES_BOOST);
+                break;
+            case SHOES_BOOST:
+                hatBuilder.setMagicEffect(ItemProtos.MagicEffect.SHOES_BOOST);
+                break;
+            case WEAPON_BOOST:
+                hatBuilder.setMagicEffect(ItemProtos.MagicEffect.WEAPON_BOOST);
+                break;
+            case TRIPLED_ON_HIT:
+                hatBuilder.setMagicEffect(ItemProtos.MagicEffect.TRIPLED_ON_HIT);
+                break;
+            case LINGERING_POTIONS:
+                hatBuilder.setMagicEffect(ItemProtos.MagicEffect.LINGERING_POTIONS);
+                break;
+            case STACKING_BONUS:
+                hatBuilder.setMagicEffect(ItemProtos.MagicEffect.STACKING_BONUS);
+                break;
+        }
 
         return hatBuilder.build();
+    }
+
+    public static ItemProtos.Accessory Accessory(Accessory accessory) {
+        ItemProtos.Accessory.Builder accessoryBuilder = ItemProtos.Accessory.newBuilder();
+
+        accessoryBuilder.setStats(StatusModifier(accessory.getStats()));
+        accessoryBuilder.setTurnsToDeletion(accessory.getTurnsToDeletion());
+
+        switch(accessory.getMagicEffect()){
+            default:
+                accessoryBuilder.setMagicEffect(ItemProtos.MagicEffect.NONE);
+                break;
+            case CLOTHES_BOOST:
+                accessoryBuilder.setMagicEffect(ItemProtos.MagicEffect.CLOTHES_BOOST);
+                break;
+            case SHOES_BOOST:
+                accessoryBuilder.setMagicEffect(ItemProtos.MagicEffect.SHOES_BOOST);
+                break;
+            case WEAPON_BOOST:
+                accessoryBuilder.setMagicEffect(ItemProtos.MagicEffect.WEAPON_BOOST);
+                break;
+            case TRIPLED_ON_HIT:
+                accessoryBuilder.setMagicEffect(ItemProtos.MagicEffect.TRIPLED_ON_HIT);
+                break;
+            case LINGERING_POTIONS:
+                accessoryBuilder.setMagicEffect(ItemProtos.MagicEffect.LINGERING_POTIONS);
+                break;
+            case STACKING_BONUS:
+                accessoryBuilder.setMagicEffect(ItemProtos.MagicEffect.STACKING_BONUS);
+                break;
+        }
+
+        return accessoryBuilder.build();
     }
 
     public static ItemProtos.Shoes Shoes(Shoes shoes){
         ItemProtos.Shoes.Builder shoesBuilder = ItemProtos.Shoes.newBuilder();
         shoesBuilder.setStats(StatusModifier(shoes.getStats()));
+        shoesBuilder.setTurnsToDeletion(shoes.getTurnsToDeletion());
         return shoesBuilder.build();
     }
 
@@ -254,6 +319,7 @@ public class ProtoFactory {
         weaponBuilder.setSplashRadius(weapon.getSplashRadius());
         weaponBuilder.setOnHitEffect(TempStatusModifier(weapon.getOnHitEffect()));
         weaponBuilder.setAttack(weapon.getAttack());
+        weaponBuilder.setTurnsToDeletion(weapon.getTurnsToDeletion());
 
         return weaponBuilder.build();
     }

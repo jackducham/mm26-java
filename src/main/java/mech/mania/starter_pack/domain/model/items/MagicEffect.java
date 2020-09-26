@@ -1,6 +1,6 @@
 package mech.mania.starter_pack.domain.model.items;
 
-public enum HatEffect {
+public enum MagicEffect {
     LINGERING_POTIONS,
     /* EFFECT:
         This hat effect causes any consumable the wearer uses to apply the same TempStatusModifier,
@@ -48,7 +48,7 @@ public enum HatEffect {
         times.
      */
 
-    STACKING_BONUS
+    STACKING_BONUS,
     /* EFFECT:
         This hat effect adds a long lasting TSM to the wearer every turn which has the same stats as the hat this effect
         is on. The end effect is that the longer that hat is worn, the bigger the stat bonus, up to the duration of the
@@ -59,4 +59,8 @@ public enum HatEffect {
         the wearer's hat into a TSM with a duration of 10 and a damage per turn of 0, and then applies the effect.
      */
 
+    NONE
+    /*
+        This does absolutely nothing.¯\_(ツ)_/¯
+     */
 }

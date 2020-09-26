@@ -38,7 +38,7 @@ public class API {
      * @param end The position to end at
      * @return A list of Position objects from start to end or an empty list if no path is possible.
      */
-    public List<Position> pathFinding(Position start, Position end) {
+    public List<Position> findPath(Position start, Position end) {
         List<Position> path = new ArrayList<>();
 
         ApiProtos.APIPathFindingResponse response =
@@ -94,7 +94,7 @@ public class API {
      * @param position The position to assume you are at
      * @return A List of Characters sorted by distance.
      */
-    public List<Character> findEnemiesInRange(Position position) {
+    public List<Character> findEnemiesInRangeOfAttack(Position position) {
         List<Character> result = new ArrayList<>();
         ApiProtos.APIFindEnemiesInRangeOfAttackByDistanceResponse response =
                 findEnemiesInRange(ProtoFactory.GameState(gameState), ProtoFactory.Position(position), playerName);
@@ -121,7 +121,7 @@ public class API {
     /**
      * @return The list of current players sorted by total XP
      */
-    public List<Player> leaderBoard() {
+    public List<Player> getLeaderboard() {
         ApiProtos.APILeaderBoardRequest request = ApiProtos.APILeaderBoardRequest.newBuilder()
                 .setGameState(ProtoFactory.GameState(gameState))
                 .build();
@@ -162,13 +162,13 @@ public class API {
     /**
      * Find out if you would be in range of an attack if you were at the given position
      * @param position The position to assume you are at
-     * @return 0 if not in range, 1 if in range, 2 if error
+     * @return Whether or not the position is in range of an attack
      */
-    public int inRangeOfAttack(GameState gameState, Position position) {
+    public Boolean inRangeOfAttack(Position position) {
         ApiProtos.APIInRangeOfAttackResponse response =
                 canBeAttacked(ProtoFactory.GameState(gameState), ProtoFactory.Position(position), playerName);
-        if(response == null) return 2;
-        return response.getInRangeOfAttack() ? 1 : 0;
+        if(response == null) return null;
+        return response.getInRangeOfAttack();
     }
 
 
@@ -185,7 +185,7 @@ public class API {
         if(response == null) return result;
         for(ItemProtos.Item i : response.getItemsList()){
             if(i.hasClothes()) result.add(new Clothes(i.getClothes()));
-            else if(i.hasConsumable()) result.add(new Consumable(i.getMaxStack(), i.getConsumable()));
+            else if(i.hasConsumable()) result.add(new Consumable(i.getConsumable()));
             else if(i.hasHat()) result.add(new Hat(i.getHat()));
             else if(i.hasShoes()) result.add(new Shoes(i.getShoes()));
             else if(i.hasWeapon()) result.add(new Weapon(i.getWeapon()));
