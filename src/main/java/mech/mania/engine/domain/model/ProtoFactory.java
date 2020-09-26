@@ -111,6 +111,7 @@ public class ProtoFactory {
         characterBuilder.setBaseAttack(character.getBaseAttack());
         characterBuilder.setBaseDefense(character.getBaseDefense());
         characterBuilder.setCurrentHealth(character.getCurrentHealth());
+        characterBuilder.setLevel(character.getLevel());
         characterBuilder.setExperience(character.getExperience());
 
         characterBuilder.setTicksSinceDeath(character.getTicksSinceDeath());

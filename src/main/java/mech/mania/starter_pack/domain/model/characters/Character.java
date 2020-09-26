@@ -22,6 +22,7 @@ public abstract class Character {
 
     /** Character's ongoing stats */
     protected int currentHealth;
+    protected int level;
     protected int experience;
 
     /** Death parameters */
@@ -91,6 +92,7 @@ public abstract class Character {
         this.baseDefense = character.getBaseDefense();
 
         this.currentHealth = character.getCurrentHealth();
+        this.level = character.getLevel();
         this.experience = character.getExperience();
 
         this.ticksSinceDeath = character.getTicksSinceDeath();
