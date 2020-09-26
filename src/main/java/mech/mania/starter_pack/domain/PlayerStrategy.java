@@ -7,23 +7,10 @@ import mech.mania.starter_pack.domain.model.characters.Character;
 import mech.mania.starter_pack.domain.model.items.*;
 import mech.mania.starter_pack.domain.model.board.*;
 import mech.mania.starter_pack.domain.memory.MemoryObject;
-<<<<<<< HEAD
-import mech.mania.starter_pack.domain.model.characters.Character;
 import mech.mania.starter_pack.domain.model.items.Item;
 import mech.mania.starter_pack.domain.model.items.Weapon;
 
 import java.util.List;
-=======
-import mech.mania.starter_pack.domain.model.board.Tile.TileType;
-
-import java.util.List;
-
-
-import java.util.List;
-
-import mech.mania.starter_pack.domain.model.characters.CharacterDecision.DecisionType;
-
->>>>>>> f994dc417c1a16c90511196b13c805d80b9e84e1
 
 public class PlayerStrategy implements Strategy {
     /**
@@ -47,7 +34,7 @@ public class PlayerStrategy implements Strategy {
      * @return the position you should move to
      */
     private Position findPositionToMove(Player player, Position destination) {
-        List<Position> path = api.pathFinding(player.getPosition(), destination);
+        List<Position> path = api.findPath(player.getPosition(), destination);
         Position pos;
         if (path.size() < player.getSpeed()) {
             pos = path.get(path.size() - 1);
@@ -86,14 +73,14 @@ public class PlayerStrategy implements Strategy {
         String lastAction = memory.getValueString("lastAction");
         if (lastAction != null && lastAction.equals("PICKUP")) {
             memory.setValue("lastAction", "EQUIP");
-            return new CharacterDecision(DecisionType.EQUIP, myPlayer.getFirstInventoryIndex());
+            return new CharacterDecision(CharacterDecision.DecisionType.EQUIP, myPlayer.getFirstInventoryIndex());
         }
 
         // pick up first item on current tile
         List<Item> tileItems = board.getTileAtPosition(currPos).getItems();
         if (tileItems != null || !tileItems.isEmpty()) {
             memory.setValue("lastAction", "PICKUP");
-            return new CharacterDecision(DecisionType.PICKUP, 0);
+            return new CharacterDecision(CharacterDecision.DecisionType.PICKUP, 0);
         }
 
         Weapon weapon = myPlayer.getWeapon();
@@ -102,18 +89,18 @@ public class PlayerStrategy implements Strategy {
         // if no enemies close by, move to spawn point
         if (enemies == null || enemies.isEmpty()) {
             memory.setValue("lastAction", "MOVE");
-            return new CharacterDecision(DecisionType.MOVE, findPositionToMove(myPlayer, myPlayer.getSpawnPoint()));
+            return new CharacterDecision(CharacterDecision.DecisionType.MOVE, findPositionToMove(myPlayer, myPlayer.getSpawnPoint()));
         }
 
         // attack closest enemy
         Position enemyPos = enemies.get(0).getPosition();
         if (currPos.manhattanDistance(enemyPos) <= weapon.getRange()) {
             memory.setValue("lastAction", "ATTACK");
-            return new CharacterDecision(DecisionType.ATTACK, enemyPos);
+            return new CharacterDecision(CharacterDecision.DecisionType.ATTACK, enemyPos);
         }
 
         // move towards closest enemy
         memory.setValue("lastAction", "MOVE");
-        return new CharacterDecision(DecisionType.MOVE, findPositionToMove(myPlayer, enemyPos));
+        return new CharacterDecision(CharacterDecision.DecisionType.MOVE, findPositionToMove(myPlayer, enemyPos));
     }
 }
