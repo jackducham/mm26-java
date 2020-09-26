@@ -1,7 +1,7 @@
 # MechMania 26 Java Starter Pack
 ![MechMania 26 Logo](https://mechmania.io/images/MM26LOGO.png)
 
-Welcome to MechMania 26! This is the **Java Starter Pack**. In this repository is the base code to help you get started with the competition.
+Welcome to MechMania 26! This is the **Java Starter Pack**. In this repository is the base code to help you get started with the competition. You can find `PlayerStrategy.java` in the path `src/main/java/mech/mania/starter_pack/domain/PlayerStrategy.java`.
 
 ## The Don'ts
 - **Don't** edit any files except for `PlayerStrategy.java`. These other files are necessary for your code to interface with the engine. Messing with them will only cause your player to function incorrectly!
