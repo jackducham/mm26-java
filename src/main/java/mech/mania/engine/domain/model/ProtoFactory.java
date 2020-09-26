@@ -152,7 +152,7 @@ public class ProtoFactory {
 
         for (int i = 0; i < Player.INVENTORY_SIZE; i++) {
             Item curItem = player.getInventory()[i];
-            playerBuilder.setInventory(i, Item(curItem));
+            playerBuilder.addInventory(Item(curItem));
         }
 
         if (player.getHat() != null) {

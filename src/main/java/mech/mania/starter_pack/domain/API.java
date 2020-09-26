@@ -301,7 +301,7 @@ public class API {
                 .build();
         try {
             return ApiProtos.APIFindAllEnemiesHitResponse.parseFrom(makeApiRequest("findAllEnemiesHit", request));
-        } catch (InvalidProtocolBufferException e) {
+        } catch (Exception e) {
             LOGGER.warning("Exception occurred in parsing API response: " + e);
         }
         return null;
@@ -319,7 +319,7 @@ public class API {
                 .build();
         try {
             return ApiProtos.APIFindItemsInRangeByDistanceResponse.parseFrom(makeApiRequest("itemsInRange", request));
-        } catch (InvalidProtocolBufferException e) {
+        } catch (Exception e) {
             LOGGER.warning("Exception occurred in parsing API response: " + e);
         }
         return null;

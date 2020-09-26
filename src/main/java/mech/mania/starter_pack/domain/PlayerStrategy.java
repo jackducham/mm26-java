@@ -61,14 +61,6 @@ public class PlayerStrategy implements Strategy {
         Player myPlayer = gameState.getAllPlayers().get(playerName);
         Position currPos = myPlayer.getPosition();
 
-        // api function calls
-        List<Character> enemiesHit = api.findAllEnemiesHit(myPlayer.getPosition());
-        Position closestPortal = api.findClosestPortal(myPlayer.getPosition());
-        List<Character> enemiesList = api.findEnemies(myPlayer.getPosition());
-        List<Character> enemiesInRangeList = api.findEnemiesInRangeOfAttack(myPlayer.getPosition());
-        List<Monster> monstersList = api.findMonsters(myPlayer.getPosition());
-        List<Player> leaderboard = api.getLeaderboard();
-
         // if lastAction was PICKUP, EQUIP first item in inventory
         String lastAction = memory.getValueString("lastAction");
         if (lastAction != null && lastAction.equals("PICKUP")) {
