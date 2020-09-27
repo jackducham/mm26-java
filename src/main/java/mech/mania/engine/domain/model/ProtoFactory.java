@@ -151,8 +151,8 @@ public class ProtoFactory {
 
         playerBuilder.mergeCharacter(characterProtoClass);
 
-        for (int i = 0; i < Player.INVENTORY_SIZE; i++) {
-            Item curItem = player.getInventory()[i];
+        for (int i = 0; i < player.getInventory().size(); i++) {
+            Item curItem = player.getInventory().get(i);
             playerBuilder.addInventory(Item(curItem));
         }
 

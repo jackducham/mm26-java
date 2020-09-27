@@ -5,6 +5,8 @@ import mech.mania.engine.domain.model.CharacterProtos;
 import mech.mania.engine.domain.model.ItemProtos;
 import mech.mania.starter_pack.domain.model.items.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import static java.lang.Math.max;
@@ -15,7 +17,7 @@ public class Player extends Character {
     private final Accessory accessory;
     private final Clothes clothes;
     private final Shoes shoes;
-    private final Item[] inventory;
+    private final List<Item> inventory;
 
     public Player(final String name, final int baseSpeed, final int baseMaxHealth,
                    final int baseAttack, final int baseDefense, int currentHealth,
@@ -25,7 +27,7 @@ public class Player extends Character {
                    String[] activeEffectsSource, boolean[] activeEffectsIsPlayer,
                    Map<String, Integer> taggedPlayersDamageMap,
                    final Hat hat, final Accessory accessory, final Clothes clothes,
-                   final Shoes shoes, final Item[] inventory) {
+                   final Shoes shoes, final List<Item> inventory) {
         super(name, baseSpeed, baseMaxHealth, baseAttack, baseDefense, currentHealth,
                 experience, ticksSinceDeath, isDead, position, spawnPoint, weapon,
                 activeEffectsTempStatusModifierCount, activeEffectsTempStatusModifier,
@@ -45,27 +47,29 @@ public class Player extends Character {
         accessory = new Accessory(playerProto.getAccessory());
         clothes = new Clothes(playerProto.getClothes());
         shoes = new Shoes(playerProto.getShoes());
-        inventory = new Item[INVENTORY_SIZE];
+        inventory = new ArrayList<>();
 
         for (int i = 0; i < playerProto.getInventoryCount(); i++) {
             ItemProtos.Item protoItem = playerProto.getInventory(i);
             switch(protoItem.getItemCase()) {
                 case CLOTHES:
-                    inventory[i] = new Clothes(protoItem.getClothes());
+                    inventory.add(new Clothes(protoItem.getClothes()));
                     break;
                 case HAT:
-                    inventory[i] = new Hat(protoItem.getHat());
+                    inventory.add(new Hat(protoItem.getHat()));
                     break;
                 case ACCESSORY:
-                    inventory[i] = new Accessory(protoItem.getAccessory());
+                    inventory.add(new Accessory(protoItem.getAccessory()));
+                    break;
                 case SHOES:
-                    inventory[i] = new Shoes(protoItem.getShoes());
+                    inventory.add(new Shoes(protoItem.getShoes()));
                     break;
                 case WEAPON:
-                    inventory[i] = new Weapon(protoItem.getWeapon());
+                    inventory.add(new Weapon(protoItem.getWeapon()));
                     break;
                 case CONSUMABLE:
-                    inventory[i] = new Consumable(protoItem.getConsumable());
+                    inventory.add(new Consumable(protoItem.getConsumable()));
+                    break;
             }
         }
     }
@@ -87,11 +91,11 @@ public class Player extends Character {
         return shoes;
     }
 
-    public int getInventorySize() {
+    public int getMaxInventorySize() {
         return INVENTORY_SIZE;
     }
 
-    public Item[] getInventory() {
+    public List<Item> getInventory() {
         return inventory;
     }
 
@@ -278,14 +282,11 @@ public class Player extends Character {
 
 
     /**
-     * @return index of first null inventory space, -1 if none
+     * @return index of first available inventory space, -1 if none
      */
     public int getFreeInventoryIndex() {
-        for (int i = 0; i < INVENTORY_SIZE; i++) {
-            Item item = inventory[i];
-            if (item == null) {
-                return i;
-            }
+        if(inventory.size() < INVENTORY_SIZE){
+            return inventory.size();
         }
         return -1;
     }
@@ -294,8 +295,8 @@ public class Player extends Character {
      * @return index of first filled inventory space, -1 if none
      */
     public int getFirstInventoryIndex() {
-        for (int i = 0; i < INVENTORY_SIZE; i++) {
-            Item item = inventory[i];
+        for (int i = 0; i < inventory.size(); i++) {
+            Item item = inventory.get(i);
             if (item != null) {
                 return i;
             }
